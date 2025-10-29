@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import RegistrationModal from './RegistrationModal';
+import EnrollmentModal from './EnrollmentModal';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
+  const [showEnrollment, setShowEnrollment] = useState(false);
+  const [enrollmentCourse, setEnrollmentCourse] = useState('');
   const [scrolled, setScrolled] = useState(false);
   
   const toggleMenu = () => {
@@ -14,6 +19,24 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Fix cleanup: add a separate effect to register the openRegistration listener with proper cleanup
+  React.useEffect(() => {
+    const onOpenRegistration = () => setShowRegistration(true);
+    window.addEventListener('skillkoder:openRegistration', onOpenRegistration);
+    return () => window.removeEventListener('skillkoder:openRegistration', onOpenRegistration);
+  }, []);
+
+  // Listen for enrollment open events from other components
+  React.useEffect(() => {
+    const onOpenEnrollment = (e) => {
+      const course = e?.detail?.course || '';
+      setEnrollmentCourse(course);
+      setShowEnrollment(true);
+    };
+    window.addEventListener('skillkoder:openEnrollment', onOpenEnrollment);
+    return () => window.removeEventListener('skillkoder:openEnrollment', onOpenEnrollment);
   }, []);
 
   const styles = {
@@ -241,7 +264,7 @@ const Navbar = () => {
         <div style={styles.container}>
           <div style={styles.logoContainer}>
             <img 
-              src="/sk_logo.png" 
+              src="/sk_logo.webp" 
               alt="SkillKoder Logo" 
               style={styles.logoImg}
               className="logo-img"
@@ -312,6 +335,7 @@ const Navbar = () => {
             <li>
               <button 
                 style={styles.registerBtn}
+                onClick={() => setShowRegistration(true)}
                 onMouseEnter={(e) => {
                   e.target.style.transform = 'translateY(-2px) scale(1.02)';
                   e.target.style.boxShadow = '0 8px 24px rgba(255, 107, 107, 0.4)';
@@ -391,13 +415,15 @@ const Navbar = () => {
           <li style={{ marginTop: '1rem' }}>
             <button 
               style={{...styles.registerBtn, width: '100%'}}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => { setIsMenuOpen(false); setShowRegistration(true); }}
             >
               Register Now
             </button>
           </li>
         </ul>
       </div>
+      <RegistrationModal open={showRegistration} onClose={() => setShowRegistration(false)} />
+      <EnrollmentModal open={showEnrollment} onClose={() => setShowEnrollment(false)} initialCourse={enrollmentCourse} />
     </>
   );
 };

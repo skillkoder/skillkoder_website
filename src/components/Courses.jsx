@@ -5,19 +5,19 @@ const Courses = () => {
     { 
       title: 'Data Analytics', 
       desc: 'Transform raw data into actionable insights with powerful analytics tools and visualization techniques',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
+      image: 'course1.webp',
       stats: { duration: '12 Weeks', level: 'Beginner to Advanced' }
     },
     { 
       title: 'Data Science', 
       desc: 'Master machine learning, statistical modeling, and predictive analytics to solve complex problems',
-      image: 'https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800&h=400&fit=crop',
+      image: 'course2.webp',
       stats: { duration: '16 Weeks', level: 'Intermediate' }
     },
     { 
       title: 'Generative AI', 
       desc: 'Explore cutting-edge AI, prompt engineering, and build intelligent applications with large language models',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop',
+      image: 'course3.webp',
       stats: { duration: '10 Weeks', level: 'Advanced' }
     },
   ];
@@ -25,7 +25,8 @@ const Courses = () => {
   return (
     <section id="courses" style={{
       padding: '5rem 2rem',
-      background: '#ffffff',
+      /* subtle white + light-peach combination to match About section */
+      background: 'radial-gradient(ellipse at center, #ffffff 0%, #fffaf6 45%, #fff2ea 85%)',
       position: 'relative'
     }}>
       {/* Decorative Background Elements */}
@@ -212,6 +213,7 @@ const Courses = () => {
                     transition: 'all 0.3s ease',
                     boxShadow: '0 4px 15px rgba(255, 138, 84, 0.3)'
                   }}
+                  onClick={() => window.dispatchEvent(new CustomEvent('skillkoder:openEnrollment', { detail: { course: course.title } }))}
                   onMouseEnter={(e) => {
                     e.target.style.transform = 'translateY(-2px)';
                     e.target.style.boxShadow = '0 8px 25px rgba(255, 138, 84, 0.4)';
@@ -241,7 +243,14 @@ const Courses = () => {
                   onMouseLeave={(e) => {
                     e.target.style.background = 'transparent';
                     e.target.style.borderColor = '#FFE8DC';
-                  }}>
+                  }}
+                  onClick={() => {
+                    /* navigate using hash-based routing to avoid extra deps */
+                    const slug = course.title.toLowerCase().replace(/\s+/g, '-');
+                    window.location.hash = `/courses/${slug}`;
+                    window.scrollTo(0, 0);
+                  }}
+                  >
                     View Details
                   </button>
                 </div>

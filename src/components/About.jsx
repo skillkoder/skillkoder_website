@@ -4,9 +4,9 @@ const About = () => {
   return (
     <section id="about" style={{
       position: 'relative',
-      /* reduced vertical padding to make the section shorter */
       padding: '2rem 0',
-      background: 'radial-gradient(ellipse at center, #FFF5F0 0%, #FFEDE5 30%, #FFE8DC 60%, #ffffff 100%)',
+      /* subtle white + light-peach combination */
+      background: 'radial-gradient(ellipse at center, #ffffff 0%, #fffaf6 45%, #fff2ea 85%)',
       overflow: 'hidden'
     }}>
       <div style={{
@@ -15,7 +15,6 @@ const About = () => {
         position: 'relative',
         padding: '0 2rem'
       }}>
-        {/* Title */}
         <h2 style={{
           fontSize: '2.5rem',
           fontWeight: '700',
@@ -26,23 +25,19 @@ const About = () => {
           About Us
         </h2>
 
-        {/* Main Content Container */}
         <div style={{
           position: 'relative',
-          /* increase height to accommodate larger images */
           minHeight: '400px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-          {/* Top Right Image - D Shape */}
-          <div style={{
+          <div className="top-right-image" style={{
             position: 'absolute',
-            /* anchor the image to the top-right edge touching the container edge */
             top: '0',
-            right: '0',
-            width: '380px',
-            height: '180px',
+            right: '-200px',
+            width: '500px',
+            height: '160px',
             borderRadius: '90px 0 0 90px',
             overflow: 'hidden',
             backgroundColor: '#e2e8f0',
@@ -50,7 +45,7 @@ const About = () => {
             zIndex: 1
           }}>
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=300&fit=crop" 
+              src="about2.png" 
               alt="Team collaboration"
               style={{
                 width: '100%',
@@ -60,12 +55,10 @@ const About = () => {
             />
           </div>
 
-          {/* Center Content */}
           <div style={{
             position: 'relative',
             maxWidth: '650px',
             margin: '0 auto',
-            /* adjust padding to balance with larger images */
             padding: '2rem 3rem',
             textAlign: 'center',
             zIndex: 2
@@ -126,14 +119,12 @@ const About = () => {
             </p>
           </div>
 
-          {/* Bottom Left Image - D Shape (Flipped) */}
-          <div style={{
+          <div className="bottom-left-image" style={{
             position: 'absolute',
-            /* anchor the image to the bottom-left edge touching the container edge */
             bottom: '0',
-            left: '0',
-            width: '380px',
-            height: '180px',
+            left: '-200px',
+            width: '500px',
+            height: '160px',
             borderRadius: '0 90px 90px 0',
             overflow: 'hidden',
             backgroundColor: '#e2e8f0',
@@ -141,7 +132,7 @@ const About = () => {
             zIndex: 1
           }}>
             <img 
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=300&fit=crop" 
+              src="about4.png" 
               alt="Learning environment"
               style={{
                 width: '100%',
@@ -155,14 +146,19 @@ const About = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          /* slightly taller on tablet but images shrink so they don't intrude */
           #about > div > div:nth-child(2) {
             min-height: 360px !important;
           }
-          #about > div > div:nth-child(2) > div:first-child,
-          #about > div > div:nth-child(2) > div:last-child {
+          .top-right-image,
+          .bottom-left-image {
             width: 280px !important;
             height: 140px !important;
+          }
+          .top-right-image {
+            right: -120px !important;
+          }
+          .bottom-left-image {
+            left: -120px !important;
           }
           #about > div > div:nth-child(2) > div:nth-child(2) {
             padding: 2rem 1.5rem !important;
@@ -178,15 +174,20 @@ const About = () => {
             margin-bottom: 1.25rem !important;
           }
           #about > div > div:nth-child(2) {
-            min-height: 420px !important;
+            min-height: 460px !important;
           }
-          #about > div > div:nth-child(2) > div:first-child,
-          #about > div > div:nth-child(2) > div:last-child {
-            width: 180px !important;
-            height: 100px !important;
+          .top-right-image,
+          .bottom-left-image {
+            /* increase image size on small screens so visuals are more prominent */
+            width: 220px !important;
+            height: 120px !important;
             border-radius: 50px 0 0 50px !important;
           }
-          #about > div > div:nth-child(2) > div:last-child {
+          .top-right-image {
+            right: -90px !important;
+          }
+          .bottom-left-image {
+            left: -90px !important;
             border-radius: 0 50px 50px 0 !important;
           }
           #about > div > div:nth-child(2) > div:nth-child(2) {
@@ -194,6 +195,23 @@ const About = () => {
           }
           #about > div > div:nth-child(2) > div:nth-child(2) p {
             font-size: 0.95rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          /* slightly larger images for very small screens */
+          .top-right-image,
+          .bottom-left-image {
+            width: 180px !important;
+            height: 100px !important;
+            border-radius: 40px 0 0 40px !important;
+          }
+          .top-right-image {
+            right: -40px !important;
+          }
+          .bottom-left-image {
+            left: -40px !important;
+            border-radius: 0 40px 40px 0 !important;
           }
         }
       `}</style>
