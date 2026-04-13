@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Features from './Features';
 import Contact from './Contact';
 
 const DataScience = () => {
+  const navigate = useNavigate();
   const [hoveredTopic, setHoveredTopic] = useState(null);
   const [hoveredTool, setHoveredTool] = useState(null);
 
@@ -85,7 +87,7 @@ const DataScience = () => {
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem 1rem 0 1rem', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', marginLeft: '1rem' }}>
           <button
-            onClick={() => { window.location.hash = '/'; window.scrollTo(0, 0); }}
+            onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
             style={{ 
               padding: '0.75rem 1.8rem', 
               borderRadius: 50, 

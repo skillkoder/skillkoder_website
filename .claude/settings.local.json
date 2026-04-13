@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start:*)",
+      "Bash(powershell.exe -Command \"where.exe npm; where.exe node\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Program Files\\\\nodejs' -ErrorAction SilentlyContinue; Get-ChildItem 'C:\\\\Program Files \\(x86\\)\\\\nodejs' -ErrorAction SilentlyContinue; Get-ChildItem 'C:\\\\Users\\\\Minfy\\\\AppData\\\\Local\\\\Programs\\\\nodejs' -ErrorAction SilentlyContinue; Get-ChildItem 'C:\\\\Users\\\\Minfy\\\\scoop\\\\apps\\\\nodejs' -ErrorAction SilentlyContinue\")",
+      "Bash(cmd.exe /c \"where node & where npm\")"
+    ]
+  }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
   const styles = {
     footer: {
       background: 'linear-gradient(135deg, #ffffff 0%, #fff5f0 50%, #ffe8dc 100%)',
@@ -120,6 +122,27 @@ const Footer = () => {
     }
   };
 
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    if (window.location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const handleLinkClick = (e) => {
     const el = e.currentTarget;
     if (!el) return;
@@ -198,70 +221,55 @@ const Footer = () => {
             <ul style={styles.linksList}>
               <li style={styles.linkItem}>
                 <a
-                  href="#home"
+                  href="/"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}
-                  onClick={(e) => {
-                    handleLinkClick(e);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { handleLinkClick(e); scrollToTop(e); }}
                 >
                   Home
                 </a>
               </li>
               <li style={styles.linkItem}>
                 <a
-                  href="#about"
+                  href="/about"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}
-                  onClick={(e) => {
-                    handleLinkClick(e);
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate('/about'); }}
                 >
                   About
                 </a>
               </li>
               <li style={styles.linkItem}>
                 <a
-                  href="#courses"
+                  href="/courses"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}
-                  onClick={(e) => {
-                    handleLinkClick(e);
-                    document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate('/courses'); }}
                 >
                   Courses
                 </a>
               </li>
               <li style={styles.linkItem}>
                 <a
-                  href="#features"
+                  href="/features"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}
-                  onClick={(e) => {
-                    handleLinkClick(e);
-                    document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate('/features'); }}
                 >
                   Features
                 </a>
               </li>
               <li style={styles.linkItem}>
                 <a
-                  href="#contact"
+                  href="/contact"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}
-                  onClick={(e) => {
-                    handleLinkClick(e);
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate('/contact'); }}
                 >
                   Contact
                 </a>
@@ -382,21 +390,21 @@ const Footer = () => {
             © 2025 SkillKoder. All rights reserved.
           </p>
           <div style={styles.policyLinks}>
-            <a 
-              href="#privacy" 
+            <a
+              href="/"
               style={styles.policyLink}
               onMouseEnter={(e) => handlePolicyHover(e, true)}
               onMouseLeave={(e) => handlePolicyHover(e, false)}
-              onClick={handlePolicyClick}
+              onClick={(e) => { e.preventDefault(); handlePolicyClick(e); }}
             >
               Privacy Policy
             </a>
-            <a 
-              href="#terms" 
+            <a
+              href="/"
               style={styles.policyLink}
               onMouseEnter={(e) => handlePolicyHover(e, true)}
               onMouseLeave={(e) => handlePolicyHover(e, false)}
-              onClick={handlePolicyClick}
+              onClick={(e) => { e.preventDefault(); handlePolicyClick(e); }}
             >
               Terms of Service
             </a>

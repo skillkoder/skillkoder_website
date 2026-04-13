@@ -1,14 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import RegistrationModal from './RegistrationModal';
 import EnrollmentModal from './EnrollmentModal';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showRegistration, setShowRegistration] = useState(false);
   const [showEnrollment, setShowEnrollment] = useState(false);
   const [enrollmentCourse, setEnrollmentCourse] = useState('');
   const [scrolled, setScrolled] = useState(false);
-  
+
+  // Scroll to a section without touching the URL.
+  // If not on the homepage, navigate there first then scroll.
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    if (window.location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -273,10 +298,11 @@ const Navbar = () => {
 
           <ul className="desktop-menu" style={styles.desktopMenu}>
             <li>
-              <a 
+              <a
                 className="menu-item"
-                style={styles.menuItem} 
-                href="#home"
+                style={styles.menuItem}
+                href="/"
+                onClick={scrollToTop}
                 onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
@@ -285,10 +311,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
+              <a
                 className="menu-item"
-                style={styles.menuItem} 
-                href="#about"
+                style={styles.menuItem}
+                href="/about"
+                onClick={(e) => { e.preventDefault(); navigate('/about'); }}
                 onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
@@ -297,10 +324,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
+              <a
                 className="menu-item"
-                style={styles.menuItem} 
-                href="#courses"
+                style={styles.menuItem}
+                href="/courses"
+                onClick={(e) => { e.preventDefault(); navigate('/courses'); }}
                 onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
@@ -309,10 +337,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
+              <a
                 className="menu-item"
-                style={styles.menuItem} 
-                href="#features"
+                style={styles.menuItem}
+                href="/features"
+                onClick={(e) => { e.preventDefault(); navigate('/features'); }}
                 onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
@@ -321,10 +350,11 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
+              <a
                 className="menu-item"
-                style={styles.menuItem} 
-                href="#contact"
+                style={styles.menuItem}
+                href="/contact"
+                onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
                 onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
@@ -368,46 +398,46 @@ const Navbar = () => {
         </button>
         <ul style={styles.mobileMenuList}>
           <li>
-            <a 
-              style={styles.mobileMenuItem} 
-              href="#home"
-              onClick={() => setIsMenuOpen(false)}
+            <a
+              style={styles.mobileMenuItem}
+              href="/"
+              onClick={(e) => { setIsMenuOpen(false); scrollToTop(e); }}
             >
               Home
             </a>
           </li>
           <li>
-            <a 
-              style={styles.mobileMenuItem} 
-              href="#about"
-              onClick={() => setIsMenuOpen(false)}
+            <a
+              style={styles.mobileMenuItem}
+              href="/about"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/about'); }}
             >
               About
             </a>
           </li>
           <li>
-            <a 
-              style={styles.mobileMenuItem} 
-              href="#courses"
-              onClick={() => setIsMenuOpen(false)}
+            <a
+              style={styles.mobileMenuItem}
+              href="/courses"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/courses'); }}
             >
               Courses
             </a>
           </li>
           <li>
-            <a 
-              style={styles.mobileMenuItem} 
-              href="#features"
-              onClick={() => setIsMenuOpen(false)}
+            <a
+              style={styles.mobileMenuItem}
+              href="/features"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/features'); }}
             >
               Features
             </a>
           </li>
           <li>
-            <a 
-              style={styles.mobileMenuItem} 
-              href="#contact"
-              onClick={() => setIsMenuOpen(false)}
+            <a
+              style={styles.mobileMenuItem}
+              href="/contact"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/contact'); }}
             >
               Contact Us
             </a>
