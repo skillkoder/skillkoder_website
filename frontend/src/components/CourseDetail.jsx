@@ -284,18 +284,21 @@ const CourseDetail = ({ slug }) => {
 
     (async () => {
       try {
-        // Try to fetch the full API slug (e.g. 'data-analytics-course-online')
-        // then fall back to niche-level slug
         let data = null;
+
+        // 1st attempt: try the slug as-is (full slug like 'data-science-course-online')
         try {
           data = await apiService.getCourseBySlug(slug);
         } catch {
-          // Try niche key as slug
-          const nicheKey = nicheKeyFromSlug(slug);
-          if (nicheKey) {
-            data = await apiService.getCourseBySlug(nicheKey);
+          // 2nd attempt: if slug is a short niche slug (e.g. 'data-science'),
+          // append '-course-online' to build the full API slug
+          if (!slug.endsWith('-course-online')) {
+            data = await apiService.getCourseBySlug(`${slug}-course-online`);
+          } else {
+            throw new Error('not found');
           }
         }
+
         if (!cancelled) {
           setCourse(data);
           if (data?.seo) injectSEO(data.seo, data.title);
