@@ -31,3 +31,6 @@ django-filter==24.3
 # Development tools (optional, not installed in production)
 # Uncomment if needed locally:
 # django-debug-toolbar==4.4.6
+whitenoise 
+dj-database-url 
+psycopg2-binary
