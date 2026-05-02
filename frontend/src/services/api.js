@@ -23,7 +23,9 @@
 // Base URL — configure via REACT_APP_API_URL environment variable
 // ---------------------------------------------------------------------------
 export const API_BASE_URL =
-  process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1';
+  // process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1';
+  process.env.REACT_APP_API_URL || 'https://skillkoder-backend-d9gvewesa9c7a5hc.southindia-01.azurewebsites.net/api/v1';
+
 
 // ---------------------------------------------------------------------------
 // Internal fetch wrapper
