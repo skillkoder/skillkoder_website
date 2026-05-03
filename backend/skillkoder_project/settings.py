@@ -376,6 +376,15 @@ CORS_ALLOWED_ORIGINS = config(
 CORS_ALLOW_CREDENTIALS = True
 
 # ---------------------------------------------------------------------------
+# CSRF — Trusted Origins (Necessary for Admin login on Azure)
+# ---------------------------------------------------------------------------
+CSRF_TRUSTED_ORIGINS = [
+    'https://skillkoder-backend-d9gvewesa9c7a5hc.canadacentral-01.azurewebsites.net',
+    'https://www.skillkoder.com',
+    'https://skillkoder.com',
+]
+
+# ---------------------------------------------------------------------------
 # Security (Production)
 # ---------------------------------------------------------------------------
 if not DEBUG:
