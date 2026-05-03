@@ -1,0 +1,36 @@
+# SkillKoder Django Backend — Python dependencies
+# Install: pip install -r requirements.txt
+# 
+# Core
+Django==4.2.16
+djangorestframework==3.15.2
+
+# JWT Authentication
+djangorestframework-simplejwt==5.3.1
+
+# CORS Headers (allow GitHub Pages frontend)
+django-cors-headers==4.4.0
+
+# Environment variable management
+python-decouple==3.8
+
+# Image handling (for ImageField)
+Pillow==10.4.0
+
+# Production WSGI server
+gunicorn==22.0.0
+
+# PostgreSQL driver (production EC2 only — not needed for local SQLite dev)
+# Install on EC2 after confirming PostgreSQL is available:
+#   pip install psycopg2-binary==2.9.10
+psycopg2-binary==2.9.10
+
+# Filtering support
+django-filter==24.3
+
+# Development tools (optional, not installed in production)
+# Uncomment if needed locally:
+# django-debug-toolbar==4.4.6
+whitenoise 
+dj-database-url 
+psycopg2-binary

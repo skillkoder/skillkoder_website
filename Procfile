@@ -1,0 +1,1 @@
+web: gunicorn skillkoder_project.wsgi
