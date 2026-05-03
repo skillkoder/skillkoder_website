@@ -369,7 +369,7 @@ SIMPLE_JWT = {
 # ---------------------------------------------------------------------------
 CORS_ALLOWED_ORIGINS = config(
     'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000',
+    default='https://www.skillkoder.com,https://skillkoder.com,http://localhost:3000',
     cast=Csv()
 )
 
