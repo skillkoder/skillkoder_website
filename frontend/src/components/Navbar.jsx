@@ -9,21 +9,9 @@ const Navbar = () => {
   const [showRegistration, setShowRegistration] = useState(false);
   const [showEnrollment, setShowEnrollment] = useState(false);
   const [enrollmentCourse, setEnrollmentCourse] = useState('');
-  const [scrolled, setScrolled] = useState(false);
 
   // Scroll to a section without touching the URL.
   // If not on the homepage, navigate there first then scroll.
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    if (window.location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-      }, 150);
-    } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const scrollToTop = (e) => {
     e.preventDefault();
@@ -34,17 +22,7 @@ const Navbar = () => {
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Fix cleanup: add a separate effect to register the openRegistration listener with proper cleanup
   React.useEffect(() => {
@@ -110,19 +88,6 @@ const Navbar = () => {
       listStyle: 'none',
       alignItems: 'center',
       flexWrap: 'nowrap',
-      '@media (max-width: 768px)': {
-  display: isMenuOpen ? 'flex' : 'none',
-  position: 'absolute',
-  top: '100%',
-  left: 0,
-  right: 0,
-  flexDirection: 'column',
-  /* keep menu transparent so navbar area doesn't show white */
-  background: 'transparent',
-  padding: '1rem 0',
-  boxShadow: 'none',
-  gap: '1rem',
-      },
     },
     menuItem: {
       color: '#1a202c',
@@ -163,10 +128,6 @@ const Navbar = () => {
       background: 'none',
       border: 'none',
       cursor: 'pointer',
-      padding: '0.5rem',
-      '@media (max-width: 768px)': {
-        display: 'block',
-      },
       padding: '0.5rem',
       color: '#1a202c',
       transition: 'all 0.3s ease',
@@ -244,11 +205,22 @@ const Navbar = () => {
             font-size: 0.9rem !important;
           }
         }
-        @media (max-width: 900px) {
-          .desktop-menu { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
-        }
         @media (max-width: 768px) {
+          .desktop-menu {
+            display: ${isMenuOpen ? 'flex' : 'none'} !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            flex-direction: column !important;
+            background: transparent !important;
+            padding: 1rem 0 !important;
+            box-shadow: none !important;
+            gap: 1rem !important;
+          }
+          .mobile-menu-btn {
+            display: block !important;
+          }
           nav > div {
             padding: 0.875rem 1rem !important;
             gap: 1rem !important;

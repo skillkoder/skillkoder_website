@@ -40,7 +40,7 @@ const RegistrationModal = ({ open, onClose }) => {
 
     try {
       // Send data to Google Sheets
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors', // Important for Google Apps Script
         headers: {

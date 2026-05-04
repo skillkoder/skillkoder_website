@@ -39,7 +39,7 @@ const EnrollmentModal = ({ open, onClose, initialCourse = '' }) => {
     setError('');
 
     try {
-      const response = await fetch(SCRIPT_URL, {
+      await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: {

@@ -122,17 +122,6 @@ const Footer = () => {
     }
   };
 
-  const scrollToSection = (e, sectionId) => {
-    e.preventDefault();
-    if (window.location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-      }, 150);
-    } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   const scrollToTop = (e) => {
     e.preventDefault();

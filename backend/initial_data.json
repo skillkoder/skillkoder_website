@@ -1,0 +1,114 @@
+[
+  {
+    "model": "courses.course",
+    "pk": 1,
+    "fields": {
+      "title": "Data Analytics Course Online",
+      "slug": "data-analytics-course-online",
+      "tagline": "Transform raw data into actionable insights",
+      "description": "Master the full data analytics stack — Power BI, Python, SQL, and Statistics — with real-world projects and mentorship.",
+      "niche": "data-analytics",
+      "curriculum": [
+        "Power BI & Report Design",
+        "Data Transformation with Power Query",
+        "DAX & Data Modeling",
+        "Python for Data Analysis",
+        "SQL Fundamentals & Advanced Queries",
+        "Statistics for Data Analytics",
+        "Machine Learning Basics",
+        "Exploratory Data Analysis (EDA)"
+      ],
+      "salary_insights": "Data Analysts in India earn ₹4–12 LPA. With Power BI + Python expertise, senior roles reach ₹18–25 LPA.",
+      "duration_weeks": 12,
+      "difficulty": "beginner-to-advanced",
+      "is_active": true,
+      "is_featured": true,
+      "created_at": "2024-05-04T12:00:00Z",
+      "updated_at": "2024-05-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 2,
+    "fields": {
+      "title": "Data Science Course Online",
+      "slug": "data-science-course-online",
+      "tagline": "From data to machine learning at scale",
+      "description": "A comprehensive Data Science program covering Python, machine learning, deep learning, and MLOps with industry-grade projects.",
+      "niche": "data-science",
+      "curriculum": [
+        "Python for Data Science",
+        "Numpy, Pandas & Matplotlib",
+        "Statistical Learning",
+        "Supervised & Unsupervised Learning",
+        "Deep Learning & Neural Networks",
+        "NLP Fundamentals",
+        "Model Deployment with FastAPI",
+        "MLOps & CI/CD for ML"
+      ],
+      "salary_insights": "Data Scientists in India earn ₹8–20 LPA. ML Engineers at top firms reach ₹25–40 LPA.",
+      "duration_weeks": 16,
+      "difficulty": "intermediate",
+      "is_active": true,
+      "is_featured": true,
+      "created_at": "2024-05-04T12:00:00Z",
+      "updated_at": "2024-05-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 3,
+    "fields": {
+      "title": "Generative AI Course Online",
+      "slug": "generative-ai-course-online",
+      "tagline": "Build with the latest AI models",
+      "description": "Dive into Generative AI — prompt engineering, LangChain, RAG pipelines, fine-tuning, and building production AI applications.",
+      "niche": "generative-ai",
+      "curriculum": [
+        "Intro to Generative AI & LLMs",
+        "Prompt Engineering Best Practices",
+        "LangChain & LlamaIndex",
+        "RAG (Retrieval-Augmented Generation)",
+        "Fine-tuning Open-Source Models",
+        "AI Agents & Tool Use",
+        "Deploying AI Applications",
+        "AI Ethics & Safety"
+      ],
+      "salary_insights": "Generative AI Engineers are among the highest paid in tech, earning ₹12–35 LPA in India, $150k–$250k globally.",
+      "duration_weeks": 10,
+      "difficulty": "advanced",
+      "is_active": true,
+      "is_featured": true,
+      "created_at": "2024-05-04T12:00:00Z",
+      "updated_at": "2024-05-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 4,
+    "fields": {
+      "title": "Azure Data Engineering Course Online",
+      "slug": "azure-data-engineering-course-online",
+      "tagline": "Master the Cloud Data Ecosystem",
+      "description": "Become a specialist in cloud data solutions. Master Azure Data Factory, Databricks, Synapse Analytics, and PySpark to build scalable production-grade data pipelines.",
+      "niche": "azure-data-engineering",
+      "curriculum": [
+        "Azure Cloud Fundamentals",
+        "Data Lake Storage Gen2",
+        "Azure Data Factory (ADF)",
+        "ETL/ELT Pipeline Design",
+        "Databricks & PySpark",
+        "Azure Synapse Analytics",
+        "Lakehouse Architecture",
+        "CI/CD with Azure DevOps"
+      ],
+      "salary_insights": "Azure Data Engineers in India earn ₹12–25 LPA. Senior Architects reach ₹30–50+ LPA.",
+      "duration_weeks": 14,
+      "difficulty": "beginner-to-advanced",
+      "is_active": true,
+      "is_featured": true,
+      "created_at": "2024-05-04T12:00:00Z",
+      "updated_at": "2024-05-04T12:00:00Z"
+    }
+  }
+]
