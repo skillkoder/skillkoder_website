@@ -309,6 +309,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'skillkoder_project.wsgi.application'
 
 # ---------------------------------------------------------------------------
+# Internationalisation
+# ---------------------------------------------------------------------------
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Asia/Kolkata'
+USE_I18N = True
+USE_TZ = True
+
+# ---------------------------------------------------------------------------
 # Database (Azure-friendly)
 # ---------------------------------------------------------------------------
 DATABASES = {
@@ -331,6 +339,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # ---------------------------------------------------------------------------
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ---------------------------------------------------------------------------
 # REST Framework
