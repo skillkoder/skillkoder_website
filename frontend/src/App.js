@@ -9,6 +9,10 @@ import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import CourseDetail from './components/CourseDetail.jsx';
 import CoursesPage from './pages/CoursesPage.jsx';
+import DataAnalyticsPage from './pages/DataAnalyticsPage.jsx';
+import DataSciencePage from './pages/DataSciencePage.jsx';
+import GenerativeAIPage from './pages/GenerativeAIPage.jsx';
+import AzureDataEngineeringPage from './pages/AzureDataEngineeringPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import FeaturesPage from './pages/FeaturesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
@@ -34,9 +38,13 @@ const App = () => (
     <Routes>
       <Route path="/"                  element={<HomePage />} />
       <Route path="/about"             element={<AboutPage />} />
-      <Route path="/courses"           element={<CoursesPage />} />
-      <Route path="/courses/:slug"     element={<CourseDetailPage />} />
-      <Route path="/features"          element={<FeaturesPage />} />
+      <Route path="/courses"                     element={<CoursesPage />} />
+      <Route path="/courses/data-analytics"      element={<DataAnalyticsPage />} />
+      <Route path="/courses/data-science"        element={<DataSciencePage />} />
+      <Route path="/courses/generative-ai"       element={<GenerativeAIPage />} />
+      <Route path="/courses/azure-data-engineering" element={<AzureDataEngineeringPage />} />
+      <Route path="/courses/:slug"               element={<CourseDetailPage />} />
+      <Route path="/features"                    element={<FeaturesPage />} />
       <Route path="/contact"           element={<ContactPage />} />
       {/* Catch-all → homepage */}
       <Route path="*"                  element={<HomePage />} />

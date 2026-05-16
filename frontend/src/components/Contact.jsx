@@ -132,25 +132,16 @@ const Contact = () => {
             marginBottom: '1rem',
             letterSpacing: '-0.02em'
           }}>
-            we can't wait to see you grow!
+            Book a Free Demo or Talk to a Career Expert
           </h3>
           <p style={{
             fontSize: 'clamp(1rem, 2vw, 1.25rem)',
             color: '#4a5568',
-            maxWidth: '600px',
+            maxWidth: '680px',
             margin: '0 auto'
           }}>
-            For any queries please reach out to
+            Get personalized guidance for Data Analytics, Data Science, and Generative AI training with placement support, resume help, and live mentorship.
           </p>
-        </div>
-
-        {/* Main Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '1.5rem',
-          alignItems: 'start'
-        }}>
           {/* Contact Info Cards */}
           <div style={{
             display: 'flex',

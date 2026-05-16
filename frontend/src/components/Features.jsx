@@ -5,33 +5,33 @@ const Features = () => {
 
   const features = [
     {
-      title: "Personalized Learning",
-      description: "Adaptive learning paths tailored to your skill level and goals.",
+      title: "Placement Assistance",
+      description: "Career support with resume guidance, interview prep, and placement-ready project portfolios.",
       color: "#FF8A54"
     },
     {
-      title: "AI-Powered Support",
-      description: "24/7 intelligent assistance to help you learn and solve problems.",
+      title: "Tools Mastery",
+      description: "Learn industry-standard tools like Python, Power BI, SQL, Tableau, Excel, and ChatGPT.",
       color: "#FFB088"
     },
     {
       title: "Real-World Projects",
-      description: "Hands-on experience with industry-relevant projects and case studies.",
+      description: "Build authentic case studies and portfolio projects aligned with top hiring needs.",
       color: "#FF7A3D"
     },
     {
       title: "Expert Mentorship",
-      description: "Learn from industry professionals with years of experience.",
+      description: "Guidance from working professionals to help you learn fast and stay industry-ready.",
       color: "#FF6B6B"
     },
     {
-      title: "Progress Tracking",
-      description: "Detailed analytics and insights to monitor your learning journey.",
+      title: "Career Growth",
+      description: "Step into roles like Data Analyst, Data Scientist, AI Developer, and Business Intelligence Analyst.",
       color: "#FFA07A"
     },
     {
-      title: "Certifications",
-      description: "Earn recognized certificates upon completing courses and projects.",
+      title: "High-Confidence Learning",
+      description: "A structured path from beginner to career-ready with measurable progress every week.",
       color: "#FF9966"
     }
   ];

@@ -189,7 +189,7 @@ const DataAnalytics = () => {
           }}>
             {/* Replace the src with your image URL */}
             <img 
-              src ="data_analytics.webp"
+              src="/data_analytics.webp"
               alt="Data Analytics" 
               style={{
                 width: '100%',

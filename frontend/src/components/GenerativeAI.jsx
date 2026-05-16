@@ -196,7 +196,7 @@ const GenerativeAI = () => {
           }}>
             {/* Replace the src with your image URL */}
             <img 
-              src="genai.webp"
+              src="/course4.webp"
               alt="Generative AI" 
               style={{
                 width: '100%',

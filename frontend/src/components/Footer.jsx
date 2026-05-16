@@ -5,9 +5,9 @@ const Footer = () => {
   const navigate = useNavigate();
   const styles = {
     footer: {
-      background: 'linear-gradient(135deg, #ffffff 0%, #fff5f0 50%, #ffe8dc 100%)',
+      background: 'linear-gradient(135deg, #fff7f2 0%, #ffe8df 55%, #fff2eb 100%)',
       padding: '3rem 1.5rem',
-      borderTop: '1px solid rgba(255, 182, 136, 0.3)',
+      borderTop: '1px solid rgba(255, 183, 132, 0.35)',
     },
     container: {
       maxWidth: '1200px',
@@ -37,8 +37,8 @@ const Footer = () => {
       lineHeight: '1.5',
     },
     sectionTitle: {
-      color: '#2d3748',
-      fontWeight: '600',
+      color: '#2b334e',
+      fontWeight: '700',
       marginBottom: '1rem',
       fontSize: '1rem',
     },

@@ -190,7 +190,7 @@ const DataScience = () => {
           }}>
             {/* Replace the src with your image URL */}
             <img 
-              src="data_science.webp"
+              src="/data_science.webp"
               alt="Data Science" 
               style={{
                 width: '100%',

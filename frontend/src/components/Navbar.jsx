@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RegistrationModal from './RegistrationModal';
 import EnrollmentModal from './EnrollmentModal';
@@ -44,28 +44,26 @@ const Navbar = () => {
 
   const styles = {
     nav: {
-      /* static navbar: participates in normal document flow and does not float */
-      position: 'static',
-      /* full width appearance */
+      position: 'sticky',
+      top: 0,
+      left: 0,
       width: '100%',
-      /* Always transparent - no background color */
-      background: 'transparent',
-      backdropFilter: 'none',
-      WebkitBackdropFilter: 'none',
-      borderBottom: 'none',
-      boxShadow: 'none',
-      transition: 'all 0.15s ease',
+      zIndex: 1000,
+      background: 'rgba(255, 255, 255, 0.78)',
+      backdropFilter: 'blur(18px)',
+      WebkitBackdropFilter: 'blur(18px)',
+      borderBottom: '1px solid rgba(255, 183, 132, 0.2)',
+      boxShadow: '0 18px 45px rgba(0, 0, 0, 0.06)',
+      transition: 'all 0.25s ease',
     },
     container: {
       maxWidth: '1280px',
       margin: '0 auto',
-      /* decreased vertical padding to make navbar shorter */
-      padding: '0.5rem 1.25rem',
+      padding: '0.85rem 1.5rem',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       gap: '1.5rem',
-      /* position relative so absolute dropdowns anchor to the container */
       position: 'relative',
     },
     logoContainer: {
@@ -90,14 +88,15 @@ const Navbar = () => {
       flexWrap: 'nowrap',
     },
     menuItem: {
-      color: '#1a202c',
+      color: '#2d3748',
       textDecoration: 'none',
       fontSize: '0.95rem',
-      fontWeight: '500',
+      fontWeight: '600',
       transition: 'all 0.3s ease',
       cursor: 'pointer',
       position: 'relative',
       padding: '0.5rem 0',
+      letterSpacing: '0.01em'
     },
     menuItemUnderline: {
       position: 'absolute',
@@ -105,20 +104,20 @@ const Navbar = () => {
       left: 0,
       width: '0%',
       height: '2px',
-      background: 'linear-gradient(90deg, #FF6B6B, #FFB088)',
+      background: 'linear-gradient(90deg, #FF8A54, #FFB088)',
       transition: 'width 0.3s ease',
+      borderRadius: '999px'
     },
     registerBtn: {
-      background: 'linear-gradient(135deg, #FF6B6B, #FFB088)',
+      background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
       color: 'white',
-      /* slightly smaller button to reduce navbar height */
-      padding: '0.5rem 1.25rem',
-      borderRadius: '40px',
+      padding: '0.6rem 1.5rem',
+      borderRadius: '999px',
       border: 'none',
-      fontWeight: '600',
+      fontWeight: '700',
       cursor: 'pointer',
-      fontSize: '0.9rem',
-      boxShadow: '0 4px 15px rgba(255, 107, 107, 0.3)',
+      fontSize: '0.95rem',
+      boxShadow: '0 18px 40px rgba(255, 138, 84, 0.25)',
       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       position: 'relative',
       overflow: 'hidden',
@@ -193,8 +192,10 @@ const Navbar = () => {
   return (
     <>
       <style>{`
-        /* ensure navbar area stays transparent */
-        nav, nav > div, .desktop-menu { background: transparent !important; box-shadow: none !important; border-bottom: none !important; }
+        /* allow the sticky navbar glass surface to appear over the page without forcing full transparency */
+        nav { background: rgba(255, 255, 255, 0.82) !important; }
+        nav > div { background: transparent !important; }
+        .desktop-menu { background: transparent !important; box-shadow: none !important; border-bottom: none !important; }
 
         @media (max-width: 1024px) {
           .desktop-menu { 
@@ -347,7 +348,7 @@ const Navbar = () => {
                   e.target.style.boxShadow = '0 4px 15px rgba(255, 107, 107, 0.3)';
                 }}
               >
-                Register Now
+                Book Free Demo
               </button>
             </li>
           </ul>

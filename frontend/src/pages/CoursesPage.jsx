@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiService } from '../services/api';
 
 const BADGE_COLORS = ['#FF8A54', '#6C63FF', '#00C6A2', '#0078D4', '#E91E8C', '#F59E0B'];
-const FALLBACK_IMAGES = ['course1.webp', 'course2.webp', 'course3.webp', 'course4.png'];
+const FALLBACK_IMAGES = ['course1.png', 'course2.webp', 'course3.webp', 'course4.webp'];
 
 // Derive short bullet highlights from curriculum (first 4 items)
 function getHighlights(course) {
@@ -14,6 +14,29 @@ function getHighlights(course) {
   }
   return [];
 }
+
+const FEATURED_PAGES = [
+  {
+    title: 'Data Analytics',
+    description: 'Build analytical dashboards, SQL skills, and Power BI expertise with our Data Analytics course.',
+    path: '/courses/data-analytics',
+  },
+  {
+    title: 'Data Science',
+    description: 'Learn machine learning, Python, NLP, and data modeling in a job-ready Data Science program.',
+    path: '/courses/data-science',
+  },
+  {
+    title: 'Generative AI',
+    description: 'Master AI models, prompt engineering, and generative workflows for modern applications.',
+    path: '/courses/generative-ai',
+  },
+  {
+    title: 'Azure Data Engineering',
+    description: 'Learn Azure Data Factory, Databricks, Synapse and modern data pipelines for cloud careers.',
+    path: '/courses/azure-data-engineering',
+  },
+];
 
 const CoursesPage = () => {
   const navigate = useNavigate();
@@ -64,10 +87,38 @@ const CoursesPage = () => {
         </p>
       </section>
 
-      {/* ── Course Cards ── */}
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem 6rem' }}>
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem 0' }}>
+        <div style={{ display: 'grid', gap: '1.25rem', gridTemplateColumns: 'repeat(auto-fit, minmax(235px, 1fr))' }}>
+          {FEATURED_PAGES.map(page => (
+            <div key={page.path} style={{
+              padding: '1.75rem', borderRadius: '28px', background: '#fff',
+              border: '1px solid #f0f0f0', boxShadow: '0 18px 45px rgba(15, 23, 42, 0.04)',
+            }}>
+              <h2 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 700, color: '#1c2938', marginBottom: '0.75rem' }}>
+                {page.title}
+              </h2>
+              <p style={{ color: '#596174', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                {page.description}
+              </p>
+              <button
+                style={{
+                  border: 'none', borderRadius: '999px', padding: '0.9rem 1.85rem',
+                  background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
+                  color: '#fff', fontWeight: 700, cursor: 'pointer'
+                }}
+                onClick={() => {
+                  navigate(page.path);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Explore Page
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Loading spinner */}
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 2rem 6rem' }}>
         {loading && (
           <div style={{ textAlign: 'center', padding: '4rem 0' }}>
             <div style={{
