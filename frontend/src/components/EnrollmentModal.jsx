@@ -80,7 +80,7 @@ const EnrollmentModal = ({ open, onClose, initialCourse = '' }) => {
       style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}
       onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
     >
-      <div role="dialog" aria-modal="true" aria-label="Course enrollment form" style={{ width: '100%', maxWidth: '560px', background: 'white', borderRadius: 12, padding: '1.25rem 1.5rem', boxShadow: '0 24px 60px rgba(0,0,0,0.25)' }}>
+      <div role="dialog" aria-modal="true" aria-label="Course enrollment form" style={{ width: '100%', maxWidth: '560px', maxHeight: '90vh', overflowY: 'auto', background: 'white', borderRadius: 12, padding: '1.25rem 1.5rem', boxShadow: '0 24px 60px rgba(0,0,0,0.25)' }}>
         <h3 style={{ margin: 0, marginBottom: '0.5rem' }}>Enroll in a Course</h3>
         <p style={{ marginTop: 0, marginBottom: '1rem', color: '#555' }}>Enter your details and we'll reach out to you with next steps.</p>
 

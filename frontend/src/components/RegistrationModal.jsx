@@ -100,6 +100,8 @@ const RegistrationModal = ({ open, onClose }) => {
         style={{
           width: '100%',
           maxWidth: '520px',
+          maxHeight: '90vh',
+          overflowY: 'auto',
           background: 'white',
           borderRadius: '12px',
           padding: '1.5rem 1.75rem',

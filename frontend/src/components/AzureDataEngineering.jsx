@@ -97,7 +97,7 @@ const AzureDataEngineering = () => {
           </button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '2rem', alignItems: 'start' }}>
+        <div className="azure-main-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '2rem', alignItems: 'start' }}>
           <div>
             <div style={{ marginBottom: '1rem', display: 'inline-block', padding: '0.55rem 1rem', borderRadius: 999, background: '#FFF3EB', color: '#D14B1E', fontWeight: 700, fontSize: '0.85rem' }}>
               Azure Data Engineering Course Online
@@ -158,7 +158,7 @@ const AzureDataEngineering = () => {
               </button>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+            <div className="azure-info-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
               <div style={{ padding: '1.4rem', borderRadius: '24px', background: '#fff', border: '1px solid #F5E2D8' }}>
                 <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: '#1f2937' }}>Job roles</h3>
                 <p style={{ margin: '0.75rem 0 0', color: '#57534e', lineHeight: 1.7 }}>
@@ -242,7 +242,7 @@ const AzureDataEngineering = () => {
           </div>
         </div>
 
-        <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+        <div className="azure-details-grid" style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
           <div style={{ padding: '2rem', background: '#fff', borderRadius: '28px', boxShadow: '0 20px 50px rgba(255,138,84,0.08)' }}>
             <h2 style={{ fontSize: '1.95rem', fontWeight: 800, color: '#1f2937', marginBottom: '1rem' }}>What you will learn</h2>
             <ul style={{ listStyle: 'disc inside', color: '#475569', lineHeight: 1.9, fontSize: '1rem' }}>
@@ -254,7 +254,7 @@ const AzureDataEngineering = () => {
 
           <div style={{ padding: '2rem', background: '#fff', borderRadius: '28px', boxShadow: '0 20px 50px rgba(255,138,84,0.08)' }}>
             <h2 style={{ fontSize: '1.95rem', fontWeight: 800, color: '#1f2937', marginBottom: '1rem' }}>Tools covered</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
+            <div className="azure-tools-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
               {tools.map(tool => (
                 <div key={tool} style={{ padding: '1rem 1.25rem', background: '#FFF4EB', borderRadius: '18px', fontWeight: 600, color: '#c2410c' }}>
                   {tool}
@@ -297,6 +297,28 @@ const AzureDataEngineering = () => {
           <Contact />
         </div>
       </div>
+      <style>{`
+        @media (max-width: 968px) {
+          .azure-main-grid {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
+          .azure-details-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .azure-info-grid, .azure-tools-grid {
+            grid-template-columns: 1fr !important;
+          }
+          h1 {
+            font-size: 2.2rem !important;
+          }
+          .azure-main-grid button {
+            width: 100% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

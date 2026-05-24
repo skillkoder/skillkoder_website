@@ -445,6 +445,34 @@ const DataScience = () => {
             .topics-scroll-container::-webkit-scrollbar-thumb:hover {
               background: linear-gradient(180deg, #FFB088, #FF8A54);
             }
+            /* Responsive adjustments for hero overlay and badges */
+            @media (max-width: 968px) {
+              .hero-image {
+                height: 500px !important;
+              }
+              .hero-overlay {
+                bottom: 30px !important;
+                left: 20px !important;
+                right: 20px !important;
+              }
+            }
+            @media (max-width: 640px) {
+              .hero-image {
+                width: 100vw !important;
+                height: 550px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+              }
+              .hero-overlay {
+                left: 16px !important;
+                right: 16px !important;
+                bottom: 20px !important;
+              }
+              .hero-overlay h2 { font-size: 1.8rem !important; }
+              .hero-overlay p { font-size: 0.95rem !important; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+              .floating-stats { right: 12px !important; top: 12px !important; padding: 0.5rem 0.8rem !important; }
+              .hero-overlay button { width: 100% !important; padding: 1rem !important; }
+            }
           `}</style>
         </div>
       </div>

@@ -184,12 +184,53 @@ const Footer = () => {
   };
 
   return (
-    <footer style={styles.footer}>
+    <footer style={styles.footer} className="footer-wrapper">
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-wrapper {
+            padding: 2rem 1rem !important;
+          }
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+            text-align: center;
+            gap: 1.5rem !important;
+            margin-bottom: 1rem !important;
+          }
+          .footer-logo-section {
+            align-items: center;
+          }
+          .logo-img {
+            margin-bottom: 0.5rem !important;
+          }
+          .footer-social-container {
+            justify-content: center;
+          }
+          .footer-bottom-bar {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 1.25rem !important;
+            gap: 0.75rem !important;
+          }
+          .footer-policy-links {
+            justify-content: center;
+            gap: 1rem !important;
+          }
+          .footer-links-list {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 1.5rem !important;
+          }
+          .footer-links-list li {
+            margin-bottom: 0 !important;
+          }
+        }
+      `}</style>
       <div style={styles.container}>
         {/* Main Footer Content */}
-        <div style={styles.gridContainer}>
+        <div style={styles.gridContainer} className="footer-grid">
           {/* Logo Section */}
-          <div style={styles.logoSection}>
+          <div style={styles.logoSection} className="footer-logo-section">
             <img
               src="/sk_logo.webp"
               alt="SkillKoder Logo"
@@ -207,7 +248,7 @@ const Footer = () => {
           {/* Quick Links - Matching Navbar */}
           <div>
             <h3 style={styles.sectionTitle}>Quick Links</h3>
-            <ul style={styles.linksList}>
+            <ul style={styles.linksList} className="footer-links-list">
               <li style={styles.linkItem}>
                 <a
                   href="/"
@@ -269,7 +310,7 @@ const Footer = () => {
           {/* Resources */}
           <div>
             <h3 style={styles.sectionTitle}>Resources</h3>
-            <ul style={styles.linksList}>
+            <ul style={styles.linksList} className="footer-links-list">
               {['Case Studies', 'Learning Path', 'Blog', 'Support'].map((item) => (
                 <li key={item} style={styles.linkItem}>
                   <a
@@ -289,7 +330,7 @@ const Footer = () => {
           {/* Connect with Social Icons */}
           <div>
             <h3 style={styles.sectionTitle}>Connect</h3>
-            <div style={styles.socialContainer}>
+            <div style={styles.socialContainer} className="footer-social-container">
               {/* Facebook */}
               <a
                   href="https://www.facebook.com/profile.php?id=61582789902427"
@@ -374,11 +415,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div style={styles.bottomBar}>
+        <div style={styles.bottomBar} className="footer-bottom-bar">
           <p style={styles.copyright}>
             © 2025 SkillKoder. All rights reserved.
           </p>
-          <div style={styles.policyLinks}>
+          <div style={styles.policyLinks} className="footer-policy-links">
             <a
               href="/"
               style={styles.policyLink}

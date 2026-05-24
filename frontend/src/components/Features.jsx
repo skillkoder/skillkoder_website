@@ -116,14 +116,14 @@ const Features = () => {
         </div>
 
         {/* Main Content Area */}
-        <div style={{
+        <div className="features-grid" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1.25fr',
           gap: '1.5rem',
           alignItems: 'center'
         }}>
           {/* Left Side - Feature List */}
-          <div style={{
+          <div className="features-list-container" style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem'
@@ -131,6 +131,7 @@ const Features = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
+                className={`feature-item ${activeIndex === index ? 'active' : ''}`}
                 onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
                 style={{
@@ -157,7 +158,7 @@ const Features = () => {
           </div>
 
           {/* Right Side - Active Feature Details */}
-          <div style={{
+          <div className="feature-details-card" style={{
             background: 'white',
             padding: '1.5rem',
             borderRadius: '18px',
@@ -269,26 +270,35 @@ const Features = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          /* Keep the list and details side-by-side on narrower screens.
-             Use horizontal scrolling if viewport is too narrow so the
-             right-side card remains to the right instead of stacking below. */
-          #features > div > div:nth-child(2) {
-            grid-auto-flow: column !important;
-            grid-auto-columns: minmax(260px, 1fr) !important;
-            gap: 1rem !important;
-            overflow-x: auto;
+          .features-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .features-list-container {
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            padding: 0.5rem 0 !important;
             -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 0.5rem; /* allow space for scrolling */
+            scrollbar-width: none;
           }
-
-          /* Make each child snap into view when scrolling */
-          #features > div > div:nth-child(2) > div {
-            scroll-snap-align: start;
+          .features-list-container::-webkit-scrollbar {
+            display: none;
           }
-
-          #features > div > div:nth-child(2) > div:last-child {
-            min-height: 240px !important;
+          .feature-item {
+            border-left: none !important;
+            border-bottom: 3px solid transparent !important;
+            border-radius: 0 !important;
+            white-space: nowrap !important;
+            padding: 0.75rem 1rem !important;
+            transform: none !important;
+          }
+          .feature-item.active {
+            border-bottom: 3px solid currentColor !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+          }
+          .feature-details-card {
+            min-height: auto !important;
+            padding: 2rem 1.5rem !important;
           }
         }
 

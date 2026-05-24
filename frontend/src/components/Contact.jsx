@@ -122,7 +122,7 @@ const Contact = () => {
         zIndex: 1
       }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h3 style={{
             fontSize: 'clamp(2.5rem, 5vw, 4rem)',
             fontWeight: '800',
@@ -142,6 +142,14 @@ const Contact = () => {
           }}>
             Get personalized guidance for Data Analytics, Data Science, and Generative AI training with placement support, resume help, and live mentorship.
           </p>
+        </div>
+
+        <div className="contact-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1.2fr',
+          gap: '3rem',
+          alignItems: 'start'
+        }}>
           {/* Contact Info Cards */}
           <div style={{
             display: 'flex',
@@ -227,7 +235,7 @@ const Contact = () => {
           <div style={{
             background: 'white',
             borderRadius: '22px',
-            padding: 'clamp(1rem, 2.5vw, 1.5rem)',
+            padding: 'clamp(1.5rem, 3vw, 2.5rem)',
             border: '2px solid #FFE8DC',
             boxShadow: '0 8px 30px rgba(255, 138, 84, 0.12)'
           }}>
@@ -470,8 +478,9 @@ const Contact = () => {
         }
 
         @media (max-width: 768px) {
-          #contact > div > div:nth-child(2) {
+          .contact-grid {
             grid-template-columns: 1fr !important;
+            gap: 2rem !important;
           }
         }
       `}</style>

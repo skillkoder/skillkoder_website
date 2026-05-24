@@ -187,7 +187,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div style={{
+          <div className="hero-cta-container" style={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             gap: '0.75rem',
@@ -263,7 +263,7 @@ const Hero = () => {
             </button>
           </div>
 
-          <div style={{
+          <div className="hero-features-list" style={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             justifyContent: 'center',
@@ -297,7 +297,7 @@ const Hero = () => {
             marginBottom: '2.5rem',
             animation: 'fadeInUp 1s ease-out'
           }}>
-            <p style={{
+            <p className="journey-title" style={{
               fontSize: isMobile ? '1.5rem' : isTablet ? '1.75rem' : '2rem',
               fontWeight: 800,
               letterSpacing: '-0.01em',
@@ -308,7 +308,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <div style={{
+          <div className="journey-flow-container" style={{
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             gap: '2rem',
@@ -634,6 +634,32 @@ const Hero = () => {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          .hero-cta-container {
+            flex-direction: column !important;
+            width: 100%;
+            gap: 1rem !important;
+          }
+          .hero-cta-container button {
+            width: 100% !important;
+          }
+          .hero-features-list {
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+          }
+          .hero-features-list > div {
+            width: 100% !important;
+          }
+          .journey-flow-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 3rem !important;
+          }
+          .journey-title {
+            font-size: 1.75rem !important;
+          }
+        }
+
         @keyframes blob {
           0%, 100% { 
             transform: translate(0px, 0px) scale(1) rotate(0deg); 
