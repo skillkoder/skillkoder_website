@@ -25,7 +25,7 @@ const About = () => {
           About Us
         </h2>
 
-        <div className="about-main-grid" style={{
+        <div style={{
           position: 'relative',
           minHeight: '520px',
           display: 'grid',
@@ -52,7 +52,7 @@ const About = () => {
               SkillKoder is a specialist academy for Data Analytics, Data Science, and Generative AI training. We focus on career-ready programs, real projects, tool mastery, and placement support for learners in India and beyond.
             </p>
 
-            <div className="about-features-grid" style={{
+            <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
               gap: '1rem',
@@ -140,7 +140,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-images-container" style={{
+          <div style={{
             position: 'relative',
             minHeight: '420px'
           }}>
@@ -195,15 +195,22 @@ const About = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          .about-main-grid {
-            grid-template-columns: 1fr !important;
-            gap: 3rem !important;
+          #about > div > div:nth-child(2) {
+            min-height: 360px !important;
           }
-          .about-features-grid {
-            grid-template-columns: 1fr !important;
+          .top-right-image,
+          .bottom-left-image {
+            width: 280px !important;
+            height: 140px !important;
           }
-          .about-images-container {
-            display: none !important;
+          .top-right-image {
+            right: -120px !important;
+          }
+          .bottom-left-image {
+            left: -120px !important;
+          }
+          #about > div > div:nth-child(2) > div:nth-child(2) {
+            padding: 2rem 1.5rem !important;
           }
         }
 
@@ -215,14 +222,45 @@ const About = () => {
             font-size: 1.75rem !important;
             margin-bottom: 1.25rem !important;
           }
-          .about-images-container {
-            display: none !important;
+          #about > div > div:nth-child(2) {
+            min-height: 460px !important;
           }
-          #about > div > div:nth-child(2) > div:first-child {
+          .top-right-image,
+          .bottom-left-image {
+            /* increase image size on small screens so visuals are more prominent */
+            width: 220px !important;
+            height: 120px !important;
+            border-radius: 50px 0 0 50px !important;
+          }
+          .top-right-image {
+            right: -90px !important;
+          }
+          .bottom-left-image {
+            left: -90px !important;
+            border-radius: 0 50px 50px 0 !important;
+          }
+          #about > div > div:nth-child(2) > div:nth-child(2) {
             padding: 1.5rem 1rem !important;
           }
-          #about > div > div:nth-child(2) > div:first-child p {
+          #about > div > div:nth-child(2) > div:nth-child(2) p {
             font-size: 0.95rem !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          /* slightly larger images for very small screens */
+          .top-right-image,
+          .bottom-left-image {
+            width: 180px !important;
+            height: 100px !important;
+            border-radius: 40px 0 0 40px !important;
+          }
+          .top-right-image {
+            right: -40px !important;
+          }
+          .bottom-left-image {
+            left: -40px !important;
+            border-radius: 0 40px 40px 0 !important;
           }
         }
       `}</style>

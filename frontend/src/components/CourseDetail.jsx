@@ -373,7 +373,7 @@ const CourseDetail = ({ slug }) => {
         {error && <ErrorBanner message={error} />}
 
         {/* Hero */}
-        <div className="course-detail-hero" style={{
+        <div style={{
           borderRadius: 16,
           overflow: 'hidden',
           marginBottom: '2.5rem',
@@ -547,28 +547,6 @@ const CourseDetail = ({ slug }) => {
       {/* Reuse site-wide Features & Contact sections */}
       <Features />
       <Contact />
-
-      <style>{`
-        @media (max-width: 768px) {
-          .course-detail-hero {
-            min-height: 200px !important;
-            padding: 1.5rem !important;
-          }
-          .course-detail-hero h1 {
-            font-size: 1.75rem !important;
-          }
-          .course-detail-hero p {
-            font-size: 0.95rem !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .course-detail-hero {
-            min-height: 180px !important;
-            padding: 1.25rem !important;
-            border-radius: 12px !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };

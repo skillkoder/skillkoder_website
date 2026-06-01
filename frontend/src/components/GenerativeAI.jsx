@@ -100,6 +100,15 @@ const GenerativeAI = () => {
             onMouseEnter={e => {
               e.target.style.background = 'linear-gradient(135deg, #FF8A54, #FFB088)';
               e.target.style.color = 'white';
+            <style>{`
+            @media (max-width: 640px) {
+              .hero-image { width: 100% !important; left: 0 !important; right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; height: 360px !important; }
+              .hero-overlay { left: 16px !important; right: 16px !important; bottom: 18px !important; }
+              .hero-overlay h2 { font-size: 1.5rem !important; }
+              .hero-overlay p { font-size: 1rem !important; }
+              .floating-stats { right: 12px !important; top: 12px !important; }
+            }
+            `}</style>
               e.target.style.transform = 'translateX(-5px)';
               e.target.style.boxShadow = '0 6px 25px rgba(255,138,84,0.3)';
             }}

@@ -208,7 +208,16 @@ const Navbar = () => {
         }
         @media (max-width: 768px) {
           .desktop-menu {
-            display: none !important;
+            display: ${isMenuOpen ? 'flex' : 'none'} !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            flex-direction: column !important;
+            background: transparent !important;
+            padding: 1rem 0 !important;
+            box-shadow: none !important;
+            gap: 1rem !important;
           }
           .mobile-menu-btn {
             display: block !important;

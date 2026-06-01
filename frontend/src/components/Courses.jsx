@@ -72,7 +72,7 @@ const Courses = () => {
           </p>
         </div>
 
-        <div className="featured-links-grid" style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginBottom: '3rem' }}>
+        <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginBottom: '3rem' }}>
           {FEATURED_LINKS.map(link => (
             <div key={link.path} style={{
               background: 'white', borderRadius: '26px', padding: '1.5rem',
@@ -251,28 +251,15 @@ const Courses = () => {
       <style>{`
         @media (max-width: 968px) {
           #courses h2 { font-size: 2.2rem !important; }
-          .course-card { 
-            grid-template-columns: 1fr !important; 
-            gap: 2rem !important;
-            padding: 1.5rem !important;
-          }
+          .course-card { grid-template-columns: 1fr !important; }
           .course-card > div { order: 1 !important; }
           .course-card > div:first-child { height: 250px !important; min-height: 200px !important; }
-          .featured-links-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
         }
         @media (max-width: 640px) {
           #courses { padding: 3rem 1rem !important; }
           #courses h2 { font-size: 1.8rem !important; }
           .course-card > div:first-child { height: 220px !important; min-height: 180px !important; }
           #courses button { width: 100% !important; padding: 0.8rem 1.5rem !important; }
-          .featured-links-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .course-card {
-            gap: 1.5rem !important;
-          }
         }
       `}</style>
     </section>
