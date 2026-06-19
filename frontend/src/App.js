@@ -16,6 +16,7 @@ import AzureDataEngineeringPage from './pages/AzureDataEngineeringPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import FeaturesPage from './pages/FeaturesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import DrugFreeCertificatePage from './pages/DrugFreeCertificatePage.jsx';
 
 const HomePage = () => (
   <>
@@ -46,6 +47,7 @@ const App = () => (
       <Route path="/courses/:slug"               element={<CourseDetailPage />} />
       <Route path="/features"                    element={<FeaturesPage />} />
       <Route path="/contact"           element={<ContactPage />} />
+      <Route path="/drug-free-certificates" element={<DrugFreeCertificatePage />} />
       {/* Catch-all → homepage */}
       <Route path="*"                  element={<HomePage />} />
     </Routes>
