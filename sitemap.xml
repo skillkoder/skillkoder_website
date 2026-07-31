@@ -10,50 +10,50 @@
 
   <!-- Course pages: the highest commercial-intent URLs on the site. -->
   <url>
-    <loc>https://www.skillkoder.com/courses/data-analytics</loc>
+    <loc>https://www.skillkoder.com/courses/data-analytics/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/courses/data-science</loc>
+    <loc>https://www.skillkoder.com/courses/data-science/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/courses/generative-ai</loc>
+    <loc>https://www.skillkoder.com/courses/generative-ai/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/courses/azure-data-engineering</loc>
+    <loc>https://www.skillkoder.com/courses/azure-data-engineering/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.skillkoder.com/courses</loc>
+    <loc>https://www.skillkoder.com/courses/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/features</loc>
+    <loc>https://www.skillkoder.com/features/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/about</loc>
+    <loc>https://www.skillkoder.com/about/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.skillkoder.com/contact</loc>
+    <loc>https://www.skillkoder.com/contact/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
