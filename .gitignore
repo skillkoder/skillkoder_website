@@ -38,3 +38,9 @@ backend/.env
 backend/media/
 backend/staticfiles/
 backend/venv/
+
+# Editor settings. Kept out of the repo because these files routinely hold
+# API keys for editor AI extensions — a Groq key reached commit history this
+# way once already and had to be stripped with filter-branch.
+.vscode/
+.idea/
