@@ -1,0 +1,209 @@
+{
+  "_README": [
+    "ACTION REQUIRED BEFORE THESE GO LIVE.",
+    "",
+    "1. Every occurrence of the string '[REGISTERED ENTITY]' must be replaced with",
+    "   the legal name of the company that operates SkillKoder, and '[REGISTERED",
+    "   ADDRESS]' with its registered office address. These are the two facts a",
+    "   privacy policy legally cannot omit in India and that no one but you knows.",
+    "",
+    "2. The refund page deliberately does NOT state a refund window, a percentage",
+    "   or a deadline. Those are binding commercial commitments; a number invented",
+    "   to fill a template would be one you could be held to. Replace the",
+    "   'Refund eligibility' section with your actual terms, or keep the current",
+    "   wording, which points the learner to the enrolment agreement.",
+    "",
+    "3. These are competent drafts, not legal advice. Have a lawyer review them",
+    "   against the DPDP Act 2023 and your payment provider's requirements before",
+    "   relying on them.",
+    "",
+    "Jurisdiction is written as Hyderabad, Telangana, matching the location given",
+    "on the contact page. Change it if the operating entity sits elsewhere."
+  ],
+
+  "pages": [
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy | SkillKoder",
+      "description": "How SkillKoder collects, uses, stores and shares your personal data, and the rights you have over it under India's Digital Personal Data Protection Act.",
+      "keywords": "skillkoder privacy policy, data protection, personal data, dpdp act",
+      "ogImage": "/logo512.png",
+      "eyebrow": "LEGAL",
+      "h1": "Privacy Policy",
+      "accent": "",
+      "intro": "This policy explains what personal data SkillKoder collects, why we collect it, how long we keep it and what you can ask us to do with it. Last updated 1 August 2026.",
+      "blocks": [
+        { "type": "h2", "text": "Who we are" },
+        { "type": "p", "text": "SkillKoder is an online training academy operated by [REGISTERED ENTITY], with its registered office at [REGISTERED ADDRESS]. For any question about this policy or your data, contact us at Skillkoder2025@gmail.com or +91 99515 99922." },
+
+        { "type": "h2", "text": "What we collect" },
+        { "type": "p", "text": "We collect only what we need to answer your enquiry and deliver a course. Specifically:" },
+        { "type": "ul", "items": [
+          "**Contact details you give us** — name, email address and phone number, submitted through the enquiry form, demo booking, brochure download or registration form.",
+          "**Course interest** — which program you asked about, so we can send you relevant information rather than everything we run.",
+          "**Learning records** — attendance, submitted work and progress, for learners who enrol.",
+          "**Usage data** — pages visited, approximate location derived from IP, browser and device type. This is collected by Google Analytics and is not linked by us to your name."
+        ]},
+        { "type": "p", "text": "We do not ask for and do not want your financial account numbers, card details, government ID numbers or passwords through this website. Never send them to us by email." },
+
+        { "type": "h2", "text": "Why we use it" },
+        { "type": "ul", "items": [
+          "To respond to your enquiry and arrange a demo class.",
+          "To deliver the course you enrolled in, including class access and materials.",
+          "To provide the career support described on our [placement support page](/placement).",
+          "To send information about courses you asked about. You can opt out of these at any time.",
+          "To understand which pages are useful, so we can improve them."
+        ]},
+        { "type": "p", "text": "We do not sell your personal data. We do not share it with advertisers." },
+
+        { "type": "h2", "text": "Who we share it with" },
+        { "type": "p", "text": "We share data only with service providers that help us operate, and only to the extent they need it:" },
+        { "type": "ul", "items": [
+          "**Google** — Analytics for site usage, and Google Workspace for storing enquiry submissions and email.",
+          "**Our hosting and communication providers** — to serve the website and run live classes.",
+          "**Employers and hiring partners** — only your CV, only for roles you have asked us to put you forward for, and only with your agreement each time."
+        ]},
+        { "type": "p", "text": "We may also disclose data where we are legally required to, for example in response to a valid order from a court or regulator." },
+
+        { "type": "h2", "text": "Where your data is stored" },
+        { "type": "p", "text": "Some of the providers above store data on servers outside India. Where that happens, the transfer is made under the provider's own contractual protections. If you would prefer your enquiry not to be stored with a third-party provider, contact us by phone instead of using the forms on this site." },
+
+        { "type": "h2", "text": "How long we keep it" },
+        { "type": "ul", "items": [
+          "**Enquiries that do not lead to enrolment** — up to 24 months from your last contact with us, then deleted.",
+          "**Learner records** — for the duration of your course and for a period afterwards while career support continues, then retained only where required for accounting or legal reasons.",
+          "**Analytics data** — as per Google Analytics retention settings."
+        ]},
+
+        { "type": "h2", "text": "Your rights" },
+        { "type": "p", "text": "Under India's Digital Personal Data Protection Act, 2023, you can ask us to:" },
+        { "type": "ul", "items": [
+          "Tell you what personal data of yours we hold and what we have done with it.",
+          "Correct anything inaccurate or incomplete.",
+          "Erase data we no longer need for the purpose you gave it for.",
+          "Withdraw consent for marketing communications, at any time.",
+          "Nominate someone to exercise these rights on your behalf if you are unable to."
+        ]},
+        { "type": "p", "text": "Write to Skillkoder2025@gmail.com to make any of these requests. We will respond within a reasonable period. If you are not satisfied with our response, you may complain to the Data Protection Board of India." },
+
+        { "type": "h2", "text": "Cookies and analytics" },
+        { "type": "p", "text": "This site uses Google Analytics, which sets cookies to measure how the site is used. You can block these through your browser settings or a browser extension without losing any functionality of this site. We do not use advertising or cross-site tracking cookies." },
+
+        { "type": "h2", "text": "Children" },
+        { "type": "p", "text": "Our programs are intended for people aged 18 and over. We do not knowingly collect personal data from children. If you believe a child has given us their data, contact us and we will delete it." },
+
+        { "type": "h2", "text": "Changes to this policy" },
+        { "type": "p", "text": "If we change how we handle your data, we will update this page and change the date at the top. Material changes affecting existing learners will also be sent by email." },
+
+        { "type": "cta", "text": "Questions about your data, or want a copy of what we hold? Ask us directly — we will answer plainly.", "href": "/contact", "label": "Contact SkillKoder" }
+      ]
+    },
+
+    {
+      "path": "/terms",
+      "title": "Terms & Conditions | SkillKoder",
+      "description": "The terms that apply when you use the SkillKoder website, book a demo class, or enrol in one of our Data, Analytics or AI training programs.",
+      "keywords": "skillkoder terms and conditions, terms of service, enrolment terms",
+      "ogImage": "/logo512.png",
+      "eyebrow": "LEGAL",
+      "h1": "Terms & Conditions",
+      "accent": "",
+      "intro": "These terms apply when you use this website, book a demo class, or enrol in a SkillKoder program. Last updated 1 August 2026.",
+      "blocks": [
+        { "type": "h2", "text": "Agreement to these terms" },
+        { "type": "p", "text": "By using this website or enrolling in a program, you agree to these terms. SkillKoder is operated by [REGISTERED ENTITY], registered at [REGISTERED ADDRESS]. If you do not agree with these terms, please do not use the site or enrol." },
+
+        { "type": "h2", "text": "What we provide" },
+        { "type": "p", "text": "SkillKoder provides online, instructor-led training in Data Analytics, Data Science, Generative AI and Azure Data Engineering, together with the career support set out on our [placement support page](/placement)." },
+        { "type": "p", "text": "Course content, curriculum, tools covered and batch schedules may be updated to keep pace with the technology being taught. Where a change materially affects a batch already running, we will tell that batch in advance." },
+
+        { "type": "h2", "text": "What we do not promise" },
+        { "type": "callout", "title": "Read this before enrolling", "text": "We do not guarantee employment, a job offer, a salary figure or a placement outcome. We provide training and structured career support. Any statement made verbally by any person that contradicts this is not binding on us — if an outcome matters to your decision, ask for it in writing before you pay." },
+
+        { "type": "h2", "text": "Enrolment and payment" },
+        { "type": "ul", "items": [
+          "Your place in a batch is confirmed once payment is received and we have acknowledged it.",
+          "Fees, instalment options and payment schedules are set out at the time of enrolment and form part of your agreement with us.",
+          "You are responsible for any bank charges or payment gateway fees applied by your provider.",
+          "Refunds are governed by our [refund policy](/refund-policy)."
+        ]},
+
+        { "type": "h2", "text": "Your responsibilities as a learner" },
+        { "type": "ul", "items": [
+          "Provide accurate information at enrolment, and keep your contact details current.",
+          "Arrange your own working internet connection, computer and any software licences not supplied as part of the course.",
+          "Attend live sessions or catch up via recordings; career support depends on you completing project work.",
+          "Treat instructors and other learners with respect. We may remove anyone from a batch for harassment or abuse, without refund."
+        ]},
+
+        { "type": "h2", "text": "Course materials and intellectual property" },
+        { "type": "p", "text": "Recordings, slides, notebooks, datasets and written material provided during a course remain our property or that of our licensors. They are supplied for your personal learning only." },
+        { "type": "p", "text": "You may not record sessions, redistribute materials, share your login with anyone else, or use our material to deliver training of your own. Doing so may result in removal from the program without refund, and we reserve our legal remedies." },
+        { "type": "p", "text": "Work you produce yourself during the course — your code, your analysis, your portfolio projects — belongs to you. Use it freely in your job search." },
+
+        { "type": "h2", "text": "Website use" },
+        { "type": "p", "text": "You may not attempt to gain unauthorised access to this site or its systems, scrape it at a rate that degrades service for others, or use it to distribute malware or unlawful content." },
+        { "type": "p", "text": "Links to third-party sites are provided for convenience. We are not responsible for their content or their privacy practices." },
+
+        { "type": "h2", "text": "Limitation of liability" },
+        { "type": "p", "text": "To the extent permitted by law, our total liability arising out of or in connection with a course is limited to the fees you paid for that course. We are not liable for indirect or consequential loss, including loss of earnings or loss of an employment opportunity." },
+        { "type": "p", "text": "Nothing in these terms limits liability that cannot lawfully be limited." },
+
+        { "type": "h2", "text": "Governing law" },
+        { "type": "p", "text": "These terms are governed by the laws of India. The courts at Hyderabad, Telangana have exclusive jurisdiction over any dispute arising from them." },
+
+        { "type": "h2", "text": "Contact" },
+        { "type": "p", "text": "Questions about these terms: Skillkoder2025@gmail.com or +91 99515 99922." },
+
+        { "type": "cta", "text": "Want the specific terms for the batch you are considering, in writing, before you commit? Ask us.", "href": "/contact", "label": "Talk to SkillKoder" }
+      ]
+    },
+
+    {
+      "path": "/refund-policy",
+      "title": "Refund Policy | SkillKoder",
+      "description": "How to request a refund from SkillKoder, how requests are assessed and processed, and what happens if we cancel or reschedule a batch.",
+      "keywords": "skillkoder refund policy, course refund, cancellation policy",
+      "ogImage": "/logo512.png",
+      "eyebrow": "LEGAL",
+      "h1": "Refund Policy",
+      "accent": "",
+      "intro": "How to request a refund, how we assess it, and what happens if we cancel or reschedule a batch. Last updated 1 August 2026.",
+      "blocks": [
+        { "type": "h2", "text": "Try before you pay" },
+        { "type": "p", "text": "The best way to avoid needing a refund is to sit in on a live class first. Every prospective learner can [book a free demo class](/contact) and see the teaching, the pace and the curriculum before committing any money. We would rather you decided against enrolling than enrolled and regretted it." },
+
+        { "type": "h2", "text": "Refund eligibility" },
+        { "type": "callout", "title": "Your specific terms are in your enrolment agreement", "text": "Refund windows and conditions vary by program, batch and payment plan, and the terms that apply to you are the ones set out in writing at the time you enrol. Ask for them before you pay — we will always give them to you in writing, and we will not ask you to commit without them. If you have already enrolled and cannot find your terms, email Skillkoder2025@gmail.com and we will resend them." },
+
+        { "type": "h2", "text": "When we cancel or reschedule" },
+        { "type": "p", "text": "This part does not depend on your enrolment terms and applies in every case:" },
+        { "type": "ul", "items": [
+          "**If we cancel a batch before it starts**, you receive a full refund of everything you paid, or a transfer to another batch — your choice.",
+          "**If we cancel a batch part-way through**, you receive a pro-rata refund for the sessions not delivered, or a transfer to an equivalent batch.",
+          "**If we reschedule a batch** to timings that no longer work for you, you may transfer to another batch or request a full refund if the course has not yet started."
+        ]},
+
+        { "type": "h2", "text": "How to request a refund" },
+        { "type": "ol", "items": [
+          "Email Skillkoder2025@gmail.com from the address you enrolled with, with the subject line 'Refund request'.",
+          "Include your full name, the program and batch you enrolled in, the date of payment and the reason for the request.",
+          "We will acknowledge your request and tell you whether it falls within your enrolment terms.",
+          "Approved refunds are returned to the original payment method. Your bank or payment provider determines how long it takes to appear on your statement."
+        ]},
+
+        { "type": "h2", "text": "What is not refundable" },
+        { "type": "ul", "items": [
+          "Payment gateway or bank charges deducted by your provider, which we never receive.",
+          "Third-party costs paid on your behalf at your request, such as an examination or certification fee already submitted.",
+          "Fees where a learner has been removed from a program for conduct reasons under our [terms and conditions](/terms)."
+        ]},
+
+        { "type": "h2", "text": "If you are not satisfied with the outcome" },
+        { "type": "p", "text": "Reply to our decision explaining why you disagree, and it will be reviewed by someone who was not involved the first time. We would rather resolve a dispute directly than have you take it further." },
+
+        { "type": "cta", "text": "Not sure yet? Sit in on a live class first — it costs nothing and it is the honest way to decide.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ]
+    }
+  ]
+}

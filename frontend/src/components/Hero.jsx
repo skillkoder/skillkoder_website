@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
+import {
+  BRAND_TEXT,
+  BRAND_TEXT_STRONG,
+  CTA_GRADIENT,
+  CTA_GRADIENT_HOVER,
+  STEP_LEARN,
+  STEP_EVOLVE,
+  STEP_EXCEL,
+  ACCENT_CORAL,
+  ACCENT_ROSE,
+} from '../theme/colors';
 
-// Define the custom peach colors
+// Peach stays the brand surface — fills, glows, borders, gradients.
+// It is never used to carry text (1.78:1 on white). Text uses the
+// terracotta ramp from ../theme/colors. See that file for measured ratios.
 const PEACH_MAIN = '#FFB088';
 const PEACH_LIGHT_BG = '#FFF0F0';
 
@@ -149,7 +162,7 @@ const Hero = () => {
           <h1 style={{
             fontWeight: 900,
             lineHeight: 1.05,
-            backgroundImage: `linear-gradient(135deg, ${PEACH_MAIN}, #E55B5B)`,
+            backgroundImage: `linear-gradient(135deg, ${ACCENT_CORAL}, ${BRAND_TEXT_STRONG})`,
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
@@ -204,7 +217,7 @@ const Hero = () => {
               transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
               cursor: 'pointer',
               border: 'none',
-              backgroundColor: PEACH_MAIN,
+              backgroundImage: CTA_GRADIENT,
               color: 'white',
               overflow: 'hidden',
               boxShadow: `0 15px 35px -5px ${PEACH_MAIN}60`
@@ -228,7 +241,7 @@ const Hero = () => {
                 borderRadius: '0.875rem',
                 opacity: 0,
                 transition: 'opacity 0.4s ease',
-                backgroundImage: `linear-gradient(135deg, #E55B5B, ${PEACH_MAIN})`
+                backgroundImage: CTA_GRADIENT_HOVER
               }}></div>
             </button>
             
@@ -241,8 +254,8 @@ const Hero = () => {
               transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
               cursor: 'pointer',
               backgroundColor: 'white',
-              border: `2.5px solid ${PEACH_MAIN}`,
-              color: PEACH_MAIN,
+              border: `2.5px solid ${BRAND_TEXT}`,
+              color: BRAND_TEXT,
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -302,7 +315,7 @@ const Hero = () => {
               fontWeight: 800,
               letterSpacing: '-0.01em',
               textShadow: '0 4px 20px rgba(255, 176, 136, 0.3)',
-              color: PEACH_MAIN
+              color: BRAND_TEXT_STRONG
             }}>
               Your Learning Journey
             </p>
@@ -312,8 +325,9 @@ const Hero = () => {
             display: 'flex',
             flexDirection: isMobile ? 'column' : 'row',
             gap: '2rem',
-            alignItems: 'flex-start',
-            justifyContent: 'space-between'
+            alignItems: isMobile ? 'stretch' : 'flex-start',
+            justifyContent: 'space-between',
+            width: '100%'
           }}>
             {/* Step 1: Learn - Left */}
             <div style={{
@@ -339,8 +353,8 @@ const Hero = () => {
                   transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   position: 'relative',
                   zIndex: 2,
-                  backgroundColor: PEACH_MAIN,
-                  boxShadow: `0 0 0 8px ${PEACH_MAIN}20`,
+                  backgroundColor: STEP_LEARN,
+                  boxShadow: `0 0 0 8px ${PEACH_MAIN}40`,
                   transform: activeStep === 1 ? 'scale(1.2) rotate(360deg)' : 'scale(1) rotate(0deg)'
                 }}>
                   <svg viewBox="0 0 24 24" fill="white" style={{ width: '28px', height: '28px' }}>
@@ -363,9 +377,9 @@ const Hero = () => {
                   <span style={{
                     fontSize: '1rem',
                     fontWeight: 800,
-                    opacity: 0.4,
+                    opacity: 0.75,
                     letterSpacing: '0.05em',
-                    color: PEACH_MAIN
+                    color: STEP_LEARN
                   }}>01</span>
                   <h3 style={{
                     fontSize: '2.5rem',
@@ -373,7 +387,7 @@ const Hero = () => {
                     letterSpacing: '-0.02em',
                     margin: 0,
                     transition: 'all 0.3s ease',
-                    color: PEACH_MAIN
+                    color: STEP_LEARN
                   }}>Learn</h3>
                 </div>
                 <p style={{
@@ -412,7 +426,7 @@ const Hero = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}>
-                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: PEACH_MAIN }}>→</span>
+                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: STEP_LEARN }}>→</span>
                       {feature}
                     </div>
                   ))}
@@ -444,8 +458,8 @@ const Hero = () => {
                   transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   position: 'relative',
                   zIndex: 2,
-                  backgroundColor: '#E55B5B',
-                  boxShadow: '0 0 0 8px #E55B5B20',
+                  backgroundColor: STEP_EVOLVE,
+                  boxShadow: `0 0 0 8px ${ACCENT_CORAL}30`,
                   transform: activeStep === 2 ? 'scale(1.2) rotate(360deg)' : 'scale(1) rotate(0deg)'
                 }}>
                   <svg viewBox="0 0 24 24" fill="white" style={{ width: '28px', height: '28px' }}>
@@ -468,9 +482,9 @@ const Hero = () => {
                   <span style={{
                     fontSize: '1rem',
                     fontWeight: 800,
-                    opacity: 0.4,
+                    opacity: 0.75,
                     letterSpacing: '0.05em',
-                    color: '#E55B5B'
+                    color: STEP_EVOLVE
                   }}>02</span>
                   <h3 style={{
                     fontSize: '2.5rem',
@@ -478,7 +492,7 @@ const Hero = () => {
                     letterSpacing: '-0.02em',
                     margin: 0,
                     transition: 'all 0.3s ease',
-                    color: '#E55B5B'
+                    color: STEP_EVOLVE
                   }}>Evolve</h3>
                 </div>
                 <p style={{
@@ -517,7 +531,7 @@ const Hero = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}>
-                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#E55B5B' }}>→</span>
+                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: STEP_EVOLVE }}>→</span>
                       {feature}
                     </div>
                   ))}
@@ -549,8 +563,8 @@ const Hero = () => {
                   transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   position: 'relative',
                   zIndex: 2,
-                  backgroundColor: '#FF6B9D',
-                  boxShadow: '0 0 0 8px #FF6B9D20',
+                  backgroundColor: STEP_EXCEL,
+                  boxShadow: `0 0 0 8px ${ACCENT_ROSE}30`,
                   transform: activeStep === 3 ? 'scale(1.2) rotate(360deg)' : 'scale(1) rotate(0deg)'
                 }}>
                   <svg viewBox="0 0 24 24" fill="white" style={{ width: '28px', height: '28px' }}>
@@ -573,9 +587,9 @@ const Hero = () => {
                   <span style={{
                     fontSize: '1rem',
                     fontWeight: 800,
-                    opacity: 0.4,
+                    opacity: 0.75,
                     letterSpacing: '0.05em',
-                    color: '#FF6B9D'
+                    color: STEP_EXCEL
                   }}>03</span>
                   <h3 style={{
                     fontSize: '2.5rem',
@@ -583,7 +597,7 @@ const Hero = () => {
                     letterSpacing: '-0.02em',
                     margin: 0,
                     transition: 'all 0.3s ease',
-                    color: '#FF6B9D'
+                    color: STEP_EXCEL
                   }}>Excel</h3>
                 </div>
                 <p style={{
@@ -622,7 +636,7 @@ const Hero = () => {
                       e.currentTarget.style.transform = 'translateX(0)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}>
-                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: '#FF6B9D' }}>→</span>
+                      <span style={{ fontSize: '1.25rem', fontWeight: 700, color: STEP_EXCEL }}>→</span>
                       {feature}
                     </div>
                   ))}

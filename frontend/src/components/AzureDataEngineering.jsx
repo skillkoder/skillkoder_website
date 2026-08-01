@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Features from './Features';
 import Contact from './Contact';
 
 const AzureDataEngineering = () => {
   const navigate = useNavigate();
+  const [hoveredTopic, setHoveredTopic] = useState(null);
+  const [hoveredTool, setHoveredTool] = useState(null);
 
   const topics = [
     'Azure Data Factory ETL Pipelines',
@@ -34,267 +36,381 @@ const AzureDataEngineering = () => {
   ];
 
   return (
-    <section style={{
-      background: 'linear-gradient(180deg, #FFFFFF 0%, #FFF8F4 55%, #FFFFFF 100%)',
+    <section style={{ 
+      background: 'linear-gradient(180deg, #FFFFFF 0%, #FFF5F2 50%, #FFFFFF 100%)', 
+      minHeight: '100vh',
       position: 'relative',
       overflow: 'hidden',
-      minHeight: '100vh'
+      padding: 0,
+      margin: 0,
+      width: '100%'
     }}>
+      {/* Decorative Background Elements */}
       <div style={{
         position: 'absolute',
         top: '10%',
         right: '-5%',
-        width: '420px',
-        height: '420px',
+        width: '400px',
+        height: '400px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(255,138,84,0.12) 0%, transparent 70%)',
-        filter: 'blur(90px)',
+        background: 'radial-gradient(circle, rgba(255,138,84,0.1) 0%, transparent 70%)',
+        filter: 'blur(60px)',
         pointerEvents: 'none'
-      }} />
+      }}></div>
+      <div style={{
+        position: 'absolute',
+        bottom: '20%',
+        left: '-10%',
+        width: '500px',
+        height: '500px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(255,176,136,0.15) 0%, transparent 70%)',
+        filter: 'blur(80px)',
+        pointerEvents: 'none'
+      }}></div>
 
-      <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '2rem 1rem 4rem', position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem 1rem 0 1rem', position: 'relative', zIndex: 1 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', marginLeft: '1rem' }}>
           <button
             onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
-            style={{
-              padding: '0.85rem 1.75rem',
-              borderRadius: 50,
+            style={{ 
+              padding: '0.75rem 1.8rem', 
+              borderRadius: 50, 
               border: 'none',
               background: 'white',
-              color: '#FF8A54',
-              fontWeight: 700,
+              color: '#C2410C',
               cursor: 'pointer',
-              boxShadow: '0 10px 30px rgba(255,138,84,0.12)'
+              fontWeight: '600',
+              fontSize: '0.95rem',
+              transition: 'all 0.3s',
+              boxShadow: '0 4px 20px rgba(255,138,84,0.1)'
             }}
             onMouseEnter={e => {
-              e.target.style.transform = 'translateX(-3px)';
-              e.target.style.background = 'linear-gradient(135deg, #FF8A54, #FFB088)';
+              e.target.style.background = 'linear-gradient(135deg, #C2410C, #9A3412)';
               e.target.style.color = 'white';
+              e.target.style.transform = 'translateX(-5px)';
+              e.target.style.boxShadow = '0 6px 25px rgba(255,138,84,0.3)';
             }}
             onMouseLeave={e => {
-              e.target.style.transform = 'translateX(0)';
               e.target.style.background = 'white';
-              e.target.style.color = '#FF8A54';
+              e.target.style.color = '#C2410C';
+              e.target.style.transform = 'translateX(0)';
+              e.target.style.boxShadow = '0 4px 20px rgba(255,138,84,0.1)';
             }}
           >
             Back to Home
           </button>
-
-          <button
-            onClick={() => window.open('https://chat.whatsapp.com/GlHfkuwLD2Q0Rd8pBDVWoj?mode=wwt', '_blank')}
-            style={{
-              padding: '0.85rem 1.75rem',
-              borderRadius: 50,
-              border: '2px solid #FFB088',
-              background: 'white',
-              color: '#FF8A54',
-              fontWeight: 700,
-              cursor: 'pointer',
-              boxShadow: '0 10px 30px rgba(255,138,84,0.12)'
-            }}
-          >
-            Talk to Career Expert
-          </button>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '2rem', alignItems: 'start' }}>
-          <div>
-            <div style={{ marginBottom: '1rem', display: 'inline-block', padding: '0.55rem 1rem', borderRadius: 999, background: '#FFF3EB', color: '#D14B1E', fontWeight: 700, fontSize: '0.85rem' }}>
-              Azure Data Engineering Course Online
-            </div>
-            <h1 style={{ fontSize: 'clamp(2.8rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.05, marginBottom: '1.25rem', color: '#1f2937' }}>
-              Launch your career as an Azure Data Engineer
-            </h1>
-            <p style={{ fontSize: '1.1rem', color: '#4b5568', lineHeight: 1.8, marginBottom: '1.75rem' }}>
-              Master Azure Data Factory, Databricks, Synapse, and modern data engineering workflows with a 14-week job-oriented program designed for working professionals and freshers.
-            </p>
-
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '2rem' }}>
-              {['14-week program', 'Hands-on projects', 'Placement-focused', 'Azure certified tools', 'Career mentoring'].map(item => (
-                <span key={item} style={{
-                  display: 'inline-flex',
-                  background: '#FFF5F0',
-                  color: '#D14B1E',
-                  padding: '0.65rem 1rem',
-                  borderRadius: '999px',
-                  fontWeight: 600,
-                  fontSize: '0.95rem'
-                }}>
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent('skillkoder:openEnrollment', { detail: { course: 'Azure Data Engineering' } }))}
-                style={{
-                  background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: 999,
-                  padding: '0.95rem 2.2rem',
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  boxShadow: '0 16px 40px rgba(255,138,84,0.22)'
-                }}
-              >
-                Enroll Now
-              </button>
-
-              <button
-                onClick={() => window.open('/documents/azure-data-engineering.pdf', '_blank')}
-                style={{
-                  background: 'white',
-                  color: '#FF8A54',
-                  border: '2px solid #FFE0D0',
-                  borderRadius: 999,
-                  padding: '0.95rem 2.2rem',
-                  fontWeight: 700,
-                  cursor: 'pointer'
-                }}
-              >
-                Download Brochure
-              </button>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-              <div style={{ padding: '1.4rem', borderRadius: '24px', background: '#fff', border: '1px solid #F5E2D8' }}>
-                <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: '#1f2937' }}>Job roles</h3>
-                <p style={{ margin: '0.75rem 0 0', color: '#57534e', lineHeight: 1.7 }}>
-                  Azure Data Engineer, Data Platform Engineer, ETL Developer, Analytics Engineer.
-                </p>
-              </div>
-              <div style={{ padding: '1.4rem', borderRadius: '24px', background: '#fff', border: '1px solid #F5E2D8' }}>
-                <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: '#1f2937' }}>Tools covered</h3>
-                <p style={{ margin: '0.75rem 0 0', color: '#57534e', lineHeight: 1.7 }}>
-                  Azure Data Factory, Synapse, Databricks, Spark, Python, SQL, Power BI.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          
           <div style={{
-            borderRadius: '30px',
-            minHeight: '420px',
-            background: 'linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 100%)',
-            boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
-            padding: '2rem',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            display: 'inline-block',
+            padding: '0.6rem 1.5rem',
+            background: 'linear-gradient(135deg, #FFF5F2, #FFE8DD)',
+            borderRadius: 50,
+            border: '2px solid rgba(255,138,84,0.2)',
+            boxShadow: '0 8px 30px rgba(255,138,84,0.15)',
+            animation: 'float 3s ease-in-out infinite'
           }}>
-            <div>
-              <img
-                src="/course1.png"
-                alt="Azure Data Engineering course"
-                style={{
-                  width: '100%',
-                  borderRadius: '24px',
-                  objectFit: 'cover',
-                  minHeight: '260px',
-                  marginBottom: '1.75rem',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)'
-                }}
-              />
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: 78,
-                height: 78,
-                borderRadius: '50%',
-                background: 'rgba(255,138,84,0.14)',
-                color: '#D14B1E',
-                fontWeight: 800,
-                fontSize: '1.5rem',
-                marginBottom: '1.5rem',
-              }}>AD</div>
-              <h2 style={{ margin: 0, fontSize: '1.6rem', fontWeight: 800, color: '#1f2937', marginBottom: '1rem' }}>
-                Why this program works
-              </h2>
-              <p style={{ color: '#475569', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Learn cloud-first data engineering with practical pipeline projects, Azure-native tooling, and role-specific career mentorship.
-              </p>
-              <ul style={{ listStyle: 'disc inside', color: '#475569', lineHeight: 1.9 }}>
-                <li>End-to-end Azure pipeline development</li>
-                <li>Production-grade ETL and streaming workflows</li>
-                <li>Cloud architecture for analytics teams</li>
-                <li>Resume, interview and placement support</li>
-              </ul>
-            </div>
-
-            <button
-              onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-              style={{
-                marginTop: '2rem',
-                background: 'white',
-                color: '#FF8A54',
-                border: '2px solid #FFE0D0',
-                borderRadius: 999,
-                padding: '0.95rem 2.2rem',
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              Talk to our team
-            </button>
+            <span style={{ 
+              color: '#C2410C', 
+              fontWeight: '700', 
+              fontSize: '0.95rem', 
+              letterSpacing: '2px'
+            }}>
+              ✦ DATA ENGINEERING ✦
+            </span>
           </div>
         </div>
 
-        <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-          <div style={{ padding: '2rem', background: '#fff', borderRadius: '28px', boxShadow: '0 20px 50px rgba(255,138,84,0.08)' }}>
-            <h2 style={{ fontSize: '1.95rem', fontWeight: 800, color: '#1f2937', marginBottom: '1rem' }}>What you will learn</h2>
-            <ul style={{ listStyle: 'disc inside', color: '#475569', lineHeight: 1.9, fontSize: '1rem' }}>
-              {topics.map(topic => (
-                <li key={topic}>{topic}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div style={{ padding: '2rem', background: '#fff', borderRadius: '28px', boxShadow: '0 20px 50px rgba(255,138,84,0.08)' }}>
-            <h2 style={{ fontSize: '1.95rem', fontWeight: 800, color: '#1f2937', marginBottom: '1rem' }}>Tools covered</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem' }}>
-              {tools.map(tool => (
-                <div key={tool} style={{ padding: '1rem 1.25rem', background: '#FFF4EB', borderRadius: '18px', fontWeight: 600, color: '#c2410c' }}>
-                  {tool}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div style={{ marginTop: '3rem', padding: '2.5rem', borderRadius: '28px', background: '#fff5ef', border: '1px solid #ffe0d2' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem', color: '#1f2937' }}>Career growth with Azure Data Engineering</h2>
-          <p style={{ color: '#475569', lineHeight: 1.9, fontSize: '1rem', maxWidth: '860px' }}>
-            Azure data engineers are in high demand across startups and enterprises. This course prepares you to own data pipelines, build analytics platforms, and support business intelligence teams using Microsoft Azure technologies.
+        {/* Hero Section */}
+        <div style={{ 
+          textAlign: 'left',
+          marginLeft: '1rem',
+          marginBottom: '2rem'
+        }}>
+          <h1 style={{ 
+            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', 
+            margin: '0 0 1rem 0',
+            background: 'linear-gradient(135deg, #C2410C 0%, #9A3412 50%, #C2410C 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontWeight: '800',
+            lineHeight: 1.1,
+            letterSpacing: '-1px'
+          }}>
+            Build Cloud Data Pipelines
+          </h1>
+          <p style={{ 
+            fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', 
+            color: '#666',
+            maxWidth: '750px',
+            margin: 0,
+            lineHeight: 1.7,
+            fontWeight: '400'
+          }}>
+            Master advanced Azure cloud pipelines, orchestrate complex ETL workflows, and deploy production-grade analytics data warehouses
           </p>
         </div>
 
-        <div style={{ marginTop: '3rem' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1.5rem', color: '#1f2937' }}>Frequently Asked Questions</h2>
-          <div style={{ display: 'grid', gap: '1rem' }}>
-            <div style={{ background: '#fff', padding: '1.5rem', borderRadius: '22px', boxShadow: '0 12px 32px rgba(0,0,0,0.06)' }}>
-              <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700, color: '#1f2937' }}>Is Azure Data Engineering suitable for beginners?</h3>
-              <p style={{ color: '#555', marginTop: '0.75rem', lineHeight: 1.8 }}>
-                Yes, the course begins with data engineering fundamentals and includes guided learning paths. It is especially suited to learners with basic programming knowledge.
-              </p>
+        {/* Main Content Section with Full Width Image */}
+        <div style={{ 
+          position: 'relative',
+          overflow: 'hidden',
+          marginBottom: '2rem',
+          marginLeft: 0,
+          marginRight: 0,
+          width: '100vw',
+          left: '50%',
+          right: '50%',
+          marginLeft: '-50vw',
+          marginRight: '-50vw'
+        }}>
+          {/* Full Width Image Background */}
+          <div style={{
+            width: '100vw',
+            height: '450px',
+            position: 'relative',
+            overflow: 'hidden',
+            background: '#1a1a2e'
+          }}>
+            <img loading="eager" fetchpriority="high" decoding="async" 
+              src="/azure_data_bg.jpg"
+              alt="Azure Data Engineering" 
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                display: 'block',
+                opacity: 1
+              }}
+            />
+            {/* Dark gradient overlay for high contrast text readability */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.85) 100%)',
+              zIndex: 1
+            }} />
+
+            {/* Floating Stats */}
+            <div className="floating-stats" style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              background: 'white',
+              padding: '0.75rem 1.2rem',
+              borderRadius: 15,
+              boxShadow: '0 10px 40px rgba(255,138,84,0.2)',
+              animation: 'float 4s ease-in-out infinite',
+              zIndex: 3
+            }}>
+              <div style={{ 
+                fontSize: 'clamp(1.5rem, 4vw, 2rem)', 
+                fontWeight: '700', 
+                color: '#C2410C',
+                lineHeight: 1.2
+              }}>14+</div>
+              <div style={{ 
+                fontSize: 'clamp(0.7rem, 2vw, 0.85rem)', 
+                color: '#666', 
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+              }}>Weeks</div>
             </div>
-            <div style={{ background: '#fff', padding: '1.5rem', borderRadius: '22px', boxShadow: '0 12px 32px rgba(0,0,0,0.06)' }}>
-              <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700, color: '#1f2937' }}>Do you offer placement assistance?</h3>
-              <p style={{ color: '#555', marginTop: '0.75rem', lineHeight: 1.8 }}>
-                Yes, SkillKoder provides placement-focused mentorship, resume support, and interview preparation as part of the program.
+
+            {/* Content directly on image (overlay) */}
+            <div className="hero-overlay" style={{
+              position: 'absolute',
+              bottom: '40px',
+              left: '50px',
+              right: '50px',
+              zIndex: 2
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.5rem 1.5rem',
+                background: 'white',
+                borderRadius: 50,
+                marginBottom: '1.5rem',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
+              }}>
+                <span style={{ fontSize: '1.2rem' }}>🎯</span>
+                <span style={{ 
+                  color: '#C2410C', 
+                  fontWeight: '700', 
+                  fontSize: '0.9rem',
+                  letterSpacing: '1px'
+                }}>
+                  PROGRAM OVERVIEW
+                </span>
+              </div>
+
+              <h2 style={{ 
+                fontSize: 'clamp(2rem, 4vw, 3rem)', 
+                margin: '0 0 1.2rem 0',
+                color: 'white',
+                fontWeight: '800',
+                lineHeight: 1.2,
+                textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+              }}>
+                Build Enterprise Data Lakes
+              </h2>
+
+              <p style={{ 
+                fontSize: '1.1rem', 
+                color: 'white', 
+                marginBottom: '1.2rem',
+                lineHeight: 1.8,
+                textShadow: '0 2px 8px rgba(0,0,0,0.4)',
+                maxWidth: '800px'
+              }}>
+                Transform your career with our comprehensive Azure Data Engineering program. Architect robust end-to-end data processing solutions using Azure Data Factory, Databricks, PySpark programming, and Azure Synapse Analytics. Master data warehousing, pipeline automation, batch/stream processing, and cloud database optimization through hands-on industry-oriented projects.
               </p>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent('skillkoder:openEnrollment', { detail: { course: 'Azure Data Engineering' } }))}
+                  style={{ 
+                    background: 'linear-gradient(135deg, #C2410C, #9A3412)', 
+                    color: 'white', 
+                    padding: '1.2rem 3rem', 
+                    borderRadius: 50, 
+                    border: 'none', 
+                    cursor: 'pointer',
+                    fontSize: '1.05rem',
+                    fontWeight: '700',
+                    boxShadow: '0 10px 30px rgba(255,138,84,0.4)',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseEnter={e => {
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 15px 40px rgba(255,138,84,0.5)';
+                  }}
+                  onMouseLeave={e => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 10px 30px rgba(255,138,84,0.4)';
+                  }}
+                >
+                  Start Building →
+                </button>
+                
+                <button
+                  onClick={() => window.open('/documents/azure-data-engineering.pdf', '_blank')}
+                  style={{ 
+                    background: 'white', 
+                    color: '#C2410C', 
+                    padding: '1.2rem 3rem', 
+                    borderRadius: 50, 
+                    border: '2px solid white', 
+                    cursor: 'pointer',
+                    fontSize: '1.05rem',
+                    fontWeight: '700',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                    transition: 'all 0.3s'
+                  }}
+                  onMouseEnter={e => {
+                    e.target.style.background = '#FFF5F2';
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)';
+                  }}
+                  onMouseLeave={e => {
+                    e.target.style.background = 'white';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+                  }}
+                >
+                  View Curriculum
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <div style={{ marginTop: '3rem' }}>
-          <Features />
-        </div>
+        {/* Topics + Tools Side-by-side */}
+        <div style={{ padding: '0' }}>
+          <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+            {/* Topics Column */}
+            <div style={{ flex: '1 1 520px', minWidth: '280px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.5rem', background: 'linear-gradient(135deg, #FFF5F2, #FFE8DD)', borderRadius: 50, marginBottom: '1rem', border: '2px solid rgba(255,138,84,0.2)' }}>
+                  <span style={{ fontSize: '1.2rem' }}>📚</span>
+                  <span style={{ color: '#C2410C', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>COMPREHENSIVE CURRICULUM</span>
+                </div>
+                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', margin: '0 0 1rem 0', color: '#1a1a1a', fontWeight: '800' }}>Topics We Cover</h2>
+                <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>A structured pathway from data fundamentals to advanced cloud engineering</p>
+              </div>
 
-        <div style={{ marginTop: '3rem' }}>
+              <div style={{ maxWidth: '100%', margin: '0', position: 'relative' }}>
+                <div style={{ background: 'white', borderRadius: 20, padding: '2rem', boxShadow: '0 15px 40px rgba(255,138,84,0.15)', border: '2px solid #FFE8DD', maxHeight: '400px', overflowY: 'auto', overflowX: 'hidden' }} className="topics-scroll-container">
+                  <div>
+                    {topics.map((topic, i) => (
+                      <div key={i} onMouseEnter={() => setHoveredTopic(i)} onMouseLeave={() => setHoveredTopic(null)} style={{ padding: '0.9rem 1.2rem', background: hoveredTopic === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent', borderBottom: i !== topics.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.3s ease', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '12px' }}>
+                        <span style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: '700', color: hoveredTopic === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                        <span style={{ fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', fontWeight: '600', color: hoveredTopic === i ? 'white' : '#1a1a1a' }}>{topic}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools Column */}
+            <div style={{ flex: '0 1 420px', minWidth: '260px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.5rem', background: 'linear-gradient(135deg, #FFF5F2, #FFE8DD)', borderRadius: 50, marginBottom: '1rem', border: '2px solid rgba(255,138,84,0.2)' }}>
+                  <span style={{ fontSize: '1.2rem' }}>🛠️</span>
+                  <span style={{ color: '#C2410C', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>TOOLS WE USE</span>
+                </div>
+                <h3 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', margin: '0 0 0.6rem 0', color: '#1a1a1a', fontWeight: '800' }}>Tools & Frameworks</h3>
+                <p style={{ fontSize: '1rem', color: '#666', maxWidth: '600px', margin: '0 auto 1rem auto' }}>Enterprise-level cloud engineering platforms and architectures</p>
+              </div>
+
+              <div style={{ maxWidth: '100%', margin: '0 auto', position: 'relative' }}>
+                <div style={{ background: 'white', borderRadius: 20, padding: '1.5rem', boxShadow: '0 15px 40px rgba(255,138,84,0.15)', border: '2px solid #FFE8DD', maxHeight: '400px', overflowY: 'auto', overflowX: 'hidden' }} className="topics-scroll-container">
+                  <div>
+                    {tools.map((tool, i) => (
+                      <div key={i} onMouseEnter={() => setHoveredTool(i)} onMouseLeave={() => setHoveredTool(null)} style={{ padding: '0.7rem 1rem', background: hoveredTool === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent', borderBottom: i !== tools.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.25s ease', cursor: 'default', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '10px' }}>
+                        <span style={{ fontSize: '0.95rem', fontWeight: '700', color: hoveredTool === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                        <span style={{ fontSize: '0.95rem', fontWeight: '600', color: hoveredTool === i ? 'white' : '#1a1a1a' }}>{tool}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features and Contact sections imported from main site */}
+          <Features />
           <Contact />
+
+          <style>{`
+            .topics-scroll-container::-webkit-scrollbar {
+              width: 8px;
+            }
+            .topics-scroll-container::-webkit-scrollbar-track {
+              background: #FFF5F2;
+              border-radius: 10px;
+            }
+            .topics-scroll-container::-webkit-scrollbar-thumb {
+              background: linear-gradient(180deg, #FF8A54, #FFB088);
+              border-radius: 10px;
+            }
+            .topics-scroll-container::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(180deg, #FFB088, #FF8A54);
+            }
+            @media (max-width: 640px) {
+              .hero-overlay { left: 16px !important; right: 16px !important; bottom: 18px !important; }
+              .hero-overlay h2 { font-size: 1.5rem !important; }
+              .hero-overlay p { font-size: 1rem !important; }
+              .floating-stats { right: 12px !important; top: 12px !important; }
+            }
+          `}</style>
         </div>
       </div>
     </section>

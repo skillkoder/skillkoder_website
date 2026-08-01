@@ -1,0 +1,349 @@
+{
+  "origin": "https://www.skillkoder.com",
+  "routes": [
+    {
+      "path": "/",
+      "title": "Data Analytics, Data Science & AI Courses | SkillKoder",
+      "description": "Specialist online training in Data Analytics, Data Science, Generative AI and Azure Data Engineering. Live classes, real projects, placement support.",
+      "keywords": "data analytics course online, data science course online india, generative ai course online, azure data engineering training, online tech course with placement",
+      "ogImage": "/logo512.png",
+      "h1": "SkillKoder",
+      "intro": "Premium Data, AI and Analytics training for career-ready professionals. Learn live with mentors, build a real project portfolio, and get placement support across Data Analytics, Data Science, Generative AI and Azure Data Engineering.",
+      "bullets": [
+        "Live instructor-led classes",
+        "Project-based portfolio",
+        "Career guidance and placement support",
+        "Tools covered: Python, SQL, Excel, Power BI, Tableau, ChatGPT, Azure",
+        "Roles you can target: Data Analyst, Data Scientist, AI Developer, Azure Data Engineer"
+      ]
+    },
+    {
+      "path": "/courses/data-analytics",
+      "title": "Data Analytics Course Online with Placement | SkillKoder",
+      "description": "Learn Data Analytics online with Python, SQL, Power BI and Tableau. Live classes, real projects and placement support at SkillKoder.",
+      "keywords": "data analytics course online, data analyst course with placement, learn data analytics for beginners, power bi course, sql for data analytics",
+      "ogImage": "/course2.webp",
+      "h1": "Turn Data Into Decisions",
+      "intro": "Master the art and science of analytics with cutting-edge tools and real-world techniques that drive business growth. Learn to analyze, visualize and interpret data using Excel, SQL, Power BI and Tableau, and step into the market as a job-ready Data Analyst.",
+      "course": {
+        "name": "Data Analytics Course",
+        "tools": [
+          "Python (pandas, NumPy)",
+          "SQL (MySQL / PostgreSQL)",
+          "Power BI",
+          "Tableau",
+          "Excel"
+        ],
+        "roles": [
+          "Data Analyst",
+          "Business Intelligence Analyst",
+          "Reporting Analyst"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Is coding required to join the Data Analytics course?",
+          "a": "No prior coding experience is required. The course starts with Excel and SQL fundamentals before introducing Python, so beginners can follow along from the first session."
+        },
+        {
+          "q": "Does the Data Analytics course include placement assistance?",
+          "a": "Yes. SkillKoder provides resume guidance, interview preparation and placement support alongside the technical curriculum."
+        },
+        {
+          "q": "Which tools will I learn in the Data Analytics course?",
+          "a": "You will work with Excel, SQL, Power BI, Tableau and Python (pandas, NumPy), which are the tools most commonly listed in Data Analyst job descriptions in India."
+        },
+        {
+          "q": "Is Data Analytics a good career in 2026?",
+          "a": "Data Analytics remains one of the most in-demand skill sets across industries, with strong hiring for analysts who can combine SQL, a BI tool and clear business communication."
+        }
+      ]
+    },
+    {
+      "path": "/courses/data-science",
+      "title": "Data Science Course Online with Python | SkillKoder",
+      "description": "Master Data Science with Python, machine learning and NLP. Live mentorship, real portfolio projects and placement support at SkillKoder.",
+      "keywords": "data science course online india, data science with python, python data science course, machine learning course online, data scientist training program",
+      "ogImage": "/data_science.webp",
+      "h1": "Build Intelligent Systems",
+      "intro": "Go beyond dashboards and learn to model, predict and automate. Build machine learning and NLP systems in Python with scikit-learn, TensorFlow and PyTorch, guided by mentors and grounded in real project work.",
+      "course": {
+        "name": "Data Science Course",
+        "tools": [
+          "Python (pandas, NumPy)",
+          "scikit-learn",
+          "TensorFlow",
+          "PyTorch",
+          "SQL"
+        ],
+        "roles": [
+          "Data Scientist",
+          "Machine Learning Engineer",
+          "Applied Data Analyst"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What is the difference between Data Analytics and Data Science?",
+          "a": "Data Analytics focuses on describing and explaining what happened using SQL and BI tools. Data Science extends that into prediction and automation using statistics and machine learning."
+        },
+        {
+          "q": "Do I need a maths background for the Data Science course?",
+          "a": "Comfort with school-level maths is enough to start. The required statistics and linear algebra are taught within the course, in the context of the models that use them."
+        },
+        {
+          "q": "Does the Data Science course include real projects?",
+          "a": "Yes. Every learner builds portfolio projects end to end, from data cleaning through modelling to a presentable result you can defend in an interview."
+        }
+      ]
+    },
+    {
+      "path": "/courses/generative-ai",
+      "title": "Generative AI & ChatGPT Course Online | SkillKoder",
+      "description": "Learn generative AI, ChatGPT, prompt engineering and AI app development with hands-on projects and career support from SkillKoder.",
+      "keywords": "generative ai course online, chatgpt course india, ai tools course for beginners, prompt engineering course, generative ai training",
+      "ogImage": "/genai.webp",
+      "h1": "Create with AI Power",
+      "intro": "Learn to build with generative AI rather than just use it. Cover prompt engineering, large language models, Hugging Face Transformers and AI application development, and turn the fastest-moving area in tech into a career advantage.",
+      "course": {
+        "name": "Generative AI Course",
+        "tools": [
+          "Python (pandas, NumPy)",
+          "Hugging Face Transformers",
+          "PyTorch",
+          "TensorFlow",
+          "ChatGPT"
+        ],
+        "roles": [
+          "AI Developer",
+          "Prompt Engineering Specialist",
+          "AI Application Engineer"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "Who should join the Generative AI course?",
+          "a": "It suits both beginners curious about AI tools and working professionals who want to build applications on top of large language models."
+        },
+        {
+          "q": "Will I learn prompt engineering?",
+          "a": "Yes. Prompt engineering is covered as a practical discipline alongside model behaviour, evaluation and building real AI applications."
+        },
+        {
+          "q": "Are there career opportunities in Generative AI in India?",
+          "a": "Demand is growing quickly for AI developers and prompt engineering specialists as companies move generative AI projects from experiment into production."
+        }
+      ]
+    },
+    {
+      "path": "/courses/azure-data-engineering",
+      "title": "Azure Data Engineering Course Online | SkillKoder",
+      "description": "Build Azure data pipelines with Data Factory, Databricks and Synapse. Placement-focused training with real projects at SkillKoder.",
+      "keywords": "azure data engineering course online, azure data engineer training, azure data factory course, databricks course, azure synapse analytics course",
+      "ogImage": "/logo512.png",
+      "h1": "Build Cloud Data Pipelines",
+      "intro": "Learn the enterprise data stack that companies actually hire for. Design and operate pipelines with Azure Data Factory, Databricks, Azure Synapse and Azure Data Lake, and move into one of the highest-paid roles in the data field.",
+      "course": {
+        "name": "Azure Data Engineering Course",
+        "tools": [
+          "Azure Data Factory",
+          "Databricks",
+          "Azure Synapse",
+          "Azure Data Lake",
+          "Python",
+          "Power BI"
+        ],
+        "roles": [
+          "Azure Data Engineer",
+          "Cloud Data Engineer",
+          "Analytics Engineer"
+        ]
+      },
+      "faqs": [
+        {
+          "q": "What does an Azure Data Engineer do?",
+          "a": "An Azure Data Engineer designs and runs the pipelines that move, clean and store data so analysts and data scientists can use it reliably at scale."
+        },
+        {
+          "q": "Do I need prior cloud experience for this course?",
+          "a": "No. The course covers Azure fundamentals before moving into Data Factory, Databricks and Synapse, so you can start without previous cloud exposure."
+        },
+        {
+          "q": "Why choose Azure Data Engineering over Data Analytics?",
+          "a": "Data engineering roles are less crowded and typically command higher salaries, because they require both programming and infrastructure skills that fewer candidates have."
+        }
+      ]
+    },
+    {
+      "path": "/courses",
+      "title": "Online Data, Analytics & AI Courses | SkillKoder",
+      "description": "Compare SkillKoder's four programs: Data Analytics, Data Science, Generative AI and Azure Data Engineering. Live classes and placement support.",
+      "keywords": "data analytics course, data science course, generative ai course, azure data engineering course, online tech courses india",
+      "ogImage": "/logo512.png",
+      "h1": "Transform Your Career Path",
+      "intro": "Four specialist programs, taught properly. Choose Data Analytics, Data Science, Generative AI or Azure Data Engineering, each built around live mentorship, real portfolio projects and placement support.",
+      "bullets": [
+        "Data Analytics — dashboards, SQL, Power BI",
+        "Data Science — Python, ML, NLP and modeling",
+        "Generative AI — ChatGPT, prompt engineering and AI apps",
+        "Azure Data Engineering — Azure Data Factory, Synapse, Databricks"
+      ]
+    },
+    {
+      "path": "/features",
+      "title": "Why Choose SkillKoder | Mentorship & Placement Support",
+      "description": "Placement assistance, tools mastery, real-world projects and expert mentorship on a structured path from beginner to career-ready.",
+      "keywords": "why choose skill koder, placement assistance, expert mentorship, real world projects, tech training features",
+      "ogImage": "/logo512.png",
+      "h1": "Why Choose SkillKoder",
+      "intro": "Placement assistance, tools mastery, real-world projects, expert mentorship and a structured path from beginner to career-ready with measurable progress every week."
+    },
+    {
+      "path": "/about",
+      "title": "About SkillKoder | Data, Analytics & AI Academy",
+      "description": "SkillKoder is a specialist academy for Data Analytics, Data Science and Generative AI, built around real projects and placement support.",
+      "keywords": "about skill koder, skill koder mission, data analytics academy india, ai training institute",
+      "ogImage": "/logo512.png",
+      "h1": "About Us",
+      "intro": "SkillKoder is a specialist academy for Data Analytics, Data Science, and Generative AI training. We focus on career-ready programs, real projects, tool mastery, and placement support for learners in India and beyond."
+    },
+    {
+      "path": "/blog",
+      "title": "Data Analytics, Data Science & AI Blog | SkillKoder",
+      "description": "Practical guides on data analytics, data science, generative AI and getting hired — written for people building the skill, not reading about it.",
+      "keywords": "data analytics blog, data science blog india, generative ai articles, data career guides, learn data analytics online",
+      "ogImage": "/logo512.png",
+      "h1": "Data & AI Articles",
+      "intro": "Guides on the tools, the roles and the honest realities of working with data — including the parts other training providers leave out.",
+      "bullets": [
+        "Data Analytics — SQL, Power BI, Tableau and Excel guides",
+        "Data Science — Python, machine learning and modelling",
+        "Generative AI — how LLMs work and how to build with them",
+        "Career & Jobs — role comparisons and hiring guidance"
+      ]
+    },
+    {
+      "path": "/404",
+      "title": "Page Not Found | SkillKoder",
+      "description": "That page does not exist. Browse our courses, tools, blog and career guides instead.",
+      "keywords": "",
+      "ogImage": "/logo512.png",
+      "h1": "That page doesn't exist",
+      "intro": "The link may be out of date, or the address may have a typo in it.",
+      "noindex": true
+    },
+    {
+      "path": "/tools",
+      "title": "Tools We Teach: Python, SQL, Power BI, Tableau | SkillKoder",
+      "description": "Every tool taught at SkillKoder — Python, SQL, Excel, Power BI, Tableau, scikit-learn, PyTorch, ChatGPT, Azure Data Factory, Databricks and Synapse.",
+      "keywords": "power bi course online, sql course online, tableau training india, python for data analytics, databricks course, azure data factory training, excel for data analysis course",
+      "ogImage": "/logo512.png",
+      "h1": "Tools You Will Actually Use at Work",
+      "intro": "Hiring managers screen on tools, not course titles. Every tool below is taught inside a SkillKoder program with hands-on project work — this page shows what each one is for, what you will have built by the end, and which course covers it.",
+      "bullets": [
+        "Analysis and querying — Python, SQL, Excel",
+        "Visualization and BI — Power BI, Tableau",
+        "Machine learning and AI — scikit-learn, TensorFlow, PyTorch, Hugging Face Transformers, ChatGPT and prompt engineering",
+        "Cloud and data engineering — Azure Data Factory, Databricks, Azure Synapse, Azure Data Lake Storage"
+      ]
+    },
+    {
+      "path": "/placement",
+      "title": "Placement Assistance & Career Support | SkillKoder",
+      "description": "Resume review, portfolio guidance, mock interviews and job search strategy alongside your course. Exactly what placement support covers, and what it does not.",
+      "keywords": "placement assistance data analytics, data science course with placement, career support tech course india, mock interview preparation data analyst, resume review data science",
+      "ogImage": "/logo512.png",
+      "h1": "Placement Assistance, Described Honestly",
+      "intro": "Resume review, portfolio guidance, mock interviews and job search strategy — running alongside the course rather than tacked on at the end. Instead of an unverifiable placement percentage, this page lists the specific things we do for you and states plainly what sits outside our control.",
+      "bullets": [
+        "Resume and LinkedIn review against the roles you are targeting",
+        "Portfolio guidance that turns course projects into interview material",
+        "Mock interviews with direct feedback on what would have ended the real round",
+        "Technical interview preparation in SQL, Python, modelling and pipeline design",
+        "Job search strategy and mentor access while you are interviewing"
+      ],
+      "faqs": [
+        {
+          "q": "Is a job guaranteed after completing the course?",
+          "a": "No, and you should be cautious of any training provider that promises one. What we provide is placement assistance: resume and portfolio work, mock interviews, technical preparation and job search guidance. Getting hired also depends on your own effort, the roles you target and market conditions at the time."
+        },
+        {
+          "q": "When does placement support start?",
+          "a": "Career support runs alongside the technical curriculum rather than being bolted on at the end. Resume and portfolio work begins once you have your first substantial project, so you are not starting from a blank page in the final week."
+        },
+        {
+          "q": "How long does placement support last after the course ends?",
+          "a": "Support continues past the last class while you are actively interviewing. Speak to us about the current terms for the batch you are joining so you have that in writing before you enrol."
+        },
+        {
+          "q": "Do you help with roles outside India?",
+          "a": "The preparation transfers — the tools and interview formats are broadly the same. Our direct market knowledge and network are strongest in India, so treat guidance on other markets as general rather than specific."
+        },
+        {
+          "q": "What if I am switching careers from a non-technical background?",
+          "a": "Career switchers are a large share of our learners. The extra work is usually positioning rather than technical: framing your existing domain experience as an advantage instead of a gap. That framing is something we work on with you directly."
+        }
+      ]
+    },
+    {
+      "path": "/faq",
+      "title": "SkillKoder FAQs | Eligibility, Fees, Batches & Placement",
+      "description": "Answers on eligibility, prerequisites, batch format, duration, certificates and placement support for SkillKoder's Data, Analytics and AI programs.",
+      "keywords": "skillkoder faq, data analytics course eligibility, is coding required for data analytics, online data science course duration, data course placement support india",
+      "ogImage": "/logo512.png",
+      "h1": "Everything You Asked Before Enrolling",
+      "intro": "Eligibility, prerequisites, batch format, placement support and cost — answered plainly. If your question is not here, ask us directly and we will answer it the same way.",
+      "faqs": [
+        {
+          "q": "Who can join a SkillKoder course?",
+          "a": "Our programs are built for final-year students, recent graduates and working professionals moving into a data or AI role. There is no requirement for a computer science degree — each course starts from fundamentals before moving into advanced material."
+        },
+        {
+          "q": "Is coding experience required to start?",
+          "a": "No. The Data Analytics program begins with Excel and SQL before introducing Python, so complete beginners can follow from the first session. The Data Science, Generative AI and Azure Data Engineering programs assume basic Python comfort, which the Data Analytics track or a short pre-course module will give you."
+        },
+        {
+          "q": "Are classes live or pre-recorded?",
+          "a": "Classes are live and instructor-led, so you can ask questions during the session rather than posting them into a forum and waiting. Sessions are recorded, so you can revisit anything you want to go over again."
+        },
+        {
+          "q": "What is the course duration?",
+          "a": "Duration varies by program and batch schedule. Weekday and weekend batches run at different paces to suit students and working professionals. Contact us or book a free demo class for the current schedule and duration of the batch you are considering."
+        },
+        {
+          "q": "Do SkillKoder courses include placement assistance?",
+          "a": "Yes. Every program includes placement support: resume and LinkedIn review, mock interviews, portfolio guidance and help preparing for technical rounds. This is career support, not a guaranteed job offer — see our placement support page for exactly what is and is not included."
+        },
+        {
+          "q": "Will I get a certificate at the end?",
+          "a": "Yes, you receive a course completion certificate. In practice, hiring managers in this field weigh a portfolio of real projects far more heavily than a certificate, which is why the curriculum is built around project work."
+        },
+        {
+          "q": "Can I attend a class before paying?",
+          "a": "Yes. Book a free demo class to sit in on a live session, see the teaching style and ask about the curriculum before committing to anything."
+        },
+        {
+          "q": "What happens if I miss a session?",
+          "a": "Every session is recorded and made available to your batch, and you can raise anything you did not follow in the next live class or with your mentor."
+        },
+        {
+          "q": "Which course should I choose?",
+          "a": "If you want to analyse data and report on it, start with Data Analytics. If you want to build predictive models, choose Data Science. If you want to build AI applications, choose Generative AI. If you prefer infrastructure and pipelines over analysis, choose Azure Data Engineering. If you are unsure, talk to a career expert — that conversation is free and there is no obligation."
+        },
+        {
+          "q": "Do you offer courses to students outside India?",
+          "a": "Yes. All programs run online, so you can join from anywhere. Batch timings are set in IST, so check that a batch schedule works for your time zone before enrolling."
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "title": "Contact SkillKoder | Book a Free Demo Class",
+      "description": "Talk to a SkillKoder career expert about course details, enrollment and placement support, or book a free demo class before you decide.",
+      "keywords": "contact skill koder, book free demo class, talk to career expert, course enquiry, enrollment assistance",
+      "ogImage": "/logo512.png",
+      "h1": "Contact Us",
+      "intro": "Talk to a career expert about which program fits you, book a free demo class, or ask about enrollment and placement support."
+    }
+  ]
+}

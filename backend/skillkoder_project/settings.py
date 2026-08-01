@@ -383,6 +383,12 @@ CORS_ALLOWED_ORIGINS = config(
     cast=Csv()
 )
 
+# Ensure local development origins are always allowed
+_LOCAL_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000']
+for _origin in _LOCAL_ORIGINS:
+    if _origin not in CORS_ALLOWED_ORIGINS:
+        CORS_ALLOWED_ORIGINS.append(_origin)
+
 CORS_ALLOW_CREDENTIALS = True
 
 # ---------------------------------------------------------------------------

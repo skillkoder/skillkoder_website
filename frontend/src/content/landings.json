@@ -1,0 +1,296 @@
+{
+  "_README": [
+    "Keyword-variant landing pages.",
+    "",
+    "seo.md lists sixteen of these. Only four are built, because the other twelve",
+    "would have been near-duplicates of pages that already exist — and two pages",
+    "competing for the same query is worse than one, not better. Google picks one",
+    "and the link equity splits across both. That is keyword cannibalisation, and",
+    "it is the most common self-inflicted wound in this kind of SEO plan.",
+    "",
+    "Specifically NOT built, and why:",
+    "  /data-analytics-course-online       -> /courses/data-analytics already",
+    "                                         targets exactly this query.",
+    "  /advanced-data-analytics-training   -> no separate advanced curriculum",
+    "                                         exists to describe.",
+    "  /data-analyst-course-with-placement -> /placement covers placement; the",
+    "                                         course page already says it.",
+    "  /data-science-with-internship       -> would advertise an internship that",
+    "                                         is not offered.",
+    "",
+    "The four here each earn a URL because each says something the canonical",
+    "course page does not: a single tool, the absolute-beginner path, the Python",
+    "route specifically, and one skill within Generative AI.",
+    "",
+    "Before adding more, apply the test: can you write 800 words that a visitor",
+    "would not have found on the existing course page? If not, improve the",
+    "existing page instead.",
+    "",
+    "RETARGETING NOTE (Aug 2026): the Power BI page originally targeted 'power bi",
+    "course online' — 1,600/mo but SEO difficulty 62, against a DA 4 domain. It",
+    "now targets lower-difficulty long-tail variants instead. Treat this page as a",
+    "multi-year play regardless; tool head-terms are contested by Microsoft's own",
+    "learn.microsoft.com documentation, which is unbeatable on this keyword."
+  ],
+
+  "pages": [
+    {
+      "path": "/courses/power-bi",
+      "title": "Power BI Course with Placement Support | SkillKoder",
+      "description": "Learn Power BI properly — data modelling, DAX and report design, not just chart building. Live classes with a portfolio dashboard you can show in interviews.",
+      "keywords": "power bi course with placement, power bi data modelling course, dax course online, power bi course for data analysts, learn power bi with sql, power bi training india",
+      "ogImage": "/data_analytics.webp",
+      "eyebrow": "TOOL-FOCUSED PROGRAM",
+      "h1": "Power BI Course Online",
+      "accent": "",
+      "intro": "The BI tool most Indian employers ask for by name — taught from the data model up, because that is the part most Power BI training skips and most interviews test.",
+      "coursePath": "/courses/data-analytics",
+      "blocks": [
+        { "type": "h2", "text": "Why most Power BI training produces people who cannot pass an interview" },
+        { "type": "p", "text": "The typical Power BI course teaches you to connect to a spreadsheet, drag fields onto a canvas and produce something colourful. That is genuinely useful, and it takes about a week. It is also not what employers are hiring for." },
+        { "type": "p", "text": "What separates a Power BI developer from someone who can operate Power BI is the layer underneath the visuals: how the data is modelled, how tables relate, how DAX evaluates in context, and why a measure returns the right number in one visual and a wrong one in another. That is where interview questions land, and it is where most self-taught candidates come unstuck." },
+        { "type": "callout", "title": "The question that separates candidates", "text": "'Why is this measure giving a different total at the row level than at the grand total?' If filter context and row context are just phrases you have heard, the conversation ends there. This course spends real time on that." },
+
+        { "type": "h2", "text": "What the program covers" },
+        { "type": "h3", "text": "1. Getting data in, reliably" },
+        { "type": "ul", "items": [
+          "Connecting to files, databases and services, and knowing which to use when.",
+          "Power Query for transformation — so a monthly clean-up becomes a refresh button.",
+          "Import versus DirectQuery, and the trade-off each makes.",
+          "Handling source data that changes shape without warning."
+        ]},
+
+        { "type": "h3", "text": "2. The data model — the part that matters" },
+        { "type": "ul", "items": [
+          "Star schemas: fact and dimension tables, and why flattening everything into one table causes problems you will not see until it is too late.",
+          "Relationships, cardinality and filter direction.",
+          "Date tables, and why nearly every time-based calculation needs one.",
+          "Model size and performance — what makes a report slow."
+        ]},
+
+        { "type": "h3", "text": "3. DAX, understood rather than memorised" },
+        { "type": "ul", "items": [
+          "Calculated columns versus measures, and when each is correct.",
+          "Row context and filter context — the concept everything else depends on.",
+          "CALCULATE, and why it is both the most useful and most misunderstood function in DAX.",
+          "Time intelligence: year-to-date, prior period, running totals.",
+          "Debugging a measure that returns something surprising."
+        ]},
+
+        { "type": "h3", "text": "4. Report design people actually use" },
+        { "type": "ul", "items": [
+          "Choosing the right visual for the question, and dropping the ones that only look impressive.",
+          "Layout, hierarchy and drill-through.",
+          "Accessible colour choices, which increasingly appear in enterprise design standards.",
+          "Publishing, workspaces and refresh scheduling."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A multi-page interactive dashboard on a properly modelled star schema, with DAX measures for the metrics a business audience would actually ask about, published and refreshing on a schedule. It is designed to be the artefact you open during an interview when someone asks what you have built." },
+
+        { "type": "h2", "text": "Where Power BI fits in a wider skill set" },
+        { "type": "p", "text": "Power BI alone will get you into reporting roles. Combined with SQL it gets you into analyst roles, which is why our full [Data Analytics program](/courses/data-analytics) teaches both alongside Excel, Tableau and Python. If you only want the BI layer, this focused route is the faster path; if you want the analyst role, take the full program." },
+        { "type": "p", "text": "See also: [what a data analyst actually does](/careers/data-analyst) and the [full tool list](/tools)." },
+
+        { "type": "cta", "text": "Sit in on a live Power BI session before deciding. If the teaching is not clearly better than the free videos you have already tried, do not enrol.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Do I need SQL before learning Power BI?", "a": "Not to start — Power BI can connect directly to files and services. You will hit a ceiling quickly without SQL though, because most real data sits in databases and most analyst roles expect you to query them yourself." },
+        { "q": "Is Power BI better than Tableau?", "a": "Power BI appears more often in Indian job listings and costs less, which is why it is usually the first one to learn. Tableau has strengths in exploratory visualisation. Learning one makes the other far quicker to pick up, and our Data Analytics program covers both." },
+        { "q": "Will this prepare me for the PL-300 certification?", "a": "The material covers the same ground — modelling, DAX, visualisation and deployment. The course is built around being able to do the work rather than around the exam format, so if certification is your goal, plan on separate exam-specific practice as well." }
+      ]
+    },
+
+    {
+      "path": "/courses/data-analytics-for-beginners",
+      "title": "Data Analytics Course for Beginners | SkillKoder",
+      "description": "A genuine beginner's route into data analytics from a non-technical background — what the first weeks look like and the honest time commitment involved.",
+      "keywords": "data analytics course for beginners, learn data analytics from scratch, data analytics without coding, data analyst course no experience, beginner data analytics training india",
+      "ogImage": "/data_analytics.webp",
+      "eyebrow": "FOR COMPLETE BEGINNERS",
+      "h1": "Data Analytics for Complete Beginners",
+      "accent": "",
+      "intro": "Written for people who have never written a line of code and are not sure whether this field is realistically open to them. It is — but the honest version of how, not the marketing version.",
+      "coursePath": "/courses/data-analytics",
+      "blocks": [
+        { "type": "h2", "text": "Can you actually do this with no technical background?" },
+        { "type": "p", "text": "Yes, and it is genuinely common. Analytics teams routinely hire from commerce, economics, humanities, operations and customer-facing roles. Existing domain knowledge is an advantage rather than a handicap — someone who already understands how insurance claims or retail inventory work brings context that a fresh graduate does not have." },
+        { "type": "p", "text": "What we are not going to tell you is that it is quick or effortless. There is a genuine learning curve, most of it in the first six to eight weeks, and the people who get through it are the ones who expected it." },
+
+        { "type": "h2", "text": "The three fears that stop people starting" },
+        { "type": "h3", "text": "\"I am bad at maths\"" },
+        { "type": "p", "text": "Data analytics needs far less maths than people assume. Averages, percentages, ratios and a working sense of what a distribution is will carry you through most analyst work. There is no calculus. If you can handle school-level arithmetic and think logically, the maths will not be what stops you." },
+
+        { "type": "h3", "text": "\"I cannot code\"" },
+        { "type": "p", "text": "Nobody could, initially. More usefully: the first tool you learn here is Excel, which you have probably already used, and the second is SQL, which reads much more like structured English than like programming. By the time Python appears, you have been reasoning about data for weeks and it lands as a better tool for a job you already understand rather than as an abstract new subject." },
+
+        { "type": "h3", "text": "\"I am too old / from the wrong background\"" },
+        { "type": "p", "text": "Career switchers in their thirties and forties are a large share of our learners. The extra work for a switcher is usually positioning, not technical — framing prior experience as domain expertise instead of an unexplained gap. That is something career support works on with you directly." },
+
+        { "type": "h2", "text": "What the first weeks actually look like" },
+        { "type": "ol", "items": [
+          "**Excel, properly.** Not the basics you already know — lookups, pivot tables, conditional logic, and Power Query so a repetitive clean-up becomes one click. This is where you start thinking in terms of data rather than spreadsheets.",
+          "**SQL fundamentals.** SELECT, WHERE, GROUP BY. Within a couple of sessions you are answering real questions against a real database, which is usually the point at which it clicks that this is doable.",
+          "**Joins.** The first genuine difficulty. Almost everyone finds these confusing at first, and almost everyone gets them. Expect to need practice rather than a single explanation.",
+          "**Your first visualisation.** Power BI, connected to data you queried yourself. This is where most people stop doubting they can do it."
+        ]},
+        { "type": "callout", "title": "The week most people want to quit", "text": "It is usually the joins week, and it is worth knowing that in advance. Almost nobody finds joins intuitive on first contact. The learners who struggle at that point and continue anyway are not less able than the ones who found it easy — they just met their difficulty earlier." },
+
+        { "type": "h2", "text": "The honest time commitment" },
+        { "type": "p", "text": "Live sessions are only part of it. Plan on meaningful practice time between classes — the skill is built in the doing, and learners who attend but do not practise reliably fall behind by the second month." },
+        { "type": "p", "text": "If you are working full time, the weekend or early-morning batches exist for exactly this reason. What does not work is enrolling with no time set aside and hoping to catch up on recordings later. We would rather you started a batch you can actually attend than paid for one you cannot." },
+
+        { "type": "h2", "text": "What you need before you start" },
+        { "type": "ul", "items": [
+          "A computer you can install software on. A tablet or phone is not sufficient.",
+          "A working internet connection able to hold a video call.",
+          "School-level arithmetic and comfort with logical reasoning.",
+          "Time genuinely set aside each week, not time you hope to find.",
+          "That is the whole list. No degree requirement, no prior coding, no prior tool experience."
+        ]},
+
+        { "type": "h2", "text": "Where this leads" },
+        { "type": "p", "text": "The full curriculum, tools and career outcomes are on the [Data Analytics course page](/courses/data-analytics). If you want to understand the destination before committing to the journey, read [what a data analyst actually does](/careers/data-analyst) — it describes a realistic working day rather than a job title." },
+
+        { "type": "cta", "text": "Sit in on a live class before paying anything. If you leave the demo thinking it is not for you, that is a useful outcome and it cost you an hour.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Is data analytics really possible without any coding experience?", "a": "Yes. The course starts with Excel and SQL before introducing Python, so beginners can follow from the first session. SQL in particular is far closer to structured English than to programming." },
+        { "q": "How long before I could realistically apply for jobs?", "a": "For a complete beginner working consistently, building genuine job-ready skill plus a portfolio takes several months rather than weeks. Anyone promising employability in thirty days is not being straight with you." },
+        { "q": "What if I fall behind?", "a": "Sessions are recorded and mentors are reachable between classes. What matters most is telling us early — learners who flag that they are struggling in week three almost always recover; those who go quiet until week ten usually do not." }
+      ]
+    },
+
+    {
+      "path": "/courses/data-science-with-python",
+      "title": "Data Science with Python Course Online | SkillKoder",
+      "description": "Learn data science the way it is practised — Python, pandas, scikit-learn and PyTorch, with the evaluation discipline that interviews actually test.",
+      "keywords": "data science with python, python data science course online, python machine learning course india, pandas scikit-learn training, learn python for data science",
+      "ogImage": "/data_science.webp",
+      "eyebrow": "PYTHON-FIRST PROGRAM",
+      "h1": "Data Science with Python",
+      "accent": "",
+      "intro": "Python is where essentially all applied data science is written. This is the route through it — from pandas to production-shaped modelling — with the evaluation reasoning that separates candidates who get offers from candidates who get feedback.",
+      "coursePath": "/courses/data-science",
+      "blocks": [
+        { "type": "h2", "text": "Why Python, specifically" },
+        { "type": "p", "text": "R remains excellent for statistics and is still used in academia and some specialised industries. But if you look at where applied data science jobs in India actually are, Python has won decisively, largely because it is a general-purpose language: the same code that trains a model can serve it, schedule it and integrate it with the rest of a company's systems." },
+        { "type": "p", "text": "Learning Python for data science therefore buys you more than the modelling. It puts you within reach of engineering-adjacent work, which is where a lot of the demand has moved." },
+
+        { "type": "h2", "text": "The Python stack, in the order you need it" },
+        { "type": "h3", "text": "pandas and NumPy — where the time actually goes" },
+        { "type": "p", "text": "Practitioners consistently report that data preparation dominates their week, and beginners consistently underestimate this. The course spends real time on it: joins and reshaping, missing data decisions that are defensible rather than automatic, dates and time zones, categorical encoding, and the vectorised thinking that makes pandas fast instead of a slow loop in disguise." },
+
+        { "type": "h3", "text": "scikit-learn — the modelling workflow" },
+        { "type": "ul", "items": [
+          "Regression, classification and clustering — the models that solve most real business problems.",
+          "Pipelines, so preprocessing travels with the model rather than living in a notebook cell you forget to rerun.",
+          "Train/validation/test discipline and cross-validation.",
+          "Hyperparameter search, and knowing when the gain stops being worth the compute.",
+          "**Data leakage** — how it happens, why it produces impossible results, and how to catch it before an interviewer does."
+        ]},
+
+        { "type": "h3", "text": "TensorFlow and PyTorch — deep learning" },
+        { "type": "p", "text": "Neural network fundamentals, training dynamics, regularisation, and fine-tuning pretrained models. PyTorch's explicit training loop is used deliberately, because seeing each step makes what a model is doing far harder to misunderstand than a single black-box fit call." },
+
+        { "type": "h2", "text": "The part most courses skip: honest evaluation" },
+        { "type": "callout", "title": "The most common interview failure", "text": "A candidate reports 97% accuracy on a fraud detection dataset where 97% of transactions are legitimate. The model predicts 'not fraud' every time and is useless. Metric choice on imbalanced data comes up constantly, and it is a fast way to end an interview." },
+        { "type": "ul", "items": [
+          "Choosing a metric that matches the actual cost of being wrong — precision, recall, F1, ROC-AUC and when each misleads.",
+          "Baselines: is your model better than predicting the mean? Frequently it is not.",
+          "Confidence in a result, and how much of an improvement is noise.",
+          "Knowing when the honest answer is that the data cannot support the question."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A complete modelling workflow on a real dataset: cleaning decisions documented, features engineered with reasoning, models compared against a baseline, an evaluation metric chosen and justified, and a written summary you could defend in an interview. Plus a fine-tuned neural network with its training curves." },
+        { "type": "p", "text": "Deliberately not Titanic or Iris. Interviewers have seen those thousands of times and they signal nothing about you." },
+
+        { "type": "h2", "text": "Prerequisites, honestly" },
+        { "type": "p", "text": "This program assumes basic Python comfort — variables, loops, functions, and the ability to read an error message without panic. If you have none of that, start with [Data Analytics for beginners](/courses/data-analytics-for-beginners), which builds it, or talk to us and we will tell you straight which starting point fits." },
+        { "type": "p", "text": "See also: [how to become a data scientist](/careers/data-scientist) for what the role involves day to day, and the [full course page](/courses/data-science)." },
+
+        { "type": "cta", "text": "Bring a dataset you care about to a free demo class and see how the teaching handles a real problem rather than a tutorial one.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "How much Python do I need before starting?", "a": "Variables, loops, functions and basic debugging. You do not need object-oriented programming or software engineering experience. If you have none of it, start with the analytics track and build it there." },
+        { "q": "Python or R for data science?", "a": "Python, for applied roles in India, without much hesitation. R remains strong in academia and some statistics-heavy industries, but Python dominates job listings and takes you further into engineering-adjacent work." },
+        { "q": "Do I need a GPU for the deep learning sections?", "a": "No. The course uses free cloud notebook environments with GPU access for the sections that need it, so a standard laptop is sufficient." }
+      ]
+    },
+
+    {
+      "path": "/courses/prompt-engineering",
+      "title": "Prompt Engineering Course Online | SkillKoder",
+      "description": "Prompt engineering taught as an engineering discipline — structured prompting, evaluation sets, retrieval and failure handling, not a list of magic phrases.",
+      "keywords": "prompt engineering course, prompt engineering training india, chatgpt course for beginners, llm prompting course, ai prompt engineer certification",
+      "ogImage": "/genai.webp",
+      "eyebrow": "SKILL-FOCUSED PROGRAM",
+      "h1": "Prompt Engineering, Taught as Engineering",
+      "accent": "",
+      "intro": "Anyone can write a prompt that works once. Making one behave consistently across thousands of real inputs is a different skill, and it is the one that is actually worth money.",
+      "coursePath": "/courses/generative-ai",
+      "blocks": [
+        { "type": "h2", "text": "What this course is not" },
+        { "type": "p", "text": "It is not a list of magic phrases. Those circulate freely, they are mostly folklore, and they stop working when the underlying model is updated. If someone is selling you a prompt template pack, you can find the same material free within about ten minutes." },
+        { "type": "callout", "title": "The actual difficulty", "text": "Your prompt works on the three examples you tested. Then a thousand real users arrive with inputs shaped nothing like those three, and roughly a tenth of them get an answer that is confidently wrong. Nobody notices for two weeks. This course is about that problem." },
+
+        { "type": "h2", "text": "What you actually learn" },
+        { "type": "h3", "text": "1. How these models behave" },
+        { "type": "ul", "items": [
+          "Tokens, context windows, and what really happens when you exceed one.",
+          "Why the same prompt returns different answers, and what temperature does about it.",
+          "Why models produce fluent, confident, wrong output — and why that is a property of how they work rather than a bug to be prompted away.",
+          "Where model knowledge ends and why retrieval exists."
+        ]},
+
+        { "type": "h3", "text": "2. Structured prompting" },
+        { "type": "ul", "items": [
+          "Instruction design that survives inputs you did not anticipate.",
+          "Few-shot examples, and when they help versus when they narrow the model unhelpfully.",
+          "Getting reliable structured output you can parse, rather than prose you have to guess at.",
+          "Decomposing a task into steps instead of asking for everything at once.",
+          "System-level constraints and guardrails."
+        ]},
+
+        { "type": "h3", "text": "3. Evaluation — the skill almost nobody has" },
+        { "type": "p", "text": "This is the part that makes the difference in hiring. Being able to say 'version B is better than version A, here is the evaluation set, here is the number' puts you ahead of the overwhelming majority of applicants, because most of them are still judging prompts by trying a few examples and forming an impression." },
+        { "type": "ul", "items": [
+          "Building an evaluation set — even fifty hand-labelled examples changes everything.",
+          "Automated scoring, including using a model as a judge and where that goes wrong.",
+          "Catching regressions when you change a prompt or the provider updates a model.",
+          "Measuring cost and latency alongside quality, because all three ship together."
+        ]},
+
+        { "type": "h3", "text": "4. Retrieval and grounding" },
+        { "type": "ul", "items": [
+          "Chunking strategy, and why the obvious approach retrieves confidently irrelevant passages.",
+          "Embeddings and vector search.",
+          "Grounding answers in retrieved sources, and citation that can be checked.",
+          "Knowing when retrieval is the wrong tool entirely."
+        ]},
+
+        { "type": "h3", "text": "5. Failure and adversarial input" },
+        { "type": "ul", "items": [
+          "Prompt injection — what it is, why it is a genuine security problem in any system that reads untrusted text, and what actually mitigates it.",
+          "Designing so that a wrong answer degrades gracefully rather than causing harm.",
+          "Human review points, and deciding where automation should stop."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A working LLM-backed application with structured prompts, a retrieval layer over a document set you know well enough to judge, an evaluation set with measured results, and explicit handling for the cases where the model is wrong. That last component is what makes it a portfolio piece rather than a demo." },
+
+        { "type": "h2", "text": "Is 'prompt engineer' a real job?" },
+        { "type": "p", "text": "As a standalone job title in India, it is uncommon and the number of pure prompt engineering roles is small. As a skill inside an AI developer or software engineering role, it is genuinely in demand. We would rather say that plainly than let you build a career plan on a title that may not persist." },
+        { "type": "p", "text": "The durable position is to be a competent engineer who is also fluent with these models. That is what the wider [Generative AI program](/courses/generative-ai) is built for, and [how to become an AI engineer](/careers/ai-engineer) sets out the fuller path." },
+
+        { "type": "cta", "text": "Bring a problem you have actually tried to solve with ChatGPT and could not get working reliably. That is the best possible demo class.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Do I need to be able to code for this?", "a": "Basic Python, yes. The prompting concepts are approachable without it, but building evaluation sets, retrieval and a working application requires writing code — and it is the building that makes the skill employable." },
+        { "q": "Will this be obsolete when the next model is released?", "a": "Specific prompt tricks, yes — many already are. Evaluation discipline, retrieval design and reasoning about failure modes have survived every model generation so far, and get more important as these systems take on more. The course is weighted toward the durable half deliberately." },
+        { "q": "Is there a recognised prompt engineering certification?", "a": "There is no widely recognised industry standard, and you should be sceptical of anyone presenting theirs as one. What demonstrably works in hiring is a working application with a measured evaluation set behind it." }
+      ]
+    }
+  ]
+}

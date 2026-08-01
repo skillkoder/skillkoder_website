@@ -61,7 +61,7 @@ const CourseLanding = ({
               borderRadius: 999,
               border: 'none',
               background: 'white',
-              color: '#FF6B40',
+              color: '#C2410C',
               fontWeight: 700,
               cursor: 'pointer',
               boxShadow: '0 18px 45px rgba(255,109,64,0.14)',
@@ -86,7 +86,7 @@ const CourseLanding = ({
             padding: '0.7rem 1.4rem',
             borderRadius: 999,
             background: 'rgba(255,234,221,0.95)',
-            color: '#D14B1E',
+            color: '#9A3412',
             fontWeight: 700,
             letterSpacing: '0.08em',
             fontSize: '0.95rem',
@@ -176,7 +176,7 @@ const CourseLanding = ({
                   borderRadius: 999,
                   border: '2px solid #FFB088',
                   background: 'white',
-                  color: '#FF6B40',
+                  color: '#C2410C',
                   fontWeight: 700,
                   cursor: 'pointer',
                   transition: 'background 0.25s ease, transform 0.25s ease'
@@ -204,7 +204,7 @@ const CourseLanding = ({
             flexDirection: 'column',
             gap: '1.75rem'
           }}>
-            <img
+            <img loading="lazy" decoding="async"
               src={imageSrc}
               alt={`${course} hero image`}
               style={{
@@ -224,7 +224,7 @@ const CourseLanding = ({
                   border: '1px solid rgba(255,138,84,0.12)',
                   boxShadow: '0 14px 30px rgba(255,138,84,0.08)'
                 }}>
-                  <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#FF6B40', marginBottom: '0.4rem' }}>{item.value}</div>
+                  <div style={{ fontSize: '1.9rem', fontWeight: 800, color: '#C2410C', marginBottom: '0.4rem' }}>{item.value}</div>
                   <div style={{ color: '#475569', fontWeight: 700 }}>{item.label}</div>
                 </div>
               ))}
@@ -278,7 +278,7 @@ const CourseLanding = ({
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '1rem', color: '#1F2937' }}>Course curriculum highlights</h2>
             <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', listStyle: 'none', padding: 0, margin: 0 }}>
               {topics.slice(0, 6).map((topic, index) => (
-                <li key={index} style={{ background: '#FFF7F1', borderRadius: '18px', padding: '1rem 1rem', color: '#D14B1E', fontWeight: 700 }}>{topic}</li>
+                <li key={index} style={{ background: '#FFF7F1', borderRadius: '18px', padding: '1rem 1rem', color: '#9A3412', fontWeight: 700 }}>{topic}</li>
               ))}
             </ul>
           </div>

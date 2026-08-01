@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  THIS FILE IS NO LONGER THE DEPLOYED SITEMAP.
+
+  `npm run build` copies public/ into build/ and then runs
+  scripts/prerender.mjs, which OVERWRITES build/sitemap.xml with one generated
+  from the same route list that produces the static page shells. That generated
+  file is what ships.
+
+  This copy is kept only so the repository still contains a valid sitemap if
+  someone serves public/ directly. It lists a subset of the live URLs and will
+  drift — do not edit it expecting the change to appear on the site. To change
+  what is submitted to search engines, change the routes or the PRIORITY /
+  CHANGEFREQ rules in scripts/prerender.mjs.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.skillkoder.com/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Course pages: the highest commercial-intent URLs on the site. -->
+  <url>
+    <loc>https://www.skillkoder.com/courses/data-analytics/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/courses/data-science/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/courses/generative-ai/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/courses/azure-data-engineering/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.skillkoder.com/courses/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/features/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tool-keyword and conversion pages. /tools carries the "power bi course",
+       "sql course" and "tableau training" style queries that the course pages
+       are not optimised for. -->
+  <url>
+    <loc>https://www.skillkoder.com/tools/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/placement/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/faq/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/about/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.skillkoder.com/contact/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

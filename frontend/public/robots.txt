@@ -1,3 +1,9 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# The SPA fallback rewrites deep links through /?/<path>. Those are duplicates
+# of the real URLs, so keep them out of the index.
+Disallow: /?/
+
+Sitemap: https://www.skillkoder.com/sitemap.xml

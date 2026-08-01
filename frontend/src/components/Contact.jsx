@@ -116,50 +116,66 @@ const Contact = () => {
       }} />
 
       <div style={{
-        maxWidth: '1400px',
+        maxWidth: '1200px',
         margin: '0 auto',
         position: 'relative',
-        zIndex: 1
+        zIndex: 1,
+        fontFamily: "'Outfit', 'Inter', sans-serif"
       }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h3 style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
             fontWeight: '800',
-            background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
+            background: 'linear-gradient(135deg, #C2410C, #9A3412)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             marginBottom: '1rem',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            lineHeight: 1.2
           }}>
             Book a Free Demo or Talk to a Career Expert
           </h3>
           <p style={{
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            color: '#4a5568',
+            fontSize: '1.05rem',
+            color: '#475569',
             maxWidth: '680px',
-            margin: '0 auto'
+            margin: '0 auto',
+            lineHeight: 1.6
           }}>
             Get personalized guidance for Data Analytics, Data Science, and Generative AI training with placement support, resume help, and live mentorship.
           </p>
+        </div>
+
+        {/* Small & Middle-aligned Snug Container */}
+        <div style={{
+          maxWidth: '650px',
+          margin: '0 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2.5rem'
+        }}>
           {/* Contact Info Cards */}
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '1.5rem'
+            gap: '1rem',
+            textAlign: 'left'
           }}>
-            <h3 style={{
-              fontSize: '1.75rem',
-              fontWeight: '700',
-              color: '#2d3748',
-              marginBottom: '0.5rem'
+            <h4 style={{
+              fontSize: '1.5rem',
+              fontWeight: '800',
+              color: '#0f172a',
+              marginBottom: '0.25rem',
+              textAlign: 'center'
             }}>
               Contact Information
-            </h3>
+            </h4>
             <p style={{
-              color: '#4a5568',
-              fontSize: '1rem',
-              marginBottom: '1rem'
+              color: '#64748b',
+              fontSize: '0.95rem',
+              marginBottom: '1rem',
+              textAlign: 'center'
             }}>
               Reach out to us through any of these channels
             </p>
@@ -168,31 +184,31 @@ const Contact = () => {
               <div key={index} style={{
                 background: 'white',
                 borderRadius: '16px',
-                padding: '1rem',
-                border: '2px solid #FFE8DC',
-                transition: 'all 0.3s ease',
+                padding: '1.25rem',
+                border: '1px solid rgba(255, 176, 136, 0.25)',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                 cursor: 'pointer',
-                boxShadow: '0 4px 15px rgba(255, 138, 84, 0.08)'
+                boxShadow: '0 6px 20px rgba(255, 138, 84, 0.04)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 15px 35px rgba(255, 138, 84, 0.2)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.boxShadow = '0 12px 30px rgba(255, 138, 84, 0.12)';
                 e.currentTarget.style.borderColor = '#FFB088';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 138, 84, 0.1)';
-                e.currentTarget.style.borderColor = '#FFE8DC';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 138, 84, 0.04)';
+                e.currentTarget.style.borderColor = 'rgba(255, 176, 136, 0.25)';
               }}>
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem'
+                  gap: '1.25rem'
                 }}>
                   <div style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '10px',
+                    width: '46px',
+                    height: '46px',
+                    borderRadius: '12px',
                     background: 'linear-gradient(135deg, #FFE8DC, #FFB088)',
                     display: 'flex',
                     alignItems: 'center',
@@ -203,17 +219,19 @@ const Contact = () => {
                   </div>
                   <div>
                     <div style={{
-                      fontSize: '0.875rem',
-                      color: '#718096',
-                      fontWeight: '500'
+                      fontSize: '0.82rem',
+                      color: '#64748b',
+                      fontWeight: '700',
+                      letterSpacing: '0.03em',
+                      textTransform: 'uppercase'
                     }}>
                       {item.title}
                     </div>
                     <div style={{
-                      fontSize: '1rem',
-                      color: '#2d3748',
-                      fontWeight: '600',
-                      marginTop: '0.25rem'
+                      fontSize: '1.05rem',
+                      color: '#0f172a',
+                      fontWeight: '700',
+                      marginTop: '0.15rem'
                     }}>
                       {item.info}
                     </div>
@@ -226,10 +244,11 @@ const Contact = () => {
           {/* Contact Form */}
           <div style={{
             background: 'white',
-            borderRadius: '22px',
-            padding: 'clamp(1rem, 2.5vw, 1.5rem)',
-            border: '2px solid #FFE8DC',
-            boxShadow: '0 8px 30px rgba(255, 138, 84, 0.12)'
+            borderRadius: '24px',
+            padding: '2rem',
+            border: '1px solid rgba(255, 176, 136, 0.2)',
+            boxShadow: '0 12px 36px rgba(255, 138, 84, 0.06)',
+            textAlign: 'left'
           }}>
             <form onSubmit={handleSubmit}>
               {/* Status Messages */}
@@ -246,7 +265,7 @@ const Contact = () => {
                   color: '#155724'
                 }}>
                   <CheckCircle size={20} />
-                  <span>Message sent successfully! We'll get back to you soon.</span>
+                  <span>Message sent successfully! We\'ll get back to you soon.</span>
                 </div>
               )}
 
@@ -268,13 +287,13 @@ const Contact = () => {
               )}
 
               {/* Name Input */}
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.25rem' }}>
                 <label style={{
                   display: 'block',
-                  color: '#2d3748',
-                  fontWeight: '600',
+                  color: '#334155',
+                  fontWeight: '700',
                   marginBottom: '0.5rem',
-                  fontSize: '0.95rem'
+                  fontSize: '0.9rem'
                 }}>
                   Your Name
                 </label>
@@ -284,7 +303,7 @@ const Contact = () => {
                     left: '1rem',
                     top: '50%',
                     transform: 'translateY(-50%)',
-                    color: focused === 'name' ? '#FFB088' : '#a0aec0',
+                    color: focused === 'name' ? '#FF8A54' : '#94a3b8',
                     transition: 'color 0.3s ease'
                   }} />
                   <input 
@@ -299,12 +318,12 @@ const Contact = () => {
                     disabled={isSubmitting}
                     style={{
                       width: '100%',
-                      padding: '0.75rem 0.75rem 0.75rem 2.75rem',
+                      padding: '0.8rem 0.8rem 0.8rem 2.75rem',
                       borderRadius: '12px',
-                      border: `2px solid ${focused === 'name' ? '#FFB088' : '#FFE8DC'}`,
+                      border: `2px solid ${focused === 'name' ? '#FFB088' : '#e2e8f0'}`,
                       background: focused === 'name' ? '#FFF5F0' : '#ffffff',
                       fontSize: '0.95rem',
-                      color: '#2d3748',
+                      color: '#0f172a',
                       outline: 'none',
                       transition: 'all 0.3s ease',
                       boxSizing: 'border-box',
@@ -315,13 +334,13 @@ const Contact = () => {
               </div>
 
               {/* Email Input */}
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.25rem' }}>
                 <label style={{
                   display: 'block',
-                  color: '#2d3748',
-                  fontWeight: '600',
+                  color: '#334155',
+                  fontWeight: '700',
                   marginBottom: '0.5rem',
-                  fontSize: '0.95rem'
+                  fontSize: '0.9rem'
                 }}>
                   Your Email
                 </label>
@@ -331,7 +350,7 @@ const Contact = () => {
                     left: '1rem',
                     top: '50%',
                     transform: 'translateY(-50%)',
-                    color: focused === 'email' ? '#FFB088' : '#a0aec0',
+                    color: focused === 'email' ? '#FF8A54' : '#94a3b8',
                     transition: 'color 0.3s ease'
                   }} />
                   <input 
@@ -346,12 +365,12 @@ const Contact = () => {
                     disabled={isSubmitting}
                     style={{
                       width: '100%',
-                      padding: '0.75rem 0.75rem 0.75rem 2.75rem',
+                      padding: '0.8rem 0.8rem 0.8rem 2.75rem',
                       borderRadius: '12px',
-                      border: `2px solid ${focused === 'email' ? '#FFB088' : '#FFE8DC'}`,
+                      border: `2px solid ${focused === 'email' ? '#FFB088' : '#e2e8f0'}`,
                       background: focused === 'email' ? '#FFF5F0' : '#ffffff',
                       fontSize: '0.95rem',
-                      color: '#2d3748',
+                      color: '#0f172a',
                       outline: 'none',
                       transition: 'all 0.3s ease',
                       boxSizing: 'border-box',
@@ -362,13 +381,13 @@ const Contact = () => {
               </div>
 
               {/* Message Textarea */}
-              <div style={{ marginBottom: '1rem' }}>
+              <div style={{ marginBottom: '1.5rem' }}>
                 <label style={{
                   display: 'block',
-                  color: '#2d3748',
-                  fontWeight: '600',
+                  color: '#334155',
+                  fontWeight: '700',
                   marginBottom: '0.5rem',
-                  fontSize: '0.95rem'
+                  fontSize: '0.9rem'
                 }}>
                   Your Message
                 </label>
@@ -377,7 +396,7 @@ const Contact = () => {
                     position: 'absolute',
                     left: '1rem',
                     top: '1rem',
-                    color: focused === 'message' ? '#FFB088' : '#a0aec0',
+                    color: focused === 'message' ? '#FF8A54' : '#94a3b8',
                     transition: 'color 0.3s ease'
                   }} />
                   <textarea 
@@ -391,14 +410,14 @@ const Contact = () => {
                     disabled={isSubmitting}
                     style={{
                       width: '100%',
-                      padding: '0.75rem 0.75rem 0.75rem 2.75rem',
+                      padding: '0.8rem 0.8rem 0.8rem 2.75rem',
                       borderRadius: '12px',
-                      border: `2px solid ${focused === 'message' ? '#FFB088' : '#FFE8DC'}`,
+                      border: `2px solid ${focused === 'message' ? '#FFB088' : '#e2e8f0'}`,
                       background: focused === 'message' ? '#FFF5F0' : '#ffffff',
                       fontSize: '0.95rem',
-                      color: '#2d3748',
+                      color: '#0f172a',
                       outline: 'none',
-                      minHeight: '100px',
+                      minHeight: '120px',
                       resize: 'vertical',
                       fontFamily: 'inherit',
                       transition: 'all 0.3s ease',
@@ -417,9 +436,9 @@ const Contact = () => {
                   width: '100%',
                   background: isSubmitting 
                     ? 'linear-gradient(135deg, #cbd5e0, #a0aec0)' 
-                    : 'linear-gradient(135deg, #FF8A54, #FFB088)',
+                    : 'linear-gradient(135deg, #C2410C, #9A3412)',
                   color: 'white',
-                  padding: '0.9rem',
+                  padding: '1rem',
                   borderRadius: '12px',
                   border: 'none',
                   fontWeight: '700',
@@ -430,24 +449,24 @@ const Contact = () => {
                   justifyContent: 'center',
                   gap: '0.5rem',
                   boxShadow: '0 6px 18px rgba(255, 138, 84, 0.2)',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                   opacity: isSubmitting ? 0.7 : 1
                 }}
                 onMouseEnter={(e) => {
                   if (!isSubmitting) {
-                    e.target.style.transform = 'translateY(-2px)';
-                    e.target.style.boxShadow = '0 10px 30px rgba(255, 138, 84, 0.32)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 10px 24px rgba(255, 138, 84, 0.35)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isSubmitting) {
-                    e.target.style.transform = 'translateY(0)';
-                    e.target.style.boxShadow = '0 6px 18px rgba(255, 138, 84, 0.2)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 6px 18px rgba(255, 138, 84, 0.2)';
                   }
                 }}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
-                <Send size={20} />
+                <Send size={18} />
               </button>
             </form>
           </div>

@@ -249,7 +249,7 @@ const ToolBadge = ({ tool }) => (
     color: '#333',
   }}>
     {tool.icon_url ? (
-      <img
+      <img loading="lazy" decoding="async"
         src={tool.icon_url}
         alt={tool.alt_text}
         style={{ width: 24, height: 24, objectFit: 'contain' }}
@@ -362,7 +362,7 @@ const CourseDetail = ({ slug }) => {
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             background: 'none', border: 'none', cursor: 'pointer',
-            color: '#FF8A54', fontSize: 14, fontWeight: 600,
+            color: '#C2410C', fontSize: 14, fontWeight: 600,
             padding: '8px 0', marginBottom: '1.5rem',
           }}
         >
@@ -386,7 +386,7 @@ const CourseDetail = ({ slug }) => {
           padding: '2rem',
         }}>
           {course.hero_banner_url && (
-            <img
+            <img loading="lazy" decoding="async"
               src={course.hero_banner_url}
               alt={course.hero_banner_alt || course.title}
               style={{
@@ -571,7 +571,7 @@ const FAQItem = ({ question, answer }) => {
         }}
       >
         {question}
-        <span style={{ color: '#FF8A54', fontSize: 18, lineHeight: 1 }}>{open ? '−' : '+'}</span>
+        <span style={{ color: '#C2410C', fontSize: 18, lineHeight: 1 }}>{open ? '−' : '+'}</span>
       </button>
       {open && (
         <div style={{ padding: '12px 16px', fontSize: 14, color: '#555', lineHeight: 1.7, borderTop: '1px solid #FFE0D0' }}>

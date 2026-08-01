@@ -1,0 +1,318 @@
+{
+  "_README": [
+    "Career guide pages. These target 'how to become a X' and 'X career path'",
+    "queries, which sit earlier in the funnel than course queries and are far",
+    "less competitive.",
+    "",
+    "NO SALARY FIGURES APPEAR HERE, deliberately. 'data analyst salary in india'",
+    "is the highest-volume query in this set and these pages would rank better",
+    "with real numbers — but a figure invented to fill a section is a false claim",
+    "to someone deciding how to spend course fees. Add a 'salary' block (type",
+    "'callout') to any page below once you have a citable source, and name the",
+    "source and year inside it."
+  ],
+
+  "pages": [
+    {
+      "path": "/careers",
+      "title": "Data & AI Career Guides: Roles and Skills | SkillKoder",
+      "description": "Honest guides to the four main data and AI career paths — what each role actually involves day to day, the skills employers screen for, and how to get there.",
+      "keywords": "data career guide india, data analyst vs data engineer, ai career path, how to start a career in data, data jobs india",
+      "ogImage": "/logo512.png",
+      "eyebrow": "CAREER GUIDES",
+      "h1": "Data & AI Career Guides",
+      "accent": "",
+      "intro": "Four roles, described as they actually are rather than as the job titles suggest. Start from the work you want to be doing and pick the route backwards from there.",
+      "blocks": [
+        { "type": "p", "text": "Most people choose a course first and work out the destination afterwards, which is the wrong way round and costs a lot of wasted effort. These guides describe what each role involves on an ordinary working day, what employers genuinely screen for, and the realistic route in — including where each path is harder than it is usually presented." },
+
+        { "type": "h2", "text": "The four paths" },
+        { "type": "table", "headers": ["Role", "The work in one line", "Best if you"], "rows": [
+          ["[Data Analyst](/careers/data-analyst)", "Answers business questions with data", "Want the shortest route in, and enjoy working with people"],
+          ["[Data Scientist](/careers/data-scientist)", "Estimates what will happen and what to do", "Enjoy statistics and long-form problems"],
+          ["[AI Engineer](/careers/ai-engineer)", "Builds products on top of AI models", "Enjoy software engineering and shipping things"],
+          ["[Azure Data Engineer](/careers/azure-data-engineer)", "Builds the pipelines everyone else depends on", "Prefer building systems to presenting findings"]
+        ]},
+
+        { "type": "h2", "text": "If you are not sure where to start" },
+        { "type": "p", "text": "Read [how to become a data analyst](/careers/data-analyst) first, even if you suspect it is not where you want to end up. It is the most common entry point, the shortest path from a non-technical background, and the skills it builds — SQL, data quality judgement and stakeholder communication — are assumed by all three of the others." },
+        { "type": "p", "text": "A great many people reach data science or engineering by starting as an analyst and moving across internally, which faces far less competition than applying externally into a senior role you are not yet qualified for." },
+
+        { "type": "callout", "title": "Why there are no salary figures on these pages", "text": "Because we do not have a citable source we are willing to stand behind, and an invented range on a page selling training is a false claim to someone deciding how to spend course fees. Check current listings on the job boards you would actually apply through, for your city and experience level — that is better data than any article's national average." },
+
+        { "type": "h2", "text": "Related reading" },
+        { "type": "ul", "items": [
+          "[Data analyst vs data scientist](/blog/data-analyst-vs-data-scientist) — how the two roles genuinely differ",
+          "[Skills required to become a data analyst](/blog/skills-required-to-become-a-data-analyst) — ordered by what actually gets you hired",
+          "[Data science roadmap for beginners](/blog/data-science-roadmap-for-beginners) — what to learn, in what order",
+          "[The tools we teach](/tools) — what you build with each one",
+          "[What placement support includes](/placement) — and what it does not"
+        ]},
+
+        { "type": "cta", "text": "Still weighing two paths against each other? Book a free demo class, bring your background, and get a straight recommendation.", "href": "/contact", "label": "Talk to a Career Expert" }
+      ]
+    },
+    {
+      "path": "/careers/data-analyst",
+      "title": "How to Become a Data Analyst in India | Career Path Guide",
+      "description": "What a data analyst actually does, the skills and tools employers screen for, and a realistic route into the role from a non-technical background.",
+      "keywords": "how to become a data analyst, data analyst career path, data analyst skills required, data analyst job description india, data analyst roadmap",
+      "ogImage": "/data_analytics.webp",
+      "eyebrow": "CAREER PATH",
+      "h1": "How to Become a Data Analyst",
+      "accent": "",
+      "intro": "The most common entry point into the data field, and the one with the shortest realistic path from a non-technical background. Here is what the job involves, what employers screen for, and how to get there.",
+      "coursePath": "/courses/data-analytics",
+      "blocks": [
+        { "type": "h2", "text": "What a data analyst actually does" },
+        { "type": "p", "text": "A data analyst answers business questions with data. Someone in the business wants to know why sales dipped in one region, which customers are likely to churn, or whether a change to the checkout flow made any difference. The analyst finds the data, checks whether it can be trusted, works out the answer, and presents it in a form a non-technical decision-maker can act on." },
+        { "type": "p", "text": "That last part is the one people underestimate. A technically perfect analysis nobody understands changes nothing. The analysts who progress fastest are usually not the ones with the most advanced SQL — they are the ones whose stakeholders keep coming back because the answers are clear." },
+
+        { "type": "h3", "text": "A realistic day" },
+        { "type": "ul", "items": [
+          "Checking that yesterday's dashboard refresh actually ran, and finding out why a number looks wrong when it did not.",
+          "Writing SQL against a warehouse to pull data for a new question, usually joining several tables that nobody has documented.",
+          "Cleaning that data — dates in three formats, duplicated customer records, categories that were renamed last year.",
+          "Building or updating a Power BI or Tableau view.",
+          "Explaining the result to whoever asked, and answering the follow-up question that the first answer created."
+        ]},
+
+        { "type": "h2", "text": "The skills employers actually screen for" },
+        { "type": "p", "text": "Read fifty data analyst job descriptions in India and the same short list appears in almost all of them." },
+        { "type": "table", "headers": ["Skill", "Why it is on the list", "How deep you need to go"], "rows": [
+          ["SQL", "The universal interface to company data. The single most common filter in screening rounds.", "Joins, grouping, subqueries and window functions. Window functions are what separate a pass from a fail."],
+          ["Excel", "Where a large share of real business data still lives.", "Lookups, pivot tables, conditional logic, and Power Query for repeatable cleaning."],
+          ["A BI tool", "Power BI dominates Indian job listings; Tableau is a strong second.", "Data modelling and relationships, not just chart building. Most candidates skip the modelling and it shows."],
+          ["Python", "For anything too large or too repetitive for Excel.", "pandas for cleaning and aggregation. You do not need machine learning to be hired as an analyst."],
+          ["Business communication", "The skill that determines whether you stay an analyst or become a lead.", "Being able to state a finding in one sentence before explaining the method."]
+        ]},
+
+        { "type": "h2", "text": "Do you need a degree in computer science?" },
+        { "type": "p", "text": "No. Analytics teams routinely hire from commerce, economics, statistics, engineering of any discipline, and increasingly from operations roles inside the same company. Domain knowledge is genuinely valuable: an analyst who already understands how insurance claims or retail supply chains work has an advantage over one who has to learn it." },
+        { "type": "p", "text": "What you do need is demonstrable ability. In practice that means projects — which is why what you build matters more than what certificate you hold." },
+
+        { "type": "h2", "text": "A realistic route in" },
+        { "type": "ol", "items": [
+          "**Get SQL solid first.** It is the highest-leverage skill and the most commonly tested. Do not move on while joins still feel uncertain.",
+          "**Add a BI tool and build something real.** Take a public dataset, model it properly, and build a dashboard that answers a specific question rather than showing every chart you can make.",
+          "**Learn enough Python for data cleaning.** pandas, not deep learning.",
+          "**Build two or three portfolio projects end to end.** Problem, data, cleaning decisions, analysis, result, and what you would do differently. The reasoning is what gets discussed in interviews.",
+          "**Rewrite your CV around tools and outcomes.** Recruiters scan for tool names first and results second.",
+          "**Practise explaining your projects out loud.** The project deep-dive is where most candidates lose an otherwise winnable interview."
+        ]},
+
+        { "type": "callout", "title": "The most common mistake", "text": "Spending months collecting certificates instead of finishing two solid projects. Hiring managers can tell the difference in about ninety seconds, and only one of the two survives the conversation." },
+
+        { "type": "h2", "text": "Where the role leads next" },
+        { "type": "ul", "items": [
+          "**Senior / lead analyst** — owning a business area and mentoring juniors.",
+          "**Analytics engineer** — moving toward the data modelling and transformation layer. See [Azure Data Engineer](/careers/azure-data-engineer).",
+          "**Data scientist** — adding statistics and machine learning. See [how to become a data scientist](/careers/data-scientist).",
+          "**Product or business analyst** — moving toward decisions rather than the data behind them."
+        ]},
+
+        { "type": "cta", "text": "Our Data Analytics program teaches this exact stack — SQL, Excel, Power BI, Tableau and Python — with the portfolio projects the route above depends on.", "href": "/courses/data-analytics", "label": "See the Data Analytics course" }
+      ],
+      "faqs": [
+        { "q": "How long does it take to become a data analyst?", "a": "For someone starting from scratch and working at it consistently, building genuine job-ready skill and a portfolio typically takes several months rather than weeks. Anyone promising employability in thirty days is selling something." },
+        { "q": "Is data analytics still a good career given AI tools?", "a": "AI tools have made writing a query and producing a chart faster. They have not made deciding which question to ask, judging whether the underlying data can be trusted, or persuading a stakeholder to act any easier — and that is most of the job. The tooling has changed; the demand has not gone away." },
+        { "q": "Can I become a data analyst without coding?", "a": "You can start with Excel and a BI tool alone, and some junior roles are reachable that way. SQL is not really optional beyond entry level, and it is far closer to structured English than to programming — most people find it much less intimidating than expected." }
+      ]
+    },
+
+    {
+      "path": "/careers/data-scientist",
+      "title": "How to Become a Data Scientist in India | Career Guide",
+      "description": "What data scientists really do day to day, how the role differs from data analytics, the maths you actually need, and a realistic path into it.",
+      "keywords": "how to become a data scientist, data scientist career path india, data scientist skills, difference between data analyst and data scientist, machine learning career",
+      "ogImage": "/data_science.webp",
+      "eyebrow": "CAREER PATH",
+      "h1": "How to Become a Data Scientist",
+      "accent": "",
+      "intro": "Less glamorous than the job title suggests and more rewarding than the hype implies. What the role involves, the maths you genuinely need, and how to get there without wasting a year on the wrong material.",
+      "coursePath": "/courses/data-science",
+      "blocks": [
+        { "type": "h2", "text": "What the job is really like" },
+        { "type": "p", "text": "The common expectation is designing novel algorithms. The reality, in most companies, is closer to this: a business problem arrives vaguely defined, you spend a substantial share of your time working out what data exists and whether it can be trusted, you build a model that is often deliberately simple, and then you spend a good while explaining why the answer is what it is." },
+        { "type": "p", "text": "Data cleaning and problem framing take up far more of the week than model selection. People who enjoy the job tend to be the ones who find that framing work interesting rather than an obstacle to the modelling." },
+
+        { "type": "h2", "text": "How it differs from data analytics" },
+        { "type": "table", "headers": ["", "Data Analyst", "Data Scientist"], "rows": [
+          ["Core question", "What happened, and why?", "What will happen, and what should we do?"],
+          ["Typical output", "A dashboard, a report, an answer", "A model, a prediction, an experiment result"],
+          ["Main tools", "SQL, Excel, Power BI, Tableau", "Python, scikit-learn, PyTorch, SQL"],
+          ["Maths depth", "Descriptive statistics", "Probability, inference, linear algebra as needed"],
+          ["Entry difficulty", "Lower — a common first data role", "Higher — often entered after analytics experience"]
+        ]},
+        { "type": "p", "text": "The boundary is blurrier in practice than any table suggests, and it moves between companies. In a small company one person does both. See [the data analyst path](/careers/data-analyst) if you are choosing between them." },
+
+        { "type": "h2", "text": "How much maths do you actually need?" },
+        { "type": "p", "text": "Less than the internet implies to start, and more than bootcamp marketing implies to progress. Comfort with school-level algebra is enough to begin. What matters is understanding, not derivation:" },
+        { "type": "ul", "items": [
+          "**Probability and distributions** — so you can reason about uncertainty rather than quoting a single number.",
+          "**Statistical inference** — confidence intervals, hypothesis tests, and why a result can be statistically significant and commercially irrelevant.",
+          "**Linear algebra, conceptually** — enough to know what a matrix operation is doing inside a model.",
+          "**Calculus, lightly** — enough to understand gradient descent. You will not be differentiating by hand at work."
+        ]},
+        { "type": "callout", "title": "What actually fails interviews", "text": "Not the maths. It is candidates who cannot explain why they chose one evaluation metric over another, or who report accuracy on a heavily imbalanced dataset without noticing. Evaluation reasoning is tested far more often than derivation." },
+
+        { "type": "h2", "text": "The skills that get you hired" },
+        { "type": "ol", "items": [
+          "**Python, properly** — pandas and NumPy fluently, not copied from tutorials.",
+          "**SQL** — you still have to get the data out before you can model it. This surprises people every year.",
+          "**scikit-learn and the modelling workflow** — feature engineering, train/test discipline, cross-validation, hyperparameter search.",
+          "**Honest evaluation** — choosing the right metric, spotting leakage, knowing when a model is memorising rather than learning.",
+          "**Deep learning fundamentals** — PyTorch or TensorFlow, particularly if you want to move toward AI work.",
+          "**Communication** — explaining a probabilistic result to someone who wants a yes or no."
+        ]},
+
+        { "type": "h2", "text": "A realistic route in" },
+        { "type": "p", "text": "Two routes work. The first is direct: build Python and statistics, do substantial project work, and apply to junior data scientist roles. It is harder, because employers hiring at that level are competing for candidates with degrees in the field." },
+        { "type": "p", "text": "The second is via analytics, and it works more reliably. Get hired as an analyst, learn the business, add modelling skill on the job, and move across internally. It takes longer on paper and is often faster in practice, because internal moves face far less competition than external applications." },
+
+        { "type": "h2", "text": "Portfolio projects that carry weight" },
+        { "type": "ul", "items": [
+          "One project that is **end to end** — raw messy data through to an evaluated result, with your cleaning decisions written down.",
+          "One that shows **evaluation judgement** — an imbalanced classification problem where accuracy is the wrong metric and you explain why.",
+          "One that is **deployed or demoable**, even crudely. A model behind a simple interface beats another notebook.",
+          "Avoid Titanic, Iris and the other tutorial datasets. Interviewers have seen them thousands of times and they signal nothing."
+        ]},
+
+        { "type": "cta", "text": "Our Data Science program covers Python, scikit-learn, TensorFlow and PyTorch, built around portfolio projects with the evaluation discipline interviews actually test.", "href": "/courses/data-science", "label": "See the Data Science course" }
+      ],
+      "faqs": [
+        { "q": "Do I need a master's degree to be a data scientist?", "a": "It helps for research-heavy roles and at companies that filter on it, but it is not a universal requirement. A great deal of hiring in India is now on demonstrated skill and portfolio, especially for applied roles in product companies." },
+        { "q": "Is it worth taking an analytics role first?", "a": "For many people it is the faster route, counter-intuitive as that sounds. An analyst job pays you while you build SQL depth and business context, and moving into data science internally faces far less competition than applying externally into a role you are not yet obviously qualified for." },
+        { "q": "Is data science being replaced by AI tools?", "a": "The mechanical parts — boilerplate code, first-pass exploratory analysis — are increasingly automated. Problem framing, data trustworthiness judgement and the decision about whether a model should be deployed at all are not, and those were always the hard parts." }
+      ]
+    },
+
+    {
+      "path": "/careers/ai-engineer",
+      "title": "How to Become an AI Engineer | Generative AI Career Guide",
+      "description": "What AI and prompt engineering roles involve, how they differ from data science, the skills employers look for, and how to build a portfolio that proves them.",
+      "keywords": "how to become an ai engineer, generative ai career, prompt engineer career india, ai developer skills, llm engineer jobs",
+      "ogImage": "/genai.webp",
+      "eyebrow": "CAREER PATH",
+      "h1": "How to Become an AI Engineer",
+      "accent": "",
+      "intro": "The newest of these roles, the fastest moving, and the one where the gap between people who can use AI tools and people who can build reliable products with them is widest.",
+      "coursePath": "/courses/generative-ai",
+      "blocks": [
+        { "type": "h2", "text": "What the role actually is" },
+        { "type": "p", "text": "An AI engineer builds software products on top of models they usually did not train. The model is a component; the job is everything around it — getting the right context to it, constraining what it returns, checking whether the output is good enough, and handling the cases where it is not." },
+        { "type": "p", "text": "This is closer to software engineering than to research. If you enjoy building things that work reliably under real conditions, it fits. If you were hoping to train foundation models from scratch, that is a different and much smaller job market." },
+
+        { "type": "h2", "text": "Why 'prompt engineering' is a smaller skill than it sounds" },
+        { "type": "p", "text": "Writing a good prompt once is not a profession. Anyone can do it in an afternoon. The actual difficulty is making a prompt behave consistently across thousands of real user inputs, most of which look nothing like the three you tested with." },
+        { "type": "callout", "title": "The skill that separates candidates", "text": "Evaluation. Being able to say 'this version is better than that one, and here is the evaluation set and the number that shows it' is rare, valuable, and almost never taught. Candidates who can do it stand out immediately." },
+
+        { "type": "h2", "text": "Skills employers look for" },
+        { "type": "ul", "items": [
+          "**Python** — the language nearly all of this is written in.",
+          "**LLM APIs and how they behave** — context limits, structured output, tool calling, streaming, cost and latency trade-offs.",
+          "**Retrieval** — chunking, embeddings, vector search, and why naive retrieval so often returns confidently irrelevant results.",
+          "**Evaluation** — building test sets, measuring quality, catching regressions when you change a prompt or swap a model.",
+          "**Hugging Face Transformers** — for running or fine-tuning open models when an API is not the right answer.",
+          "**Software engineering fundamentals** — version control, testing, and shipping something that stays up.",
+          "**Judgement about failure** — knowing what happens when the model is wrong, and designing so that it matters less."
+        ]},
+
+        { "type": "h2", "text": "How it differs from data science" },
+        { "type": "table", "headers": ["", "Data Scientist", "AI Engineer"], "rows": [
+          ["Starting point", "A dataset and a question", "A product requirement and a pretrained model"],
+          ["Core work", "Training and evaluating models", "Building systems around models"],
+          ["Maths depth", "Substantial", "Moderate — architecture understanding over derivation"],
+          ["Adjacent skill", "Statistics", "Software engineering"],
+          ["Typical output", "A model and its evaluation", "A running application"]
+        ]},
+
+        { "type": "h2", "text": "A realistic route in" },
+        { "type": "ol", "items": [
+          "**Get comfortable in Python** and with calling an API and handling its failures.",
+          "**Build one genuinely useful thing** for yourself. Something you actually use daily beats a demo you built for a portfolio.",
+          "**Add retrieval** over a document set you know well, so you can judge whether the answers are right.",
+          "**Build an evaluation set** for it — even fifty hand-labelled examples puts you ahead of most applicants.",
+          "**Learn what breaks it.** Adversarial inputs, prompt injection, hallucinated citations, silent quality drift after a model update.",
+          "**Write up what you learned.** In a field this young, a clear public write-up is a credential."
+        ]},
+
+        { "type": "h2", "text": "Is this a real career or a bubble?" },
+        { "type": "p", "text": "An honest answer: the job titles are new and will keep changing, and some current roles will be absorbed back into ordinary software engineering. The underlying skill — building reliable systems on top of unreliable probabilistic components — is not going away, because that problem gets harder as these systems take on more." },
+        { "type": "p", "text": "The safest position is to be a competent engineer who is also fluent with these models, rather than someone whose only skill is prompting. That is what this route is designed to produce." },
+
+        { "type": "cta", "text": "Our Generative AI program covers LLM application development, retrieval, Hugging Face Transformers and evaluation — building working applications, not demos.", "href": "/courses/generative-ai", "label": "See the Generative AI course" }
+      ],
+      "faqs": [
+        { "q": "Do I need a machine learning background to become an AI engineer?", "a": "Not to start. Most applied AI engineering work uses pretrained models through APIs or libraries. Understanding how the models behave matters far more than being able to train one, though deeper ML knowledge helps as you progress." },
+        { "q": "Is prompt engineering a real job in India?", "a": "As a standalone title it is uncommon and the number of pure prompt engineering roles is small. As a skill inside a developer or AI engineer role it is genuinely in demand. Aim for the broader engineering role rather than the narrow title." },
+        { "q": "Can I move into AI engineering from a software development background?", "a": "That is arguably the strongest starting point of all. You already have the engineering fundamentals; you need to add how these models behave, retrieval, and evaluation. It is a shorter path than coming from a non-technical background." }
+      ]
+    },
+
+    {
+      "path": "/careers/azure-data-engineer",
+      "title": "How to Become an Azure Data Engineer | Career Guide",
+      "description": "What data engineers build, why the role is less crowded than analytics, the Azure stack employers ask for, and a realistic route into it.",
+      "keywords": "how to become a data engineer, azure data engineer career, data engineer skills india, azure data factory jobs, databricks career",
+      "ogImage": "/logo512.png",
+      "eyebrow": "CAREER PATH",
+      "h1": "How to Become an Azure Data Engineer",
+      "accent": "",
+      "intro": "The least crowded of the four paths on this site, and the one where demand has most consistently outstripped the supply of candidates who can actually do the job.",
+      "coursePath": "/courses/azure-data-engineering",
+      "blocks": [
+        { "type": "h2", "text": "What data engineers build" },
+        { "type": "p", "text": "Every dashboard an analyst builds and every model a data scientist trains sits on data that arrived from somewhere, in a usable shape, on time. Making that happen reliably is data engineering." },
+        { "type": "p", "text": "In practice that means designing pipelines that pull from source systems, transforming raw data into something with consistent types and meanings, storing it so it can be queried efficiently, and — the part that separates the job from a one-off script — making all of it run unattended, recover from failure, and alert someone when it cannot." },
+
+        { "type": "h2", "text": "Why the role is less crowded" },
+        { "type": "p", "text": "Analytics attracts far more entrants, partly because it is more visible and partly because data engineering asks for two skill sets at once: programming and infrastructure. Plenty of candidates have one. Fewer have both, and that shortage is why the roles are typically better compensated and why openings stay open longer." },
+        { "type": "callout", "title": "Worth considering if", "text": "You would rather build systems that work than presentations that persuade. Data engineering has far less stakeholder management than analytics, which some people find a significant relief and others find isolating. It is worth being honest with yourself about which you are." },
+
+        { "type": "h2", "text": "The Azure stack employers ask for" },
+        { "type": "table", "headers": ["Component", "What it does", "Where it fits"], "rows": [
+          ["Azure Data Factory", "Orchestrates movement of data between systems on a schedule", "The pipeline layer — triggers, retries, monitoring"],
+          ["Azure Data Lake Storage", "Stores raw and processed data cheaply at scale", "The foundation everything else reads from"],
+          ["Databricks", "Distributed processing with Spark and Delta Lake", "Transformation of data too large for one machine"],
+          ["Azure Synapse Analytics", "Warehouse layer that analysts and BI tools query", "The serving layer at the end of the pipeline"],
+          ["Python and SQL", "The two languages the whole stack is driven by", "Everywhere"]
+        ]},
+
+        { "type": "h2", "text": "Concepts that matter more than the tools" },
+        { "type": "ul", "items": [
+          "**Idempotency** — a pipeline that runs twice should not double your data. This comes up constantly in interviews.",
+          "**Incremental loading** — reprocessing everything nightly stops scaling sooner than people expect.",
+          "**Schema evolution** — what happens when a source system adds a column without telling you.",
+          "**Partitioning and file formats** — the difference between a query returning in seconds and in minutes.",
+          "**Data quality checks** — catching bad data at ingestion rather than when an executive spots it in a dashboard.",
+          "**Dimensional modelling** — star schemas are not obsolete; they are what makes the serving layer usable."
+        ]},
+
+        { "type": "h2", "text": "A realistic route in" },
+        { "type": "ol", "items": [
+          "**Get SQL genuinely strong.** Deeper than an analyst needs — you are designing the schemas, not just querying them.",
+          "**Get comfortable with Python** for scripting and transformation work.",
+          "**Learn the medallion pattern** — bronze, silver, gold — and build one yourself end to end.",
+          "**Build a pipeline that runs on a schedule** against a real source, with failure handling. This is the portfolio piece that matters.",
+          "**Understand cost.** Cloud data work has a bill attached, and engineers who consider it are noticeably more valuable.",
+          "**Consider the DP-203 certification.** In this specific field, unlike analytics, cloud certifications carry real weight with recruiters."
+        ]},
+
+        { "type": "h2", "text": "Coming from an adjacent role" },
+        { "type": "ul", "items": [
+          "**From analytics** — you already have SQL and business context. Add orchestration, Spark and infrastructure thinking. This is a common and effective move; see [the data analyst path](/careers/data-analyst).",
+          "**From software engineering** — you already have engineering discipline. Add SQL depth, dimensional modelling and the cloud data services.",
+          "**From database administration** — you have more of this than you think. Add cloud services and distributed processing."
+        ]},
+
+        { "type": "cta", "text": "Our Azure Data Engineering program covers Data Factory, Databricks, Synapse and Data Lake Storage, built around a pipeline you design, schedule and monitor yourself.", "href": "/courses/azure-data-engineering", "label": "See the Azure Data Engineering course" }
+      ],
+      "faqs": [
+        { "q": "Is data engineering harder than data analytics?", "a": "It has a steeper start, because you need programming and infrastructure knowledge before you can build anything useful. Many people find the day-to-day work more predictable once they are in the role, since correctness is more objectively defined than in analysis." },
+        { "q": "Should I learn Azure, AWS or GCP?", "a": "Learn the concepts on one platform properly and the others become largely a matter of renaming. Azure has strong enterprise adoption in India, which is why this program uses it, but pipelines, orchestration and dimensional modelling transfer directly to any cloud." },
+        { "q": "Can I become a data engineer without being a developer first?", "a": "Yes, though you will be learning programming as part of the path rather than arriving with it. Expect the first phase to be harder than it is for someone coming from a development background, and budget time accordingly." }
+      ]
+    }
+  ]
+}

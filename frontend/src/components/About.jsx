@@ -1,4 +1,5 @@
 import React from 'react';
+import { BRAND_TEXT, BRAND_TEXT_STRONG } from '../theme/colors';
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
         <h2 style={{
           fontSize: '2.5rem',
           fontWeight: '700',
-          color: '#FFB088',
+          color: BRAND_TEXT_STRONG,
           marginBottom: '3rem',
           textAlign: 'center'
         }}>
@@ -67,7 +68,7 @@ const About = () => {
                 <h3 style={{
                   fontSize: '1.25rem',
                   fontWeight: '700',
-                  color: '#d05331',
+                  color: BRAND_TEXT,
                   marginBottom: '0.75rem'
                 }}>
                   Tools You Will Learn
@@ -97,7 +98,7 @@ const About = () => {
                 <h3 style={{
                   fontSize: '1.25rem',
                   fontWeight: '700',
-                  color: '#d05331',
+                  color: BRAND_TEXT,
                   marginBottom: '0.75rem'
                 }}>
                   Career Opportunities
@@ -130,7 +131,7 @@ const About = () => {
                   padding: '0.55rem 1rem',
                   borderRadius: '999px',
                   backgroundColor: '#FFE8DC',
-                  color: '#D14B1E',
+                  color: BRAND_TEXT_STRONG,
                   fontWeight: '600',
                   fontSize: '0.9rem'
                 }}>
@@ -156,9 +157,13 @@ const About = () => {
               boxShadow: '0 8px 25px rgba(0, 0, 0, 0.08)',
               zIndex: 1
             }}>
-              <img 
-                src="about2.png" 
-                alt="Team collaboration"
+              <img
+                src="/about2.jpg"
+                alt="SkillKoder learners collaborating on a data analytics project"
+                width="920"
+                height="826"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -179,9 +184,13 @@ const About = () => {
               boxShadow: '0 8px 25px rgba(0, 0, 0, 0.08)',
               zIndex: 1
             }}>
-              <img 
-                src="about4.png" 
-                alt="Learning environment"
+              <img
+                src="/about4.jpg"
+                alt="Live instructor-led SkillKoder training session"
+                width="920"
+                height="792"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -196,21 +205,31 @@ const About = () => {
       <style>{`
         @media (max-width: 968px) {
           #about > div > div:nth-child(2) {
-            min-height: 360px !important;
+            grid-template-columns: 1fr !important;
+            min-height: auto !important;
+            gap: 2.5rem !important;
           }
+          /* Image container parent */
+          #about > div > div:nth-child(2) > div:nth-child(2) {
+            min-height: auto !important;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 1.25rem !important;
+            margin-top: 1rem !important;
+            padding: 0 !important;
+          }
+          /* Visual images inside container */
           .top-right-image,
           .bottom-left-image {
-            width: 280px !important;
-            height: 140px !important;
-          }
-          .top-right-image {
-            right: -120px !important;
-          }
-          .bottom-left-image {
-            left: -120px !important;
-          }
-          #about > div > div:nth-child(2) > div:nth-child(2) {
-            padding: 2rem 1.5rem !important;
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
+            width: 47% !important;
+            height: 150px !important;
+            border-radius: 20px !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
           }
         }
 
@@ -222,45 +241,18 @@ const About = () => {
             font-size: 1.75rem !important;
             margin-bottom: 1.25rem !important;
           }
-          #about > div > div:nth-child(2) {
-            min-height: 460px !important;
-          }
           .top-right-image,
           .bottom-left-image {
-            /* increase image size on small screens so visuals are more prominent */
-            width: 220px !important;
             height: 120px !important;
-            border-radius: 50px 0 0 50px !important;
-          }
-          .top-right-image {
-            right: -90px !important;
-          }
-          .bottom-left-image {
-            left: -90px !important;
-            border-radius: 0 50px 50px 0 !important;
-          }
-          #about > div > div:nth-child(2) > div:nth-child(2) {
-            padding: 1.5rem 1rem !important;
-          }
-          #about > div > div:nth-child(2) > div:nth-child(2) p {
-            font-size: 0.95rem !important;
+            border-radius: 16px !important;
           }
         }
 
         @media (max-width: 480px) {
-          /* slightly larger images for very small screens */
           .top-right-image,
           .bottom-left-image {
-            width: 180px !important;
             height: 100px !important;
-            border-radius: 40px 0 0 40px !important;
-          }
-          .top-right-image {
-            right: -40px !important;
-          }
-          .bottom-left-image {
-            left: -40px !important;
-            border-radius: 0 40px 40px 0 !important;
+            border-radius: 12px !important;
           }
         }
       `}</style>

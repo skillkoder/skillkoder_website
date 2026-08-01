@@ -88,7 +88,7 @@ const DataAnalytics = () => {
               borderRadius: 50, 
               border: 'none',
               background: 'white',
-              color: '#FF8A54',
+              color: '#C2410C',
               cursor: 'pointer',
               fontWeight: '600',
               fontSize: '0.95rem',
@@ -96,14 +96,14 @@ const DataAnalytics = () => {
               boxShadow: '0 4px 20px rgba(255,138,84,0.1)'
             }}
             onMouseEnter={e => {
-              e.target.style.background = 'linear-gradient(135deg, #FF8A54, #FFB088)';
+              e.target.style.background = 'linear-gradient(135deg, #C2410C, #9A3412)';
               e.target.style.color = 'white';
               e.target.style.transform = 'translateX(-5px)';
               e.target.style.boxShadow = '0 6px 25px rgba(255,138,84,0.3)';
             }}
             onMouseLeave={e => {
               e.target.style.background = 'white';
-              e.target.style.color = '#FF8A54';
+              e.target.style.color = '#C2410C';
               e.target.style.transform = 'translateX(0)';
               e.target.style.boxShadow = '0 4px 20px rgba(255,138,84,0.1)';
             }}
@@ -145,7 +145,7 @@ const DataAnalytics = () => {
           <h1 style={{ 
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', 
             margin: '0 0 1rem 0',
-            background: 'linear-gradient(135deg, #FF8A54 0%, #FFB088 50%, #FF8A54 100%)',
+            background: 'linear-gradient(135deg, #C2410C 0%, #9A3412 50%, #C2410C 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             fontWeight: '800',
@@ -188,18 +188,28 @@ const DataAnalytics = () => {
             background: '#1a1a2e'
           }}>
             {/* Replace the src with your image URL */}
-            <img 
+            <img loading="eager" fetchpriority="high" decoding="async" 
               src="/data_analytics.webp"
               alt="Data Analytics" 
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center',
+                objectPosition: 'center top',
                 display: 'block',
                 opacity: 1
               }}
             />
+            {/* Dark gradient overlay for high contrast text readability */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.85) 100%)',
+              zIndex: 1
+            }} />
 
             {/* Floating Stats */}
             <div className="floating-stats" style={{
@@ -216,7 +226,7 @@ const DataAnalytics = () => {
               <div style={{ 
                 fontSize: 'clamp(1.5rem, 4vw, 2rem)', 
                 fontWeight: '700', 
-                color: '#FF8A54',
+                color: '#C2410C',
                 lineHeight: 1.2
               }}>20+</div>
               <div style={{ 
@@ -246,7 +256,7 @@ const DataAnalytics = () => {
               }}>
                 <span style={{ fontSize: '1.2rem' }}>🎯</span>
                 <span style={{ 
-                  color: '#FF8A54', 
+                  color: '#C2410C', 
                   fontWeight: '700', 
                   fontSize: '0.9rem',
                   letterSpacing: '1px'
@@ -292,7 +302,7 @@ const DataAnalytics = () => {
                 <button
                   onClick={() => window.dispatchEvent(new CustomEvent('skillkoder:openEnrollment', { detail: { course: 'Data Analytics' } }))}
                   style={{ 
-                    background: 'linear-gradient(135deg, #FF8A54, #FFB088)', 
+                    background: 'linear-gradient(135deg, #C2410C, #9A3412)', 
                     color: 'white', 
                     padding: '1.2rem 3rem', 
                     borderRadius: 50, 
@@ -319,7 +329,7 @@ const DataAnalytics = () => {
                   onClick={() => window.open('/documents/DATA ANALYTICS.pdf', '_blank')}
                   style={{ 
                     background: 'white', 
-                    color: '#FF8A54', 
+                    color: '#C2410C', 
                     padding: '1.2rem 3rem', 
                     borderRadius: 50, 
                     border: '2px solid white', 
@@ -365,7 +375,7 @@ const DataAnalytics = () => {
                 }}>
                   <span style={{ fontSize: '1.2rem' }}>📚</span>
                   <span style={{
-                    color: '#FF8A54',
+                    color: '#C2410C',
                     fontWeight: '700',
                     fontSize: '0.9rem',
                     letterSpacing: '1px'
@@ -398,7 +408,7 @@ const DataAnalytics = () => {
                       <div key={i} onMouseEnter={() => setHoveredTopic(i)} onMouseLeave={() => setHoveredTopic(null)}
                         style={{
                           padding: '0.9rem 1.2rem',
-                          background: hoveredTopic === i ? 'linear-gradient(135deg, #FF8A54, #FFB088)' : 'transparent',
+                          background: hoveredTopic === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent',
                           borderBottom: i !== topics.length - 1 ? '1px solid #FFE8DD' : 'none',
                           transition: 'all 0.3s ease',
                           cursor: 'pointer',
@@ -407,7 +417,7 @@ const DataAnalytics = () => {
                           gap: '1rem',
                           borderRadius: '12px'
                         }}>
-                        <span style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: '700', color: hoveredTopic === i ? 'white' : '#FF8A54', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                        <span style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: '700', color: hoveredTopic === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
                         <span style={{ fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', fontWeight: '600', color: hoveredTopic === i ? 'white' : '#1a1a1a' }}>{topic}</span>
                       </div>
                     ))}
@@ -430,7 +440,7 @@ const DataAnalytics = () => {
                   border: '2px solid rgba(255,138,84,0.2)'
                 }}>
                   <span style={{ fontSize: '1.2rem' }}>🛠️</span>
-                  <span style={{ color: '#FF8A54', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>TOOLS WE USE</span>
+                  <span style={{ color: '#C2410C', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>TOOLS WE USE</span>
                 </div>
                 <h3 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', margin: '0 0 0.6rem 0', color: '#1a1a1a', fontWeight: '800' }}>Tools & Frameworks</h3>
                 <p style={{ fontSize: '1rem', color: '#666', maxWidth: '600px', margin: '0 auto 1rem auto' }}>Key tools and libraries you'll use throughout this program</p>
@@ -452,7 +462,7 @@ const DataAnalytics = () => {
                       <div key={i} onMouseEnter={() => setHoveredTool(i)} onMouseLeave={() => setHoveredTool(null)}
                         style={{
                           padding: '0.7rem 1rem',
-                          background: hoveredTool === i ? 'linear-gradient(135deg, #FF8A54, #FFB088)' : 'transparent',
+                          background: hoveredTool === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent',
                           borderBottom: i !== tools.length - 1 ? '1px solid #FFE8DD' : 'none',
                           transition: 'all 0.25s ease',
                           cursor: 'default',
@@ -461,7 +471,7 @@ const DataAnalytics = () => {
                           gap: '1rem',
                           borderRadius: '10px'
                         }}>
-                        <span style={{ fontSize: '0.95rem', fontWeight: '700', color: hoveredTool === i ? 'white' : '#FF8A54', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                        <span style={{ fontSize: '0.95rem', fontWeight: '700', color: hoveredTool === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
                         <span style={{ fontSize: '0.95rem', fontWeight: '600', color: hoveredTool === i ? 'white' : '#1a1a1a' }}>{tool}</span>
                       </div>
                     ))}

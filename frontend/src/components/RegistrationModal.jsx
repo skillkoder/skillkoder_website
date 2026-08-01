@@ -287,7 +287,7 @@ const RegistrationModal = ({ open, onClose }) => {
               style={{ 
                 padding: '0.625rem 1.5rem', 
                 borderRadius: '8px', 
-                background: isSubmitting ? '#9ca3af' : 'linear-gradient(135deg,#FF6B6B,#FFB088)', 
+                background: isSubmitting ? '#9ca3af' : 'linear-gradient(135deg,#C2410C,#9A3412)', 
                 color: 'white', 
                 border: 'none', 
                 cursor: isSubmitting ? 'not-allowed' : 'pointer',

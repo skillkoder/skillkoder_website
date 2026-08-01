@@ -1,0 +1,489 @@
+{
+  "_README": [
+    "Location pages carry real doorway-page risk. Google's spam policy targets",
+    "pages 'created to funnel visitors into the actual usable or relevant portion",
+    "of your site' that are near-duplicates differing only by a place name — and",
+    "'Data Analytics Course in <city>' is the textbook example.",
+    "",
+    "Two rules keep these on the right side of that line, and both must hold if",
+    "more cities are added:",
+    "",
+    "  1. EACH PAGE SAYS SOMETHING DIFFERENT. Not the same paragraph with the city",
+    "     swapped — different local hiring landscape, different employer mix,",
+    "     different advice. If you cannot write genuinely different content about",
+    "     a city, do not add a page for it.",
+    "",
+    "  2. EACH PAGE STATES PLAINLY THAT TRAINING IS ONLINE. Implying a local",
+    "     campus that does not exist misleads the visitor and is the part most",
+    "     likely to generate complaints.",
+    "",
+    "Statements about which employers operate in a city are general public",
+    "knowledge and are deliberately phrased as 'companies operate here', never as",
+    "'we place students there'. Do not upgrade that wording without real",
+    "placement relationships to back it."
+  ],
+
+  "_KEYWORD_DATA": [
+    "Pages here were selected from Ubersuggest data (India, locId 2356), not from",
+    "a list of cities. Volume and SEO difficulty as measured August 2026:",
+    "",
+    "  generative ai training in hyderabad     3,600/mo   SD 15   <- best on board",
+    "  data analyst course in hyderabad        3,600/mo   SD 14",
+    "  data analytics course in hyderabad      3,600/mo   SD 28",
+    "  data science courses in hyderabad       3,600/mo   SD 35",
+    "  data analytics course in kolkata        2,400/mo   SD 28",
+    "  data science course in kolkata          1,300/mo   SD 35",
+    "  azure data engineering training in hyd    320/mo   SD 24",
+    "",
+    "DELIBERATELY NOT BUILT:",
+    "  generative ai course in kolkata            30/mo   SD 30  <- no demand",
+    "  power bi training in hyderabad            720/mo   SD 45  <- too hard for DA 4",
+    "",
+    "Context: skillkoder.com is DA 4 with 19 referring domains. The sites winning",
+    "these city keywords are DA 13-15 (qualitythought.in ranks #4 on 'data",
+    "analytics course in hyderabad' at DA 14). That is why the target set is city",
+    "keywords at SD 14-35 and NOT 'data analytics course online', where the top 9",
+    "results are DA 83-100.",
+    "",
+    "Re-check these numbers before adding more cities. Building a page for a",
+    "30/mo keyword is how a location cluster turns into a doorway-page problem."
+  ],
+
+  "pages": [
+    {
+      "path": "/data-analytics-course-in-hyderabad",
+      "title": "Data Analyst Course in Hyderabad (Online) | SkillKoder",
+      "description": "Live online Data Analytics training for learners in Hyderabad. SQL, Power BI, Tableau and Python, with IST batch timings that fit around HITEC City work hours.",
+      "keywords": "data analyst course in hyderabad, data analytics course in hyderabad, data analytics training in hyderabad, data analytics institute in hyderabad, data analyst training hyderabad, power bi course hyderabad, sql course hyderabad",
+      "ogImage": "/data_analytics.webp",
+      "eyebrow": "HYDERABAD",
+      "h1": "Data Analyst Course in Hyderabad",
+      "accent": "",
+      "intro": "Live, instructor-led Data Analytics training for learners in Hyderabad — taught online, with batch timings set around the working hours of the city's tech corridor.",
+      "coursePath": "/courses/data-analytics",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "SkillKoder classes are delivered live and online, not from a classroom in Hyderabad. We are based in Hyderabad, and the batch timings and job-market guidance on this page are built around the city — but you attend from wherever you are. If you specifically want in-person classroom teaching, we are not the right fit and we would rather tell you now." },
+
+        { "type": "h2", "text": "Why analytics hiring in Hyderabad looks different" },
+        { "type": "p", "text": "Hyderabad's data hiring is weighted toward product engineering centres and global capability centres rather than pure IT services. Large multinational technology, cloud and consulting firms run substantial engineering and analytics operations across HITEC City, Gachibowli and the Financial District, alongside a strong pharmaceutical and life sciences presence that generates its own analytics demand." },
+        { "type": "p", "text": "The practical consequence for a candidate: interviews here tend to go deeper technically than in markets dominated by services firms. Expect live SQL, expect to be asked why you modelled a dataset the way you did, and expect the project on your CV to be examined rather than acknowledged." },
+
+        { "type": "h3", "text": "What that means for how you prepare" },
+        { "type": "ul", "items": [
+          "**Window functions are not optional.** They come up repeatedly in product-company SQL rounds.",
+          "**Know your data model.** Building a Power BI report on a flat table will be noticed. Star schemas and relationships get asked about.",
+          "**Have one project you can defend for twenty minutes** — the decisions, the trade-offs, what you would change.",
+          "**Domain context helps.** Pharma, healthcare and fintech analytics all have specific vocabulary worth knowing if you are targeting them."
+        ]},
+
+        { "type": "h2", "text": "Batch timings for working professionals" },
+        { "type": "p", "text": "Most of our Hyderabad learners are already working, frequently on shifts overlapping US or European hours. Batches run in early-morning and evening IST slots, and weekend batches exist for anyone whose weekday schedule cannot accommodate either. Every session is recorded, so a late-running sprint does not cost you a class." },
+
+        { "type": "h2", "text": "What the course covers" },
+        { "type": "ul", "items": [
+          "**SQL** — joins through window functions, against MySQL and PostgreSQL.",
+          "**Excel and Power Query** — for the data that still arrives as a spreadsheet.",
+          "**Power BI** — data modelling, DAX and report design.",
+          "**Tableau** — calculated fields, LOD expressions and dashboard actions.",
+          "**Python** — pandas and NumPy for cleaning and analysis at scale.",
+          "See the [full tool list](/tools) for what you build with each one."
+        ]},
+
+        { "type": "h2", "text": "Career support" },
+        { "type": "p", "text": "Resume review, portfolio guidance, mock interviews and job search strategy run alongside the curriculum. Our [placement support page](/placement) sets out exactly what is included and, just as importantly, what is not — we do not advertise a placement percentage." },
+
+        { "type": "h2", "text": "Other programs for Hyderabad learners" },
+        { "type": "ul", "items": [
+          "[Data Science course in Hyderabad](/data-science-course-in-hyderabad) — Python, machine learning and modelling",
+          "[Generative AI training in Hyderabad](/generative-ai-training-in-hyderabad) — building applications on language models",
+          "[Azure Data Engineering training in Hyderabad](/azure-data-engineering-training-in-hyderabad) — pipelines and the cloud data stack"
+        ]},
+
+        { "type": "cta", "text": "Sit in on a live class before deciding. It costs nothing and it is the only honest way to judge whether the teaching works for you.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Do you have a classroom in Hyderabad?", "a": "No. All classes are live and online. We are based in Hyderabad, which is why our batch timings and job-market guidance are built around the city, but you attend remotely." },
+        { "q": "Are the batch timings suitable if I work in HITEC City?", "a": "Yes. Batches run in early-morning and evening IST slots specifically to work around standard and shifted working hours, with weekend options as well. All sessions are recorded." },
+        { "q": "Will this help me get an analytics role in Hyderabad specifically?", "a": "The tools taught are the ones Hyderabad employers list, and the interview preparation reflects the technically deeper rounds common at product companies and capability centres here. We cannot guarantee an offer — see our placement support page for what we do and do not commit to." }
+      ]
+    },
+
+    {
+      "path": "/data-analytics-course-in-kolkata",
+      "title": "Data Analytics Course in Kolkata (Online) | SkillKoder",
+      "description": "Live online Data Analytics training for learners in Kolkata. SQL, Power BI, Tableau and Python with placement support, taught in IST batches.",
+      "keywords": "data analytics course in kolkata, data analyst course kolkata, power bi training kolkata, data science course kolkata, analytics institute kolkata",
+      "ogImage": "/data_analytics.webp",
+      "eyebrow": "KOLKATA",
+      "h1": "Data Analytics Course in Kolkata",
+      "accent": "",
+      "intro": "Live, instructor-led Data Analytics training for learners in Kolkata — taught online, with the tools and interview preparation the local market actually screens for.",
+      "coursePath": "/courses/data-analytics",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "SkillKoder classes are delivered live and online. We do not have a campus in Kolkata, and this page is not implying one. What is genuinely Kolkata-specific here is the guidance about the local hiring market and, if you are considering relocating, what that involves." },
+
+        { "type": "h2", "text": "The honest picture of the Kolkata market" },
+        { "type": "p", "text": "Kolkata's technology employment is weighted toward IT services and business process operations, concentrated around Salt Lake Sector V and New Town Rajarhat, with a significant banking and financial services back-office presence. The city has a smaller product-company footprint than Bengaluru, Hyderabad or Pune." },
+        { "type": "p", "text": "That shapes the opportunity in two directions, and it is worth being clear about both." },
+
+        { "type": "p", "text": "If you are weighing modelling work rather than reporting, the [Data Science course in Kolkata](/data-science-course-in-kolkata) opens with the same honest assessment of local demand." },
+
+        { "type": "h3", "text": "The opportunity" },
+        { "type": "ul", "items": [
+          "Services and BPM organisations run large reporting and MIS operations, and moving from an operations role into analytics inside the same company is a well-trodden and often underrated path.",
+          "BFSI back-office work generates steady demand for people who can handle regulatory reporting, reconciliation analytics and dashboarding.",
+          "Cost of living is markedly lower than in the southern tech hubs, which changes what a given salary is actually worth."
+        ]},
+
+        { "type": "h3", "text": "The constraint" },
+        { "type": "ul", "items": [
+          "There are fewer senior and specialist analytics roles locally than in Bengaluru or Hyderabad, so progression can plateau sooner.",
+          "Compensation for equivalent roles is typically lower than in the southern hubs.",
+          "Some candidates will get further by targeting remote roles or planning a relocation. Deciding that early is better than discovering it two years in."
+        ]},
+        { "type": "callout", "title": "Why we are telling you the downside", "text": "Because you will find it out anyway, and it is better to plan around it. If your goal is a specialist analytics career at pace, be realistic about whether staying in Kolkata supports that — remote-first roles are a genuine third option, and the skills in this course qualify you for them regardless of where you sit." },
+
+        { "type": "h2", "text": "Targeting remote roles from Kolkata" },
+        { "type": "p", "text": "Remote analytics hiring has become a practical route out of a thin local market, but it is more competitive per role and it favours candidates who can demonstrate that they work well without supervision. Two things matter disproportionately: a portfolio that is genuinely self-directed, and written communication, because much of the job happens in writing when the team is distributed." },
+        { "type": "p", "text": "We work on both during career support — see [what placement support includes](/placement)." },
+
+        { "type": "h2", "text": "What the course covers" },
+        { "type": "ul", "items": [
+          "**SQL** through window functions — the most screened-for skill in every one of these markets.",
+          "**Excel and Power Query**, which matter more in services and BFSI environments than people expect.",
+          "**Power BI and Tableau**, with proper data modelling rather than chart-building alone.",
+          "**Python** with pandas for work beyond spreadsheet scale.",
+          "The [full tool list](/tools) shows what you build with each."
+        ]},
+
+        { "type": "cta", "text": "Book a free demo class and bring your questions about the local market — we will give you a straight answer, including if the answer is that you should be targeting remote roles.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Do you have a centre in Kolkata?", "a": "No. All classes are live and online, attended from wherever you are. We would rather say that plainly than let you assume otherwise." },
+        { "q": "Are there enough data analytics jobs in Kolkata?", "a": "There is real demand, concentrated in IT services, business process operations and BFSI back-office functions around Sector V and New Town. There are fewer specialist and senior roles than in Bengaluru or Hyderabad, so remote roles are worth considering alongside local ones." },
+        { "q": "Will the course timings work if I am in Kolkata?", "a": "Yes — all batches run in IST, with early-morning, evening and weekend options, and every session is recorded." }
+      ]
+    },
+
+    {
+      "path": "/generative-ai-training-in-hyderabad",
+      "title": "Generative AI Training in Hyderabad (Online) | SkillKoder",
+      "description": "Live online Generative AI training for learners in Hyderabad. Build real LLM applications with retrieval and evaluation — not prompt tricks. IST batches.",
+      "keywords": "generative ai training in hyderabad, generative ai course in hyderabad, ai training hyderabad, chatgpt course hyderabad, prompt engineering course hyderabad, llm training india",
+      "ogImage": "/genai.webp",
+      "eyebrow": "HYDERABAD",
+      "h1": "Generative AI Training in Hyderabad",
+      "accent": "",
+      "intro": "Live, instructor-led Generative AI training for learners in Hyderabad — taught online, and built around shipping working applications rather than collecting prompt templates.",
+      "coursePath": "/courses/generative-ai",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "SkillKoder classes are delivered live and online, not from a classroom in Hyderabad. We are based in Hyderabad, so the batch timings and the hiring context on this page are built around the city — but you attend from wherever you are." },
+
+        { "type": "h2", "text": "Why Hyderabad is an unusually good place to learn this" },
+        { "type": "p", "text": "Hyderabad's technology employment is weighted toward product engineering centres and global capability centres rather than pure IT services. Those are exactly the organisations currently trying to move generative AI from experiment into production — and finding that the hard part is not the model." },
+        { "type": "p", "text": "The practical consequence is that local demand is for people who can build and evaluate AI systems, not people who are fluent at chatting with one. That is a much smaller pool, and it is the gap this program is built to close." },
+
+        { "type": "h2", "text": "The distinction that matters to employers" },
+        { "type": "p", "text": "There are now a great many people who can write a good prompt. There are very few who can make a prompt behave consistently across thousands of real user inputs, measure whether it is working, and design for the cases where the model is confidently wrong." },
+        { "type": "callout", "title": "The question that separates candidates", "text": "\"How do you know version B is better than version A?\" If the answer is \"it felt better in my testing\", the conversation is effectively over. If the answer involves an evaluation set and a number, you are in a very small minority of applicants." },
+
+        { "type": "h2", "text": "What the training covers" },
+        { "type": "h3", "text": "How the models actually behave" },
+        { "type": "ul", "items": [
+          "Tokens, context windows, and what really happens when you exceed one.",
+          "Why the same prompt returns different answers, and what temperature does about it.",
+          "Why models produce fluent, confident, wrong output — a property of the mechanism rather than a bug to be prompted away.",
+          "Where model knowledge ends, and why retrieval exists."
+        ]},
+
+        { "type": "h3", "text": "Building applications, not demos" },
+        { "type": "ul", "items": [
+          "Structured prompting that survives inputs you did not anticipate.",
+          "Reliable structured output you can parse, instead of prose you have to guess at.",
+          "Retrieval — chunking, embeddings, vector search, and why the obvious approach returns confidently irrelevant passages.",
+          "Hugging Face Transformers, for running or fine-tuning open models when an API is the wrong answer.",
+          "Cost and latency alongside quality, because all three ship together."
+        ]},
+
+        { "type": "h3", "text": "Evaluation — the skill almost nobody has" },
+        { "type": "ul", "items": [
+          "Building an evaluation set. Even fifty hand-labelled examples changes how you work.",
+          "Automated scoring, including using a model as a judge and where that goes wrong.",
+          "Catching regressions when you change a prompt or the provider updates a model.",
+          "Prompt injection — a genuine security problem in any system that reads untrusted text."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A working LLM-backed application with structured prompts, a retrieval layer over documents you know well enough to judge, an evaluation set with measured results, and explicit handling for when the model gets it wrong. That last part is what makes it a portfolio piece rather than a weekend demo." },
+
+        { "type": "h2", "text": "Being straight about the job titles" },
+        { "type": "p", "text": "\"Prompt engineer\" as a standalone job title is uncommon in India and the number of pure prompt engineering roles is small. As a skill inside a developer or AI engineer role, it is genuinely in demand. We would rather tell you that than let you build a career plan around a title that may not persist." },
+        { "type": "p", "text": "The durable position is being a competent engineer who is also fluent with these models. [How to become an AI engineer](/careers/ai-engineer) sets out that fuller path." },
+
+        { "type": "h2", "text": "Batch timings" },
+        { "type": "p", "text": "Most of our Hyderabad learners are already working, often on shifts overlapping US or European hours. Batches run in early-morning and evening IST slots, with weekend options, and every session is recorded." },
+
+        { "type": "h2", "text": "Other programs for Hyderabad learners" },
+        { "type": "ul", "items": [
+          "[Data Analyst course in Hyderabad](/data-analytics-course-in-hyderabad) — SQL, Power BI, Tableau and Excel",
+          "[Data Science course in Hyderabad](/data-science-course-in-hyderabad) — Python, machine learning and modelling",
+          "[Azure Data Engineering training in Hyderabad](/azure-data-engineering-training-in-hyderabad) — pipelines and the cloud data stack"
+        ]},
+
+        { "type": "cta", "text": "Bring a problem you have actually tried to solve with ChatGPT and could not get working reliably. That is the best possible demo class.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Do I need coding experience for Generative AI training?", "a": "Basic Python, yes. The concepts are approachable without it, but building retrieval, evaluation sets and a working application requires writing code — and it is the building that makes the skill employable." },
+        { "q": "Is there a classroom in Hyderabad for these classes?", "a": "No. All sessions are live and online. We are based in Hyderabad, which shapes our batch timings and our knowledge of local hiring, but you attend remotely." },
+        { "q": "Will this training be obsolete when the next model is released?", "a": "Specific prompt tricks, yes — many already are. Evaluation discipline, retrieval design and reasoning about failure modes have survived every model generation so far, and the course is weighted toward that durable half deliberately." }
+      ]
+    },
+    {
+      "path": "/data-science-course-in-hyderabad",
+      "title": "Data Science Course in Hyderabad (Online) | SkillKoder",
+      "description": "Live online Data Science training for learners in Hyderabad. Python, machine learning and the evaluation discipline local product-company interviews test.",
+      "keywords": "data science course in hyderabad, data science courses in hyderabad, data science training in hyderabad, data science training institute in hyderabad, machine learning course hyderabad, python data science hyderabad",
+      "ogImage": "/data_science.webp",
+      "eyebrow": "HYDERABAD",
+      "h1": "Data Science Course in Hyderabad",
+      "accent": "",
+      "intro": "Live, instructor-led Data Science training for learners in Hyderabad — Python, machine learning and the evaluation discipline that the city's product-company interviews actually test.",
+      "coursePath": "/courses/data-science",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "Classes are live and online rather than in a Hyderabad classroom. We are based in the city, so the market context and batch timings here are specific to it, but attendance is remote." },
+
+        { "type": "h2", "text": "What data science hiring looks like in Hyderabad" },
+        { "type": "p", "text": "Hyderabad's weighting toward product engineering centres and global capability centres changes the shape of data science interviews compared with markets dominated by services firms. Teams here are more often building models that go into a product, which means the interview tends to probe how you would know the model is any good." },
+        { "type": "p", "text": "The city also has a substantial pharmaceutical and life sciences presence, which generates its own analytics and modelling demand with vocabulary worth knowing if you are targeting it." },
+
+        { "type": "h3", "text": "What that means for how you prepare" },
+        { "type": "ul", "items": [
+          "**Expect a SQL round.** Candidates who focused entirely on machine learning are caught out by this every year — you still have to extract the data before you can model it.",
+          "**Expect the project deep-dive.** Not what you built, but why you chose that metric, how you avoided leakage, and what you would do differently.",
+          "**Expect a baseline question.** \"Is your model better than predicting the mean?\" Frequently the honest answer is no, and saying so is a better outcome than not having checked.",
+          "**Do not lead with deep learning.** A large share of applied roles here are tabular problems where gradient boosting wins."
+        ]},
+
+        { "type": "h2", "text": "What the course covers" },
+        { "type": "h3", "text": "Python and the part nobody warns you about" },
+        { "type": "p", "text": "Data preparation dominates the working week, and beginners consistently underestimate it. Real time is spent on joins and reshaping, missing-data decisions you can defend rather than defaults applied by reflex, dates and time zones, and the vectorised thinking that makes pandas fast instead of a slow loop in disguise." },
+
+        { "type": "h3", "text": "The modelling workflow" },
+        { "type": "ul", "items": [
+          "Regression, classification and clustering with scikit-learn — the models that solve most real business problems.",
+          "Pipelines, so preprocessing travels with the model instead of living in a notebook cell you forget to rerun.",
+          "Train/validation/test discipline and cross-validation.",
+          "**Data leakage** — how it happens, why it produces impossible results, and how to catch it before an interviewer does."
+        ]},
+
+        { "type": "h3", "text": "Honest evaluation" },
+        { "type": "callout", "title": "The failure that ends interviews", "text": "Reporting 97% accuracy on a fraud dataset where 97% of transactions are legitimate. The model predicts \"not fraud\" every time and is useless. Metric choice on imbalanced data comes up constantly and is a fast way to lose an otherwise winnable round." },
+
+        { "type": "h3", "text": "Deep learning, in proportion" },
+        { "type": "p", "text": "TensorFlow and PyTorch, network fundamentals, training dynamics and fine-tuning pretrained models. PyTorch's explicit training loop is used deliberately — seeing each step makes what a model is doing far harder to misunderstand." },
+
+        { "type": "h2", "text": "Should you start here, or with analytics?" },
+        { "type": "p", "text": "If you have no SQL and no Python, analytics is the more realistic starting point — and moving into data science internally, once you know a company's data and business, faces far less competition than applying externally into a junior data scientist role. See the [Data Analyst course in Hyderabad](/data-analytics-course-in-hyderabad) and [how to become a data scientist](/careers/data-scientist)." },
+        { "type": "p", "text": "If you already have basic Python comfort, start here." },
+
+        { "type": "h2", "text": "Batch timings" },
+        { "type": "p", "text": "Early-morning, evening and weekend IST batches, built around standard and shifted working hours. Every session is recorded." },
+
+        { "type": "h2", "text": "Other programs for Hyderabad learners" },
+        { "type": "ul", "items": [
+          "[Data Analyst course in Hyderabad](/data-analytics-course-in-hyderabad) — the shorter route into a data role",
+          "[Generative AI training in Hyderabad](/generative-ai-training-in-hyderabad) — building applications on language models",
+          "[Azure Data Engineering training in Hyderabad](/azure-data-engineering-training-in-hyderabad) — the least crowded of the four"
+        ]},
+
+        { "type": "cta", "text": "Bring a dataset you care about to a free demo class and see how the teaching handles a real problem rather than a tutorial one.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "What should I know before joining the Data Science batch?", "a": "Basic Python — variables, loops, functions, and the ability to read an error message without panic. Everything statistical is taught in context. If you have no Python at all, start with the analytics track and build it there." },
+        { "q": "Do I need a master's degree for data science roles in Hyderabad?", "a": "It helps at companies that filter on it, but a great deal of hiring here is on demonstrated skill and portfolio, particularly for applied roles at product companies." },
+        { "q": "Is a maths background essential?", "a": "You need to understand concepts, not derive them. School-level algebra is enough to start, and the probability and statistics that matter are taught in context. Evaluation reasoning is tested far more often than mathematical derivation." }
+      ]
+    },
+    {
+      "path": "/data-science-course-in-kolkata",
+      "title": "Data Science Course in Kolkata (Online) | SkillKoder",
+      "description": "Live online Data Science training for learners in Kolkata. Python and machine learning, with an honest view of local demand and how to target remote roles.",
+      "keywords": "data science course in kolkata, data science training kolkata, machine learning course kolkata, python data science kolkata, data science institute kolkata",
+      "ogImage": "/data_science.webp",
+      "eyebrow": "KOLKATA",
+      "h1": "Data Science Course in Kolkata",
+      "accent": "",
+      "intro": "Live, instructor-led Data Science training for learners in Kolkata — with a straight assessment of what the local market will and will not offer you.",
+      "coursePath": "/courses/data-science",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "Classes are live and online. We do not have a campus in Kolkata and this page is not implying one. What is genuinely Kolkata-specific is the market guidance below." },
+
+        { "type": "h2", "text": "The honest position first" },
+        { "type": "p", "text": "There are fewer dedicated data science roles in Kolkata than there are analytics roles, and considerably fewer than in Bengaluru, Hyderabad or Pune. The city's technology employment is weighted toward IT services and business process operations around Salt Lake Sector V and New Town, with a significant banking and financial services back-office presence." },
+        { "type": "p", "text": "We are telling you this before describing the course because it should affect how you plan, and you will discover it anyway." },
+
+        { "type": "h3", "text": "What follows from that" },
+        { "type": "ul", "items": [
+          "**Remote roles deserve serious consideration.** The skills in this course qualify you for them regardless of where you sit, and remote hiring has become a practical route out of a thin local market.",
+          "**Analytics-first may be the faster path.** Local analytics and MIS demand is real, and moving into modelling work from inside a company is often easier than being hired directly into it here. See the [Data Analytics course in Kolkata](/data-analytics-course-in-kolkata).",
+          "**BFSI back-office work generates genuine modelling demand** — risk, fraud and reconciliation problems that are more interesting than they sound.",
+          "**Cost of living is markedly lower** than the southern hubs, which changes what a given salary is actually worth."
+        ]},
+
+        { "type": "h2", "text": "Targeting remote data science roles" },
+        { "type": "p", "text": "Remote roles are more competitive per opening and favour candidates who visibly work well without supervision. Two things matter disproportionately: a portfolio that is genuinely self-directed rather than course-assigned, and written communication, because most of the job happens in writing when the team is distributed." },
+        { "type": "p", "text": "Both are worked on during career support — see [what placement support includes](/placement)." },
+
+        { "type": "h2", "text": "What the course covers" },
+        { "type": "ul", "items": [
+          "**Python, pandas and NumPy** — with real time on the data preparation that dominates the actual job.",
+          "**SQL** — you still have to extract data before you can model it, and it appears in data science interviews regularly.",
+          "**scikit-learn and the modelling workflow** — pipelines, cross-validation, feature engineering and hyperparameter search.",
+          "**Honest evaluation** — metric choice, baselines, and catching data leakage before an interviewer does.",
+          "**TensorFlow and PyTorch** — network fundamentals and fine-tuning pretrained models."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A complete modelling workflow on a real dataset: cleaning decisions documented, features engineered with reasoning, models compared against a baseline, and a metric chosen and justified. Deliberately not Titanic or Iris — interviewers have seen those thousands of times and they signal nothing." },
+        { "type": "p", "text": "For a remote job search this matters more, not less. A portfolio is most of what a distributed hiring team can assess." },
+
+        { "type": "h2", "text": "Batch timings" },
+        { "type": "p", "text": "All batches run in IST with early-morning, evening and weekend options, and every session is recorded." },
+
+        { "type": "cta", "text": "Book a free demo class and bring your questions about the local market. We will give you a straight answer, including if the answer is that you should be targeting remote roles.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Are there data science jobs in Kolkata?", "a": "There is real demand, concentrated in IT services, business process operations and BFSI functions, but fewer dedicated data science roles than in the southern tech hubs. Remote roles are worth targeting alongside local ones, and the skills transfer directly." },
+        { "q": "Should I do data analytics first if I am in Kolkata?", "a": "For many people here, yes. Local analytics demand is stronger, and moving into modelling work from inside a company faces far less competition than being hired directly into a junior data science role." },
+        { "q": "Are the data science classes held in Kolkata?", "a": "No — every session is live and online, attended from wherever you are. We have no campus in Kolkata and would rather say so plainly than let you assume otherwise." }
+      ]
+    },
+    {
+      "path": "/azure-data-engineering-training-in-hyderabad",
+      "title": "Azure Data Engineering Training in Hyderabad | SkillKoder",
+      "description": "Live online Azure Data Engineering training for learners in Hyderabad. Data Factory, Databricks and Synapse — the least crowded of the four data career paths.",
+      "keywords": "azure data engineering training in hyderabad, azure data engineer course hyderabad, data engineering course hyderabad, azure data factory training hyderabad, databricks training hyderabad, dp-203 training",
+      "ogImage": "/logo512.png",
+      "eyebrow": "HYDERABAD",
+      "h1": "Azure Data Engineering Training in Hyderabad",
+      "accent": "",
+      "intro": "Live, instructor-led Azure Data Engineering training for learners in Hyderabad — the least crowded of the four data paths, and the one where demand has most consistently outstripped supply.",
+      "coursePath": "/courses/azure-data-engineering",
+      "blocks": [
+        { "type": "callout", "title": "This is online training", "text": "Classes are live and online rather than from a Hyderabad classroom. We are based in the city; the market context below is specific to it, and attendance is remote." },
+
+        { "type": "h2", "text": "Why this path is worth considering over analytics" },
+        { "type": "p", "text": "Analytics attracts far more entrants, partly because it is more visible and partly because data engineering asks for two skill sets at once: programming and infrastructure. Plenty of candidates have one. Considerably fewer have both, and that shortage is why these roles are typically better compensated and why openings stay open longer." },
+        { "type": "p", "text": "Hyderabad's concentration of global capability centres and enterprise engineering operations makes this especially relevant locally. Those organisations run substantial cloud data platforms, and the Microsoft stack has strong enterprise adoption in India — which is why this program teaches Azure specifically rather than a general 'data engineering' syllabus." },
+        { "type": "callout", "title": "Worth being honest with yourself about", "text": "Data engineering has far less stakeholder management than analytics. Some people find that a significant relief and others find it isolating. It is worth knowing which you are before committing a year to it." },
+
+        { "type": "h2", "text": "The stack you learn" },
+        { "type": "table", "headers": ["Component", "What it does", "Where it fits"], "rows": [
+          ["Azure Data Factory", "Orchestrates data movement on a schedule", "Pipelines — triggers, retries, monitoring"],
+          ["Azure Data Lake Storage", "Stores raw and processed data cheaply at scale", "The foundation everything reads from"],
+          ["Databricks", "Distributed processing with Spark and Delta Lake", "Transformation beyond one machine"],
+          ["Azure Synapse Analytics", "Warehouse layer that analysts and BI tools query", "The serving layer"],
+          ["Python and SQL", "The two languages driving the whole stack", "Everywhere"]
+        ]},
+
+        { "type": "h2", "text": "The concepts that matter more than the tools" },
+        { "type": "ul", "items": [
+          "**Idempotency** — a pipeline that runs twice should not double your data. This comes up constantly in interviews.",
+          "**Incremental loading** — reprocessing everything nightly stops scaling sooner than people expect.",
+          "**Schema evolution** — what happens when a source system adds a column without telling you.",
+          "**Partitioning and file formats** — the difference between a query returning in seconds and in minutes.",
+          "**Data quality checks** — catching bad data at ingestion rather than when an executive spots it in a dashboard.",
+          "**Dimensional modelling** — star schemas are not obsolete; they are what makes the serving layer usable."
+        ]},
+
+        { "type": "h2", "text": "What you build" },
+        { "type": "p", "text": "A scheduled ingestion pipeline pulling from source systems into a data lake with failure handling and alerting, a bronze-silver-gold transformation flow in Delta Lake written in PySpark, and a dimensional model served from Synapse and connected to a Power BI report. End to end, and running unattended." },
+
+        { "type": "h2", "text": "Certification actually counts here" },
+        { "type": "p", "text": "Unlike analytics, where a portfolio outperforms any certificate, cloud data certifications carry real weight with recruiters screening for infrastructure roles. The DP-203 material overlaps heavily with this curriculum. The course is built around being able to do the work rather than around the exam format, so plan on separate exam-specific practice if certification is a goal." },
+
+        { "type": "h2", "text": "Coming from an adjacent role" },
+        { "type": "ul", "items": [
+          "**From analytics** — you have SQL and business context already. Add orchestration, Spark and infrastructure thinking. A common and effective move.",
+          "**From software engineering** — you have the engineering discipline. Add SQL depth, dimensional modelling and the cloud services.",
+          "**From database administration** — you have more of this than you think. Add cloud services and distributed processing."
+        ]},
+        { "type": "p", "text": "More detail on the role itself in [how to become an Azure data engineer](/careers/azure-data-engineer)." },
+
+        { "type": "h2", "text": "Other programs for Hyderabad learners" },
+        { "type": "ul", "items": [
+          "[Data Analyst course in Hyderabad](/data-analytics-course-in-hyderabad) — the shortest route into a data role",
+          "[Data Science course in Hyderabad](/data-science-course-in-hyderabad) — Python and machine learning",
+          "[Generative AI training in Hyderabad](/generative-ai-training-in-hyderabad) — building on language models"
+        ]},
+
+        { "type": "cta", "text": "Sit in on a live class before deciding. Data engineering has a steeper start than analytics, and it is worth seeing that honestly before you commit.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Can I become a data engineer without a development background?", "a": "Yes, though you will be learning programming as part of the path rather than arriving with it. Expect the first phase to be harder than it is for someone coming from development, and budget time accordingly." },
+        { "q": "Is Azure the right cloud to learn in Hyderabad specifically?", "a": "The Microsoft stack has strong enterprise adoption across the capability centres and enterprise engineering operations concentrated here, so Azure skills map well onto local openings. The underlying concepts — orchestration, distributed processing, dimensional modelling — transfer to AWS or GCP largely as a matter of renaming." },
+        { "q": "Does this prepare me for the DP-203 certification?", "a": "The material covers substantially the same ground. The course is built around doing the work rather than the exam format, so plan on separate exam-specific practice as well if certification is your goal." }
+      ]
+    },
+    {
+      "path": "/online-data-science-course-india",
+      "title": "Online Data Science & AI Courses in India | SkillKoder",
+      "description": "Live online Data Science, Analytics, Generative AI and Azure Data Engineering training for learners across India. IST batches, real projects, placement support.",
+      "keywords": "online data science course india, data analytics course online india, ai course online india, best online data course india, live online data training",
+      "ogImage": "/logo512.png",
+      "eyebrow": "ACROSS INDIA",
+      "h1": "Online Data & AI Courses for Learners Across India",
+      "accent": "",
+      "intro": "Four specialist programs taught live over IST batches, open to learners anywhere in India — and to anyone abroad whose time zone fits.",
+      "coursePath": "/courses",
+      "blocks": [
+        { "type": "h2", "text": "Why online, and why live" },
+        { "type": "p", "text": "There is no shortage of recorded video courses, and most people who buy one do not finish it. The problem is not the content — a great deal of excellent material is free. The problem is that when you get stuck at 10pm on a join you do not understand, a recording cannot help you, and momentum quietly dies there." },
+        { "type": "p", "text": "Live instruction fixes that specific failure. You can ask the question in the moment, a mentor can see where your reasoning went wrong, and a batch running to a schedule creates the accountability that self-paced study does not. Sessions are still recorded, so you keep the revision benefit without depending on it." },
+
+        { "type": "h2", "text": "Choosing between the four programs" },
+        { "type": "table", "headers": ["If you want to...", "Choose", "Typical starting point"], "rows": [
+          ["Analyse data and report on it", "[Data Analytics](/courses/data-analytics)", "Any graduate background; no coding needed to start"],
+          ["Build predictive models", "[Data Science](/courses/data-science)", "Comfort with basic Python, or analytics first"],
+          ["Build applications on AI models", "[Generative AI](/courses/generative-ai)", "Basic Python; software background is an advantage"],
+          ["Build the pipelines everyone else uses", "[Azure Data Engineering](/courses/azure-data-engineering)", "Willingness to learn programming and infrastructure together"]
+        ]},
+        { "type": "p", "text": "If you are unsure, the career guides go deeper: [data analyst](/careers/data-analyst), [data scientist](/careers/data-scientist), [AI engineer](/careers/ai-engineer) and [Azure data engineer](/careers/azure-data-engineer)." },
+
+        { "type": "h2", "text": "Batch timings and time zones" },
+        { "type": "p", "text": "All batches run in Indian Standard Time, with early-morning, evening and weekend slots so that learners working standard hours, shifted hours or overlapping international hours can all find a fit. Learners outside India are welcome — check that an IST slot works for your time zone before enrolling, and ask us if you are unsure." },
+
+        { "type": "h2", "text": "What you get regardless of where you are" },
+        { "type": "ul", "items": [
+          "Live instructor-led sessions, recorded for revision.",
+          "Portfolio projects built end to end, not exercises with the answer supplied.",
+          "The [tools employers actually screen for](/tools) — SQL, Power BI, Python and the rest.",
+          "[Career support](/placement) — resume and portfolio review, mock interviews and job search strategy.",
+          "Direct mentor access while you are interviewing."
+        ]},
+
+        { "type": "h2", "text": "Location-specific guidance" },
+        { "type": "p", "text": "The job market genuinely differs by city, and generic advice is less useful than it looks. We have written up two markets in detail — **Hyderabad**, where hiring is weighted toward product companies and capability centres, and **Kolkata**, where it is weighted toward services and BFSI operations." },
+        { "type": "h3", "text": "Hyderabad" },
+        { "type": "ul", "items": [
+          "[Data Analyst course in Hyderabad](/data-analytics-course-in-hyderabad)",
+          "[Data Science course in Hyderabad](/data-science-course-in-hyderabad)",
+          "[Generative AI training in Hyderabad](/generative-ai-training-in-hyderabad)",
+          "[Azure Data Engineering training in Hyderabad](/azure-data-engineering-training-in-hyderabad)"
+        ]},
+        { "type": "h3", "text": "Kolkata" },
+        { "type": "ul", "items": [
+          "[Data Analytics course in Kolkata](/data-analytics-course-in-kolkata)",
+          "[Data Science course in Kolkata](/data-science-course-in-kolkata)"
+        ]},
+
+        { "type": "cta", "text": "Not sure which program fits your background? Book a free demo class and get a straight recommendation — including if the answer is that none of them is right for you yet.", "href": "/contact", "label": "Book a Free Demo Class" }
+      ],
+      "faqs": [
+        { "q": "Can I join from any city in India?", "a": "Yes. All programs are delivered live online in IST, so your location does not affect access. The only thing that varies by city is the local job market, which our career support takes into account." },
+        { "q": "Are recordings provided if I miss a live class?", "a": "Yes. Every session is recorded and made available to your batch, and you can raise anything you did not follow in the next live session or with your mentor." },
+        { "q": "Can learners outside India join?", "a": "Yes, and several do. Batches run in IST, so check that a slot works for your time zone before enrolling — ask us and we will tell you honestly whether it will be sustainable for you." }
+      ]
+    }
+  ]
+}

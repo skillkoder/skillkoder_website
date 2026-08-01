@@ -1,5 +1,38 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { openBrochureModal } from '../data/site';
+
+const COURSE_LINKS = [
+  ['/courses/data-analytics', 'Data Analytics'],
+  ['/courses/data-science', 'Data Science'],
+  ['/courses/generative-ai', 'Generative AI'],
+  ['/courses/azure-data-engineering', 'Azure Data Engineering'],
+];
+
+const RESOURCE_LINKS = [
+  ['/blog', 'Blog'],
+  ['/tools', 'Tools We Teach'],
+  ['/placement', 'Placement Support'],
+  ['/faq', 'FAQs'],
+  ['/contact', 'Book a Free Demo'],
+];
+
+/** Career guides — the top-of-funnel pages, linked from every page. */
+const CAREER_LINKS = [
+  ['/careers', 'All Career Guides'],
+  ['/careers/data-analyst', 'Data Analyst Career'],
+  ['/careers/data-scientist', 'Data Scientist Career'],
+  ['/careers/ai-engineer', 'AI Engineer Career'],
+  ['/careers/azure-data-engineer', 'Data Engineer Career'],
+];
+
+/** Replaces two links that both pointed at "/" and were cancelled by
+ *  preventDefault — a footer with dead legal links on every page. */
+const LEGAL_LINKS = [
+  ['/privacy-policy', 'Privacy Policy'],
+  ['/terms', 'Terms & Conditions'],
+  ['/refund-policy', 'Refund Policy'],
+];
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -90,6 +123,7 @@ const Footer = () => {
     policyLinks: {
       display: 'flex',
       gap: '1.5rem',
+      flexWrap: 'wrap',
     },
     policyLink: {
       color: '#718096',
@@ -190,7 +224,7 @@ const Footer = () => {
         <div style={styles.gridContainer}>
           {/* Logo Section */}
           <div style={styles.logoSection}>
-            <img
+            <img loading="lazy" decoding="async"
               src="/sk_logo.webp"
               alt="SkillKoder Logo"
               style={styles.logo}
@@ -266,23 +300,86 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Courses — the highest commercial-intent URLs on the site, so they
+              get a link from every page rather than only from /courses. */}
           <div>
-            <h3 style={styles.sectionTitle}>Resources</h3>
+            <h3 style={styles.sectionTitle}>Courses</h3>
             <ul style={styles.linksList}>
-              {['Case Studies', 'Learning Path', 'Blog', 'Support'].map((item) => (
-                <li key={item} style={styles.linkItem}>
+              {COURSE_LINKS.map(([path, label]) => (
+                <li key={path} style={styles.linkItem}>
                   <a
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
+                    href={path}
                     style={styles.link}
                     onMouseEnter={(e) => handleLinkHover(e, true)}
                     onMouseLeave={(e) => handleLinkHover(e, false)}
-                    onClick={handleLinkClick}
+                    onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate(path); }}
                   >
-                    {item}
+                    {label}
                   </a>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Career guides — top-of-funnel pages that need links from everywhere. */}
+          <div>
+            <h3 style={styles.sectionTitle}>Career Guides</h3>
+            <ul style={styles.linksList}>
+              {CAREER_LINKS.map(([path, label]) => (
+                <li key={path} style={styles.linkItem}>
+                  <a
+                    href={path}
+                    style={styles.link}
+                    onMouseEnter={(e) => handleLinkHover(e, true)}
+                    onMouseLeave={(e) => handleLinkHover(e, false)}
+                    onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate(path); }}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Learn more. Replaced four placeholder anchors (#case-studies,
+              #learning-path, #blog, #support) that pointed at sections which do
+              not exist — every one was a dead link on every page of the site. */}
+          <div>
+            <h3 style={styles.sectionTitle}>Learn More</h3>
+            <ul style={styles.linksList}>
+              {RESOURCE_LINKS.map(([path, label]) => (
+                <li key={path} style={styles.linkItem}>
+                  <a
+                    href={path}
+                    style={styles.link}
+                    onMouseEnter={(e) => handleLinkHover(e, true)}
+                    onMouseLeave={(e) => handleLinkHover(e, false)}
+                    onClick={(e) => { e.preventDefault(); handleLinkClick(e); navigate(path); }}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+              <li style={styles.linkItem}>
+                <button
+                  type="button"
+                  onClick={() => openBrochureModal()}
+                  style={{
+                    ...styles.link,
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    font: 'inherit',
+                    fontSize: '0.875rem',
+                    textAlign: 'left',
+                  }}
+                  onMouseEnter={(e) => handleLinkHover(e, true)}
+                  onMouseLeave={(e) => handleLinkHover(e, false)}
+                >
+                  Download Brochure
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -379,24 +476,18 @@ const Footer = () => {
             © 2025 SkillKoder. All rights reserved.
           </p>
           <div style={styles.policyLinks}>
-            <a
-              href="/"
-              style={styles.policyLink}
-              onMouseEnter={(e) => handlePolicyHover(e, true)}
-              onMouseLeave={(e) => handlePolicyHover(e, false)}
-              onClick={(e) => { e.preventDefault(); handlePolicyClick(e); }}
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/"
-              style={styles.policyLink}
-              onMouseEnter={(e) => handlePolicyHover(e, true)}
-              onMouseLeave={(e) => handlePolicyHover(e, false)}
-              onClick={(e) => { e.preventDefault(); handlePolicyClick(e); }}
-            >
-              Terms of Service
-            </a>
+            {LEGAL_LINKS.map(([path, label]) => (
+              <a
+                key={path}
+                href={path}
+                style={styles.policyLink}
+                onMouseEnter={(e) => handlePolicyHover(e, true)}
+                onMouseLeave={(e) => handlePolicyHover(e, false)}
+                onClick={(e) => { e.preventDefault(); handlePolicyClick(e); navigate(path); }}
+              >
+                {label}
+              </a>
+            ))}
           </div>
         </div>
       </div>

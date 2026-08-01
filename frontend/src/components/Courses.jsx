@@ -7,17 +7,37 @@ const BADGE_COLORS = ['#FF8A54', '#6C63FF', '#00C6A2', '#0078D4', '#E91E8C', '#F
 
 // Fallback images if a course has no hero_banner
 const FALLBACK_IMAGES = [
-  'course1.png',
+  '/course1.jpg',
   'course2.webp',
   'course3.webp',
   'course4.webp',
 ];
 
 const FEATURED_LINKS = [
-  { title: 'Data Analytics', subtitle: 'Dashboards, SQL, Power BI', path: '/courses/data-analytics' },
-  { title: 'Data Science', subtitle: 'Python, ML, NLP & modeling', path: '/courses/data-science' },
-  { title: 'Generative AI', subtitle: 'ChatGPT, prompt engineering & AI apps', path: '/courses/generative-ai' },
-  { title: 'Azure Data Engineering', subtitle: 'Azure Data Factory, Synapse, Databricks', path: '/courses/azure-data-engineering' },
+  { 
+    title: 'Data Analytics', 
+    subtitle: 'Dashboards, SQL, Power BI', 
+    image: '/data_analytics.webp',
+    path: '/courses/data-analytics' 
+  },
+  { 
+    title: 'Data Science', 
+    subtitle: 'Python, ML, NLP & modeling', 
+    image: '/data_science.webp',
+    path: '/courses/data-science' 
+  },
+  { 
+    title: 'Generative AI', 
+    subtitle: 'ChatGPT, prompt engineering & AI apps', 
+    image: '/genai.webp',
+    path: '/courses/generative-ai' 
+  },
+  { 
+    title: 'Azure Data Engineering', 
+    subtitle: 'Azure Data Factory, Synapse, Databricks', 
+    image: '/azure_data_bg.jpg',
+    path: '/courses/azure-data-engineering' 
+  },
 ];
 
 const Courses = () => {
@@ -62,7 +82,7 @@ const Courses = () => {
             </span>
           </div>
           <h2 style={{ fontSize: '3.25rem', fontWeight: '900', color: '#2b334e', marginBottom: '1rem', letterSpacing: '-0.05em' }}>
-            Transform Your <span style={{ color: '#FF8A54' }}>Career Path</span>
+            Transform Your <span style={{ color: '#C2410C' }}>Career Path</span>
           </h2>
           <p style={{ fontSize: '1.15rem', color: '#4b5568', maxWidth: '670px', margin: '0 auto', lineHeight: '1.8' }}>
             Industry-leading programs designed to take you from beginner to expert in Data Analytics, Data Science, Generative AI and Azure Data Engineering.
@@ -72,32 +92,85 @@ const Courses = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginBottom: '3rem' }}>
+        <div style={{ 
+          display: 'grid', 
+          gap: '1.5rem', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+          marginBottom: '4rem' 
+        }}>
           {FEATURED_LINKS.map(link => (
-            <div key={link.path} style={{
-              background: 'white', borderRadius: '26px', padding: '1.5rem',
-              boxShadow: '0 18px 40px rgba(15, 23, 42, 0.06)',
-              border: '1px solid #f6eff0'
-            }}>
-              <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700, color: '#1f2937' }}>
-                {link.title}
-              </h3>
-              <p style={{ margin: '0.75rem 0 1.25rem', color: '#4a5568', lineHeight: '1.7' }}>
-                {link.subtitle}
-              </p>
-              <button
-                style={{
-                  background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
-                  color: 'white', border: 'none', borderRadius: '999px',
-                  padding: '0.85rem 1.5rem', fontWeight: 700, cursor: 'pointer'
-                }}
-                onClick={() => {
-                  navigate(link.path);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Explore
-              </button>
+            <div 
+              key={link.path} 
+              className="quick-course-card"
+              style={{
+                background: 'white', 
+                borderRadius: '24px', 
+                overflow: 'hidden',
+                boxShadow: '0 12px 36px rgba(15, 23, 42, 0.04)',
+                border: '1px solid rgba(255, 176, 136, 0.12)',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                navigate(link.path);
+                window.scrollTo(0, 0);
+              }}
+            >
+              {/* Top Image */}
+              <div style={{ height: '150px', overflow: 'hidden', position: 'relative' }}>
+                <img loading="lazy" decoding="async" 
+                  src={link.image} 
+                  alt={link.title} 
+                  className="quick-course-img"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    transition: 'transform 0.5s ease',
+                    display: 'block'
+                  }}
+                />
+              </div>
+
+              {/* Text Container */}
+              <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: '800', color: '#0f172a' }}>
+                  {link.title}
+                </h3>
+                <p style={{ 
+                  margin: '0.5rem 0 1.5rem', 
+                  color: '#64748b', 
+                  lineHeight: '1.6',
+                  fontSize: '0.92rem',
+                  minHeight: '44px',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  {link.subtitle}
+                </p>
+                <div style={{ marginTop: 'auto' }}>
+                  <button
+                    style={{
+                      background: 'linear-gradient(135deg, #C2410C, #9A3412)',
+                      color: 'white', 
+                      border: 'none', 
+                      borderRadius: '999px',
+                      padding: '0.8rem 1.75rem', 
+                      fontWeight: 700, 
+                      cursor: 'pointer',
+                      fontSize: '0.9rem',
+                      boxShadow: '0 4px 12px rgba(255, 138, 84, 0.15)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    className="quick-explore-btn"
+                  >
+                    Explore Program
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -151,7 +224,7 @@ const Courses = () => {
                     overflow: 'hidden', height: '300px', minHeight: '250px',
                     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)', width: '100%'
                   }}>
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={image}
                       alt={course.title}
                       style={{
@@ -179,7 +252,7 @@ const Courses = () => {
                       display: 'inline-block', padding: '0.4rem 1rem',
                       background: '#FFF5F0', borderRadius: '20px',
                       marginBottom: '1.5rem', fontSize: '0.85rem',
-                      color: '#FF8A54', fontWeight: '600'
+                      color: '#C2410C', fontWeight: '600'
                     }}>
                       {course.duration_weeks} Weeks
                     </div>
@@ -216,7 +289,7 @@ const Courses = () => {
 
                       <button
                         style={{
-                          background: 'white', color: '#FF8A54',
+                          background: 'white', color: '#C2410C',
                           padding: '1rem 2.25rem', borderRadius: '999px',
                           border: '2px solid rgba(255, 176, 136, 0.45)', fontWeight: '700',
                           fontSize: '1rem', cursor: 'pointer', transition: 'all 0.25s ease',
@@ -249,6 +322,18 @@ const Courses = () => {
       </div>
 
       <style>{`
+        .quick-course-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 48px rgba(255, 138, 84, 0.08) !important;
+          border-color: rgba(255, 176, 136, 0.3) !important;
+        }
+        .quick-course-card:hover .quick-course-img {
+          transform: scale(1.05);
+        }
+        .quick-course-card:hover .quick-explore-btn {
+          box-shadow: 0 6px 18px rgba(255, 138, 84, 0.3) !important;
+          transform: translateY(-1px);
+        }
         @media (max-width: 968px) {
           #courses h2 { font-size: 2.2rem !important; }
           .course-card { grid-template-columns: 1fr !important; }
@@ -260,6 +345,7 @@ const Courses = () => {
           #courses h2 { font-size: 1.8rem !important; }
           .course-card > div:first-child { height: 220px !important; min-height: 180px !important; }
           #courses button { width: 100% !important; padding: 0.8rem 1.5rem !important; }
+          .quick-course-card button { width: 100% !important; }
         }
       `}</style>
     </section>

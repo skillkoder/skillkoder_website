@@ -164,7 +164,7 @@ const EnrollmentModal = ({ open, onClose, initialCourse = '' }) => {
             <button 
               type="submit" 
               disabled={submitting}
-              style={{ padding: '0.5rem 0.9rem', borderRadius: 8, background: 'linear-gradient(135deg,#FF6B6B,#FFB088)', color: 'white', border: 'none', cursor: submitting ? 'not-allowed' : 'pointer', opacity: submitting ? 0.6 : 1 }}
+              style={{ padding: '0.5rem 0.9rem', borderRadius: 8, background: 'linear-gradient(135deg,#C2410C,#9A3412)', color: 'white', border: 'none', cursor: submitting ? 'not-allowed' : 'pointer', opacity: submitting ? 0.6 : 1 }}
             >
               {submitting ? 'Submitting...' : 'Submit'}
             </button>

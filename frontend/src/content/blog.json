@@ -1,0 +1,537 @@
+{
+  "_README": [
+    "Blog content. seo.md calls this the traffic engine and sets a target of 4-8",
+    "posts a month; six seed posts are here to establish the structure and the",
+    "voice.",
+    "",
+    "TO ADD A POST: append an object to `posts`. Everything else is automatic —",
+    "src/seo/allRoutes.js turns it into a route, scripts/prerender.mjs writes it a",
+    "static shell with BlogPosting schema, and it appears on /blog and its",
+    "category page. The only manual step is adding the URL to public/sitemap.xml.",
+    "",
+    "`published` and `updated` are ISO dates and feed datePublished/dateModified",
+    "in the schema. Update `updated` when you materially revise a post; leaving a",
+    "stale date on rewritten content is worse than having no date.",
+    "",
+    "No post here quotes a salary figure, a placement statistic or a market size.",
+    "Those need a citable source, and an uncited number in an SEO post is the",
+    "fastest way to lose the trust the rest of the writing is building."
+  ],
+
+  "categories": [
+    {
+      "slug": "data-analytics",
+      "label": "Data Analytics",
+      "description": "Guides on the tools, techniques and day-to-day reality of analytics work — SQL, Power BI, Tableau, Excel and the judgement that goes with them.",
+      "keywords": "data analytics blog, data analytics guides, learn data analytics, power bi tutorials, sql guides"
+    },
+    {
+      "slug": "data-science",
+      "label": "Data Science",
+      "description": "Python, machine learning and the modelling discipline behind data science — written for people building the skill rather than reading about it.",
+      "keywords": "data science blog, machine learning guides, python data science, data science roadmap"
+    },
+    {
+      "slug": "generative-ai",
+      "label": "Generative AI",
+      "description": "How large language models actually work, what they are good and bad at, and how to build things with them that hold up outside a demo.",
+      "keywords": "generative ai blog, chatgpt guides, llm explained, prompt engineering articles, ai tools"
+    },
+    {
+      "slug": "career",
+      "label": "Career & Jobs",
+      "description": "Role comparisons, skill requirements and honest guidance on getting hired in data and AI — including the parts other people leave out.",
+      "keywords": "data career advice, data analyst jobs, data science career, tech career switch india"
+    }
+  ],
+
+  "posts": [
+    {
+      "slug": "what-is-data-analytics",
+      "category": "data-analytics",
+      "title": "What is Data Analytics? A Beginner's Guide | SkillKoder",
+      "description": "A plain explanation of what data analytics is, the four types of analysis, what analysts actually do all day, and how the field differs from data science.",
+      "keywords": "what is data analytics, data analytics for beginners, types of data analytics, descriptive predictive prescriptive analytics, data analytics explained",
+      "ogImage": "/data_analytics.webp",
+      "h1": "What is Data Analytics? A Beginner's Guide",
+      "intro": "Stripped of buzzwords: what the field actually is, the four kinds of question it answers, and what the job looks like on an ordinary Tuesday.",
+      "excerpt": "Data analytics is the practice of examining data to answer a question someone actually cares about. Here is what that means in practice, the four types of analysis, and what analysts really do all day.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 9,
+      "blocks": [
+        { "type": "p", "text": "Data analytics is the practice of examining data in order to answer a question that someone actually cares about. That is the whole definition. Everything else — the tools, the dashboards, the job titles — is machinery built around that one activity." },
+        { "type": "p", "text": "The reason it gets described in more complicated terms is that the machinery has become large. But if you keep the definition in view, most of the confusion in this field resolves itself." },
+
+        { "type": "h2", "text": "A concrete example first" },
+        { "type": "p", "text": "A retail company notices that sales in one region dropped 12% last quarter. That is the question. Answering it might involve:" },
+        { "type": "ol", "items": [
+          "Finding where the sales data lives, and whether it can be trusted. Frequently it lives in three places that disagree.",
+          "Checking whether the drop is real or an artefact — did a store close, did a reporting definition change, was there a data pipeline failure in the third week?",
+          "Breaking the number down. Is the drop across all products or one category? All stores or two? New customers or returning ones?",
+          "Finding the pattern. Perhaps one large customer stopped ordering. Perhaps a competitor opened nearby.",
+          "Telling someone, in a form that leads to a decision rather than a follow-up meeting."
+        ]},
+        { "type": "p", "text": "Notice how much of that is not statistics. Steps one and two — finding the data and establishing whether it means what it appears to mean — routinely take longer than the analysis itself. This is the single biggest gap between how analytics is taught and how it is practised." },
+
+        { "type": "h2", "text": "The four types of analytics" },
+        { "type": "p", "text": "The standard framing divides analytics into four levels. It is a useful map, as long as you do not treat the higher levels as inherently more valuable." },
+        { "type": "table", "headers": ["Type", "Question it answers", "Example"], "rows": [
+          ["Descriptive", "What happened?", "Sales fell 12% in the western region last quarter."],
+          ["Diagnostic", "Why did it happen?", "The fall is concentrated in one product line, after a competitor's launch."],
+          ["Predictive", "What is likely to happen next?", "If the trend continues, that line falls a further 8% next quarter."],
+          ["Prescriptive", "What should we do about it?", "Reallocating promotional spend to the affected line is projected to recover most of the gap."]
+        ]},
+        { "type": "callout", "title": "A common misconception", "text": "That descriptive analytics is beginner work and prescriptive is the real thing. In practice, most business value comes from descriptive and diagnostic work done well and delivered fast. A great many organisations still cannot reliably answer 'what happened last month' — and predicting on top of numbers you cannot trust just produces confident nonsense." },
+
+        { "type": "h2", "text": "What analysts actually do all day" },
+        { "type": "p", "text": "An honest breakdown of a typical week looks closer to this than to what the job description implied:" },
+        { "type": "ul", "items": [
+          "**Finding and cleaning data.** Dates in three formats, duplicate customer records, a category that was renamed in March and broke every historical comparison. This is the largest single block of time and almost nobody warns beginners about it.",
+          "**Writing SQL.** Pulling data from a warehouse, joining tables nobody documented, checking the row count looks sane.",
+          "**Building and maintaining reports.** Some new, plenty of maintaining things that already exist.",
+          "**Answering questions.** Often quick ones, often interrupting something else.",
+          "**Explaining results.** And then answering the question your answer created."
+        ]},
+        { "type": "p", "text": "If that sounds less glamorous than expected, it is worth sitting with. People who enjoy analytics tend to enjoy the detective work of establishing what is actually true — not the charts." },
+
+        { "type": "h2", "text": "The tools, and why there are so many" },
+        { "type": "ul", "items": [
+          "**SQL** — how you get data out of a database. The most universally required skill in the field.",
+          "**Excel** — still where an enormous amount of real business data lives.",
+          "**Power BI or Tableau** — for turning results into something a business audience will act on.",
+          "**Python** — for anything too large or too repetitive for a spreadsheet.",
+          "**Statistics** — less than people fear, but enough to know when a difference is meaningful."
+        ]},
+        { "type": "p", "text": "The list looks long because each tool solves a different part of the pipeline. In practice they are learned in roughly that order, and each one makes the next easier. There is more detail on each in our [tools guide](/tools)." },
+
+        { "type": "h2", "text": "How this differs from data science" },
+        { "type": "p", "text": "The shortest version: analytics is mostly concerned with what happened and why, and data science extends into what will happen and what to do. Analytics leans on SQL and BI tools; data science leans on Python and statistical modelling." },
+        { "type": "p", "text": "The boundary genuinely blurs, and it moves between companies — in a small company one person does both. We compared the two roles in detail in [data analyst vs data scientist](/blog/data-analyst-vs-data-scientist)." },
+
+        { "type": "h2", "text": "Is it a good field to enter?" },
+        { "type": "p", "text": "Demand has been consistent, and analytics remains one of the more accessible entry points into technical work for people without a computer science background. The honest caveats are that the entry level is more competitive than it was a few years ago, and that AI tools have automated some of the more mechanical tasks." },
+        { "type": "p", "text": "What has not been automated is deciding which question to ask, judging whether the underlying data can be trusted, and persuading someone to act on the answer. Those are most of the job, and they are the parts worth building deliberately." },
+
+        { "type": "cta", "text": "If this sounds like work you would enjoy, our Data Analytics program teaches this exact stack with the portfolio projects that get you hired.", "href": "/courses/data-analytics", "label": "See the Data Analytics course" }
+      ],
+      "faqs": [
+        { "q": "Is data analytics hard to learn?", "a": "It has a real learning curve, concentrated in the first couple of months, but it requires far less maths than most people assume. Joins in SQL are usually the first genuine difficulty, and almost everyone gets through them with practice." },
+        { "q": "What is the difference between data analytics and data analysis?", "a": "In everyday use they are treated as the same thing. Where people draw a distinction, 'analysis' refers to examining a specific dataset and 'analytics' to the wider practice including tooling and process. Nobody will hold the distinction against you." },
+        { "q": "Do I need a degree to work in data analytics?", "a": "Not a specific one. Analytics teams hire from commerce, economics, statistics, engineering and increasingly from operations roles within the same company. Demonstrable skill and a portfolio matter more than the subject on your certificate." }
+      ]
+    },
+
+    {
+      "slug": "excel-vs-power-bi-vs-tableau",
+      "category": "data-analytics",
+      "title": "Excel vs Power BI vs Tableau: Which to Learn? | SkillKoder",
+      "description": "An honest comparison of Excel, Power BI and Tableau — what each is genuinely good at, where each breaks down, and the order to learn them in.",
+      "keywords": "excel vs power bi vs tableau, power bi vs tableau, which bi tool to learn, best data visualization tool, power bi or tableau for jobs india",
+      "ogImage": "/data_analytics.webp",
+      "h1": "Excel vs Power BI vs Tableau: Which Should You Learn?",
+      "intro": "They overlap far less than the comparison articles suggest. Here is what each is actually for, where each falls over, and the order that makes sense.",
+      "excerpt": "These three tools are compared constantly and they solve different problems. What each is genuinely good at, the point at which each breaks down, and which to learn first.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 10,
+      "blocks": [
+        { "type": "p", "text": "This comparison usually gets framed as a contest, which is the wrong frame. These tools overlap at the edges and are built for different jobs. The useful question is not which is best but which solves the problem in front of you — and, if you are learning, which order to take them in." },
+        { "type": "p", "text": "Short answer for the impatient: learn Excel properly, then Power BI, then Tableau if you want it. Longer answer below." },
+
+        { "type": "h2", "text": "Excel" },
+        { "type": "p", "text": "Excel is a spreadsheet, and its enduring advantage is that the data and the calculation live in the same place where you can see both. For exploring an unfamiliar dataset of moderate size, nothing is faster." },
+        { "type": "h3", "text": "Genuinely good at" },
+        { "type": "ul", "items": [
+          "Quick exploration and one-off analysis.",
+          "Anything where the recipient needs to poke at the numbers themselves.",
+          "Pivot tables, which remain one of the most efficient summarisation tools ever built.",
+          "Power Query — the most underrated feature in the product. It turns a repetitive manual clean-up into a refresh button, and most Excel users have never opened it."
+        ]},
+        { "type": "h3", "text": "Where it breaks down" },
+        { "type": "ul", "items": [
+          "Data volume. Performance degrades well before the row limit, and past a few hundred thousand rows it becomes painful.",
+          "Repeatability. A manual process done monthly will eventually be done wrong.",
+          "Auditability. A formula error buried in a cell can go unnoticed for a long time, and has caused real and expensive public failures.",
+          "Collaboration. Multiple versions of the same file circulating by email is a recurring organisational disease."
+        ]},
+        { "type": "callout", "title": "Do not skip Excel", "text": "Beginners often want to jump straight to Power BI because it looks more like a real analytics tool. This is a mistake. Excel teaches you to think about data shape, and Power Query teaches you transformation logic that transfers directly — Power BI's query editor is Power Query." },
+
+        { "type": "h2", "text": "Power BI" },
+        { "type": "p", "text": "Power BI is a business intelligence platform: connect to sources, model the data, define measures, publish a report that refreshes on a schedule and that other people consume." },
+        { "type": "h3", "text": "Genuinely good at" },
+        { "type": "ul", "items": [
+          "Recurring reporting that must stay current without anyone touching it.",
+          "Data modelling. The relational model underneath is its real strength and its steepest learning curve.",
+          "Integration with the Microsoft stack, which a large share of enterprises already run.",
+          "Cost. Licensing is materially cheaper than Tableau, which is much of why it dominates job listings in India."
+        ]},
+        { "type": "h3", "text": "Where it breaks down" },
+        { "type": "ul", "items": [
+          "DAX has a genuinely steep curve. Filter context and row context defeat a lot of people, and the error messages rarely help.",
+          "Free-form exploratory visualisation is more awkward than in Tableau.",
+          "Sharing outside your organisation is more restricted than people expect."
+        ]},
+        { "type": "p", "text": "We go into the modelling and DAX layer in detail on the [Power BI course page](/courses/power-bi), because that is the part interviews test and most training skips." },
+
+        { "type": "h2", "text": "Tableau" },
+        { "type": "p", "text": "Tableau is built around visual exploration. Its design assumption is that you do not yet know what you are looking for, and it optimises for finding out." },
+        { "type": "h3", "text": "Genuinely good at" },
+        { "type": "ul", "items": [
+          "Exploratory analysis — dragging fields around to see what emerges is faster and more fluid than in Power BI.",
+          "Visualisation quality and flexibility, particularly for unusual chart types.",
+          "Level-of-detail expressions, which handle certain aggregation problems more elegantly than DAX.",
+          "Cross-platform and cross-database support."
+        ]},
+        { "type": "h3", "text": "Where it breaks down" },
+        { "type": "ul", "items": [
+          "Cost. Licensing is a real barrier, especially for smaller organisations.",
+          "Data modelling is weaker than Power BI's, and it expects reasonably well-prepared data.",
+          "Fewer job listings in India than Power BI, though it holds strength in specific industries and at larger enterprises."
+        ]},
+
+        { "type": "h2", "text": "Side by side" },
+        { "type": "table", "headers": ["", "Excel", "Power BI", "Tableau"], "rows": [
+          ["Best at", "Ad-hoc analysis", "Recurring reporting", "Visual exploration"],
+          ["Data volume", "Low to moderate", "High", "High"],
+          ["Learning curve", "Gentle start, deep end", "Steep at the modelling layer", "Gentle start, LOD is the hard part"],
+          ["Cost", "Usually already owned", "Low", "High"],
+          ["Indian job listings", "Assumed, rarely the headline skill", "Most requested", "Requested less often, still valuable"],
+          ["Learn it", "First", "Second", "Third, or when a role needs it"]
+        ]},
+
+        { "type": "h2", "text": "So which should you learn?" },
+        { "type": "p", "text": "**If you are starting from zero:** Excel, and go deeper than you think you need to — lookups, pivot tables and Power Query. It is the fastest route to being useful and it builds the mental model everything else sits on." },
+        { "type": "p", "text": "**If you want an analyst job in India:** Power BI, because it appears most often in job listings, and pair it with SQL. A BI tool without SQL limits you to whatever data someone else prepared." },
+        { "type": "p", "text": "**If you already know Power BI:** Tableau becomes considerably easier, because the underlying concepts transfer. Adding it broadens the roles you qualify for at modest cost." },
+        { "type": "callout", "title": "The thing that actually matters more than the tool", "text": "Data modelling. Star schemas, relationships and grain are tool-independent concepts, and someone who understands them can be productive in any BI tool within a fortnight. Someone who does not will build fragile reports in all three." },
+
+        { "type": "cta", "text": "Our Data Analytics program covers all three alongside SQL and Python, with the data modelling layer taught properly rather than skipped.", "href": "/courses/data-analytics", "label": "See the Data Analytics course" }
+      ],
+      "faqs": [
+        { "q": "Is Power BI replacing Excel?", "a": "No, and the framing is misleading. They do different jobs — Excel for ad-hoc work you need to see and touch, Power BI for reporting that must stay current on its own. Most analysts use both every week." },
+        { "q": "Should I learn both Power BI and Tableau?", "a": "Learning one properly makes the second substantially quicker, because the underlying concepts transfer. Start with Power BI if you are targeting the Indian job market, and add Tableau when a role calls for it." },
+        { "q": "Can I get a job with only Excel?", "a": "Some reporting and MIS roles, yes. For most analyst positions you will need SQL and a BI tool as well — Excel alone tends to cap how far you can progress." }
+      ]
+    },
+
+    {
+      "slug": "data-analyst-vs-data-scientist",
+      "category": "career",
+      "title": "Data Analyst vs Data Scientist: Key Differences | SkillKoder",
+      "description": "How the two roles genuinely differ in daily work, tools, maths and entry difficulty — and which one you should aim for first.",
+      "keywords": "data analyst vs data scientist, difference between data analyst and data scientist, which is better data analyst or data scientist, data science vs analytics career",
+      "ogImage": "/data_science.webp",
+      "h1": "Data Analyst vs Data Scientist: What's the Real Difference?",
+      "intro": "The titles are used loosely and the boundary moves between companies. Here is the difference that actually holds, and which to aim for first.",
+      "excerpt": "The two titles get used interchangeably and they are not the same job. The difference that actually holds up, how the daily work diverges, and which one to target first.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 9,
+      "blocks": [
+        { "type": "p", "text": "These titles are applied loosely enough that the same work carries either label depending on the company. But there is a real distinction underneath, and it is worth understanding before you choose which to spend a year training for." },
+        { "type": "p", "text": "The cleanest version: **an analyst explains what happened; a data scientist estimates what will happen.** Everything else follows from that." },
+
+        { "type": "h2", "text": "The difference in daily work" },
+        { "type": "table", "headers": ["", "Data Analyst", "Data Scientist"], "rows": [
+          ["Core question", "What happened, and why?", "What will happen, and what should we do?"],
+          ["Typical deliverable", "A dashboard, a report, an answer", "A model, a prediction, an experiment result"],
+          ["Main tools", "SQL, Excel, Power BI, Tableau", "Python, scikit-learn, PyTorch, SQL"],
+          ["Maths", "Descriptive statistics", "Probability, inference, some linear algebra"],
+          ["Stakeholder contact", "High — constant", "Moderate — more project-shaped"],
+          ["Time horizon", "Days to weeks", "Weeks to months"],
+          ["Entry difficulty", "Lower", "Higher"]
+        ]},
+
+        { "type": "h2", "text": "What the tables never tell you" },
+        { "type": "h3", "text": "The pace is different" },
+        { "type": "p", "text": "Analytics work is interrupt-driven. Questions arrive, often urgently, and a good deal of the job is answering them quickly and correctly. Data science work is more project-shaped — weeks on one problem, with longer stretches of uninterrupted thinking." },
+        { "type": "p", "text": "This is a genuine personality fit question and it is asked far too rarely. Some people find the analyst rhythm energising and the data science rhythm isolating. Others feel exactly the opposite." },
+
+        { "type": "h3", "text": "Both spend most of their time on data quality" },
+        { "type": "p", "text": "The popular image is that analysts clean data and data scientists build models. In reality both spend a large share of their week establishing whether the data means what it appears to mean. If you dislike that work, neither role will suit you, and it is better to find that out early." },
+
+        { "type": "h3", "text": "Analysts often have more influence than they expect" },
+        { "type": "p", "text": "Because analysts sit closer to decision-makers and turn work around faster, their output frequently changes what a business does more often than a model does. Plenty of models are built, validated and never deployed. Dashboards get looked at every morning." },
+
+        { "type": "h2", "text": "Which should you aim for?" },
+        { "type": "h3", "text": "Choose analytics if" },
+        { "type": "ul", "items": [
+          "You want the shortest realistic route into a data role.",
+          "You enjoy talking to people and translating between technical and business language.",
+          "You are coming from a non-technical background.",
+          "You like variety and fast turnaround more than depth on one problem."
+        ]},
+        { "type": "h3", "text": "Choose data science if" },
+        { "type": "ul", "items": [
+          "You genuinely enjoy statistics and probabilistic reasoning, rather than liking the idea of them.",
+          "You want to work on one problem for weeks.",
+          "You already have programming or quantitative background.",
+          "You are comfortable with work that sometimes concludes that the data cannot answer the question."
+        ]},
+        { "type": "callout", "title": "The path most people underrate", "text": "Start as an analyst, move into data science internally. You learn the company's data and the business, you build credibility, and internal moves face far less competition than external applications. It looks slower on paper and is frequently faster in practice." },
+
+        { "type": "h2", "text": "What about all the other titles?" },
+        { "type": "ul", "items": [
+          "**Business intelligence analyst** — analyst work weighted toward the reporting layer and data modelling.",
+          "**Analytics engineer** — sits between analytics and engineering, owning the transformed data layer.",
+          "**Machine learning engineer** — takes models into production. More software engineering than statistics.",
+          "**[Data engineer](/careers/azure-data-engineer)** — builds the pipelines everyone else depends on. Less crowded than either role above.",
+          "**[AI engineer](/careers/ai-engineer)** — builds applications on top of pretrained models. The newest of these titles."
+        ]},
+
+        { "type": "h2", "text": "A note on the salary comparison" },
+        { "type": "p", "text": "Data scientist roles are generally compensated above analyst roles at equivalent experience, which is the usual reason people jump straight for the title. Two things are worth weighing against that: the entry bar is meaningfully higher, and a strong senior analyst frequently out-earns a mediocre data scientist." },
+        { "type": "p", "text": "We are not quoting figures here because any number without a named source and year is worse than no number. Check current listings on the job boards you would actually apply through, for your city and experience level." },
+
+        { "type": "cta", "text": "Still unsure which fits you? Book a free demo class, bring your background, and get a straight recommendation — including if the answer is neither yet.", "href": "/contact", "label": "Talk to a Career Expert" }
+      ],
+      "faqs": [
+        { "q": "Can a data analyst become a data scientist?", "a": "Yes, and it is one of the most common routes into the role. You already have SQL, data quality judgement and stakeholder skill; you add statistics, Python modelling and evaluation discipline. Internal moves are usually easier than external applications." },
+        { "q": "Which role has better job security?", "a": "Both are exposed to the same automation pressure on their mechanical tasks and protected by the same thing: judgement about what to ask and whether the data supports the answer. Analytics has more open roles; data science has fewer qualified candidates per role." },
+        { "q": "Do data scientists need SQL?", "a": "Yes. You still have to get the data out before you can model it, and this surprises a number of candidates who focused entirely on machine learning. SQL appears in data science interviews regularly." }
+      ]
+    },
+
+    {
+      "slug": "skills-required-to-become-a-data-analyst",
+      "category": "career",
+      "title": "Skills Required to Become a Data Analyst (2026) | SkillKoder",
+      "description": "The technical and non-technical skills employers actually screen for in data analyst hiring, how deep to go in each, and the ones that are overrated.",
+      "keywords": "skills required to become a data analyst, data analyst skills, what skills do data analysts need, data analyst requirements india, data analyst qualifications",
+      "ogImage": "/data_analytics.webp",
+      "h1": "Skills Required to Become a Data Analyst",
+      "intro": "What employers actually filter on, how deep you need to go in each, and which popular skills are less important than the internet suggests.",
+      "excerpt": "Not the list of twenty skills you will find elsewhere. What data analyst hiring actually screens for, how deep to go in each, and what is safe to skip at the start.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 10,
+      "blocks": [
+        { "type": "p", "text": "Search this question and you will find lists of twenty skills, which is unhelpful in a specific way: it gives no sense of proportion. Some of these matter enormously and some are nice to have, and treating them equally is how people spend six months on the wrong things." },
+        { "type": "p", "text": "What follows is ordered by how much difference it makes to whether you get hired." },
+
+        { "type": "h2", "text": "Tier 1: you will not be hired without these" },
+        { "type": "h3", "text": "SQL" },
+        { "type": "p", "text": "The most consistently requested skill in analyst job descriptions, and the most common technical screen. If you learn one thing on this page, learn this." },
+        { "type": "p", "text": "**How deep:** SELECT, WHERE, GROUP BY and joins are table stakes. Subqueries and CTEs next. Then window functions — ROW_NUMBER, RANK, LAG, LEAD and running totals. Window functions are where a large share of candidates fail, which makes them disproportionately worth your time." },
+        { "type": "callout", "title": "How to know you are ready", "text": "You can write a query that returns each customer's most recent order along with how it compares to their previous one, without looking anything up. If that sentence made you uneasy, that is where your practice should go." },
+
+        { "type": "h3", "text": "A BI tool" },
+        { "type": "p", "text": "Power BI in most of the Indian market, Tableau in some enterprises. Either is fine; knowing one well beats knowing both superficially." },
+        { "type": "p", "text": "**How deep:** past chart building and into data modelling — relationships, star schemas, and measures. Most self-taught candidates stop at the visual layer, and interviewers can tell within two questions. We compared the tools in [Excel vs Power BI vs Tableau](/blog/excel-vs-power-bi-vs-tableau)." },
+
+        { "type": "h3", "text": "Excel" },
+        { "type": "p", "text": "Rarely the headline requirement, universally assumed. Being visibly weak at it is a problem; being strong at it is quietly useful, because a great deal of real business data still arrives as a spreadsheet." },
+        { "type": "p", "text": "**How deep:** lookups, pivot tables, conditional logic, and Power Query. Power Query is the one most people have never opened and it is the most valuable." },
+
+        { "type": "h2", "text": "Tier 2: strongly expected, learn after Tier 1" },
+        { "type": "h3", "text": "Python" },
+        { "type": "p", "text": "Increasingly standard in analyst listings, though rarely the primary filter. **How deep:** pandas for cleaning, joining and aggregating; enough NumPy to follow along; basic plotting. You do not need machine learning to be hired as an analyst, and time spent on it early is usually time taken from SQL." },
+
+        { "type": "h3", "text": "Statistics" },
+        { "type": "p", "text": "Less than feared. **How deep:** averages and their failure modes, distributions, variance, correlation versus causation, sample size intuition, and enough about significance testing to avoid over-claiming a result. There is no calculus." },
+
+        { "type": "h3", "text": "Data cleaning judgement" },
+        { "type": "p", "text": "Rarely listed as a skill and constantly assessed in interviews. Deciding what to do with missing values, spotting a duplicate that is not an exact duplicate, noticing that a category was renamed and broke the year-on-year comparison. This is learned by doing messy projects, not from tutorials with tidy data." },
+
+        { "type": "h2", "text": "Tier 3: the non-technical skills that decide your ceiling" },
+        { "type": "ul", "items": [
+          "**Explaining a result plainly.** State the finding in one sentence, then the method if asked. Analysts who lead with methodology lose the room.",
+          "**Asking the question behind the question.** 'Can you pull last month's sales?' is rarely the actual need. Finding the real need saves everyone a week.",
+          "**Scepticism about your own output.** The instinct to check a surprising number before sending it. This one is close to a defining trait of good analysts.",
+          "**Knowing when to stop.** Analysis can always be refined. Business decisions have deadlines."
+        ]},
+        { "type": "callout", "title": "The uncomfortable truth", "text": "Two candidates with identical SQL: the one who explains their reasoning clearly gets the offer, every time. Technical skill gets you the interview. Communication gets you the job, and later determines whether you become a lead." },
+
+        { "type": "h2", "text": "Overrated at the start" },
+        { "type": "ul", "items": [
+          "**Machine learning.** Not an analyst requirement. Learn it if you want to move toward [data science](/careers/data-scientist), not to get an analyst job.",
+          "**Big data tooling.** Spark and Hadoop are engineering concerns. Add them if a role requires it.",
+          "**Certification collecting.** One relevant certification is fine. Six is a signal that you have been studying instead of building.",
+          "**Advanced statistics.** Diminishing returns until you are doing modelling work."
+        ]},
+
+        { "type": "h2", "text": "The portfolio matters more than any single skill" },
+        { "type": "p", "text": "Two or three projects that go end to end — messy source data, documented cleaning decisions, real analysis, a clear result, and a note on what you would do differently. The reasoning is what interviewers dig into, and it is the thing a certificate cannot demonstrate." },
+        { "type": "p", "text": "Avoid the tutorial datasets. Pick something you find genuinely interesting; it shows in how you talk about it." },
+
+        { "type": "cta", "text": "Our Data Analytics program covers every Tier 1 and Tier 2 skill above, built around the portfolio projects that get you through interviews.", "href": "/courses/data-analytics", "label": "See the Data Analytics course" }
+      ],
+      "faqs": [
+        { "q": "How long does it take to learn these skills?", "a": "For someone starting from scratch and practising consistently, reaching genuine job-ready competence plus a portfolio typically takes several months. The first six to eight weeks are the steepest." },
+        { "q": "Do I need to learn Python to be a data analyst?", "a": "Increasingly expected, but not a blocker for entry-level roles. Get SQL and a BI tool solid first — Python before SQL is a common and costly ordering mistake." },
+        { "q": "Which certification is most valuable for data analysts?", "a": "Certifications carry less weight in analytics than in cloud or infrastructure fields. A Microsoft Power BI certification is reasonably recognised, but a strong portfolio outperforms any certificate in interviews." }
+      ]
+    },
+
+    {
+      "slug": "data-science-roadmap-for-beginners",
+      "category": "data-science",
+      "title": "Data Science Roadmap for Beginners (2026) | SkillKoder",
+      "description": "A realistic, ordered path into data science — what to learn, in what order, what to skip, and the mistakes that cost beginners months.",
+      "keywords": "data science roadmap, data science roadmap for beginners, how to learn data science, data science learning path, python data science roadmap 2026",
+      "ogImage": "/data_science.webp",
+      "h1": "Data Science Roadmap for Beginners",
+      "intro": "Ordered by what actually unblocks the next thing, with the traps that cost people months marked as you go.",
+      "excerpt": "A realistic ordered path into data science — what to learn, in what order, what to skip, and the specific mistakes that cost beginners months of wasted effort.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 11,
+      "blocks": [
+        { "type": "p", "text": "Most data science roadmaps are a list of everything, which is not a roadmap. This one is ordered by what unblocks the next thing, and it says explicitly what to skip." },
+        { "type": "p", "text": "One framing note before the steps: the field rewards depth over coverage. Someone who genuinely understands linear regression and can evaluate it honestly is more employable than someone who has run twelve algorithms without being able to say why one beat another." },
+
+        { "type": "h2", "text": "Stage 1: Python fundamentals" },
+        { "type": "p", "text": "Not the whole language. Variables, control flow, functions, lists and dictionaries, reading files, handling errors, and being able to read a traceback without panic." },
+        { "type": "p", "text": "**Signal you are ready to move on:** you can write a script that reads a CSV, does something to it and writes the result, without copying from a tutorial." },
+        { "type": "callout", "title": "Trap", "text": "Spending three months on object-oriented programming, decorators and design patterns before touching data. You need far less Python than a software engineer does, and the rest is better learned later when you have a reason for it." },
+
+        { "type": "h2", "text": "Stage 2: pandas and real data" },
+        { "type": "p", "text": "This is where a large share of the actual job lives, and where most roadmaps under-invest." },
+        { "type": "ul", "items": [
+          "Loading, inspecting and filtering data.",
+          "GroupBy and aggregation.",
+          "Joins and merges — the same conceptual difficulty as SQL joins.",
+          "Reshaping: pivot, melt, wide and long form.",
+          "Missing data, and making a decision you can defend rather than dropping rows by reflex.",
+          "Dates, time zones and the surprising number of ways they go wrong.",
+          "Vectorised operations instead of loops."
+        ]},
+        { "type": "p", "text": "**Do this on genuinely messy data.** A clean teaching dataset trains you for a job that does not exist." },
+
+        { "type": "h2", "text": "Stage 3: SQL" },
+        { "type": "p", "text": "Yes, even for data science. You cannot model data you cannot extract, and SQL appears in data science interviews regularly. Joins, grouping, subqueries, CTEs and window functions. This is a genuinely fast stage if you commit to it." },
+        { "type": "callout", "title": "Trap", "text": "Skipping SQL because 'data scientists use Python'. This is one of the most common and most costly assumptions beginners make. It surfaces in the interview, not before." },
+
+        { "type": "h2", "text": "Stage 4: statistics, the useful parts" },
+        { "type": "ul", "items": [
+          "Descriptive statistics and where the mean misleads.",
+          "Distributions, and why normality assumptions matter.",
+          "Sampling and the intuition behind the central limit theorem.",
+          "Hypothesis testing, p-values, and what a p-value does not mean.",
+          "Confidence intervals.",
+          "Correlation versus causation, properly internalised rather than recited.",
+          "Bayes' theorem, conceptually."
+        ]},
+        { "type": "p", "text": "**Skip for now:** measure theory, deriving distributions by hand, most of a formal mathematical statistics syllabus. Come back if you move toward research." },
+
+        { "type": "h2", "text": "Stage 5: machine learning fundamentals" },
+        { "type": "p", "text": "Start with the workflow rather than the algorithm zoo." },
+        { "type": "ol", "items": [
+          "**Train/test splitting and why it exists.** Then cross-validation.",
+          "**Linear and logistic regression.** Understand these completely. Nearly every concept in supervised learning appears here in its simplest form.",
+          "**Evaluation metrics.** Accuracy, precision, recall, F1, ROC-AUC — and which is appropriate when. Spend more time here than feels necessary.",
+          "**Overfitting, underfitting and regularisation.**",
+          "**Tree-based models.** Decision trees, random forests, gradient boosting. These win a great many real problems.",
+          "**Feature engineering.** Frequently more impactful than model choice.",
+          "**Data leakage.** How it happens and how to catch it."
+        ]},
+        { "type": "callout", "title": "The trap that costs the most", "text": "Collecting algorithms. Knowing twenty models shallowly is worth less than knowing five well enough to explain why you chose one. Interviewers ask why, not which." },
+
+        { "type": "h2", "text": "Stage 6: deep learning, if relevant" },
+        { "type": "p", "text": "Only after the above. Neural network fundamentals, backpropagation conceptually, PyTorch or TensorFlow, and fine-tuning pretrained models rather than training from scratch." },
+        { "type": "p", "text": "**Honest note:** a large share of applied data science roles in India involve little deep learning. Tabular data and gradient boosting solve most business problems. Learn it if you are targeting AI work — see [how to become an AI engineer](/careers/ai-engineer) — not because it sounds impressive." },
+
+        { "type": "h2", "text": "Stage 7: projects that count" },
+        { "type": "ul", "items": [
+          "**One end to end** — messy raw data through to an evaluated result, with your decisions documented.",
+          "**One with evaluation judgement** — an imbalanced problem where accuracy is the wrong metric and you explain why.",
+          "**One deployed**, however crudely. A model behind a simple interface beats another notebook.",
+          "**No tutorial datasets.** Titanic and Iris signal nothing except that you followed a tutorial."
+        ]},
+
+        { "type": "h2", "text": "How long does this take?" },
+        { "type": "p", "text": "Longer than bootcamp marketing implies and shorter than a degree. For someone working consistently alongside a job, think in terms of many months rather than weeks — and the variance between individuals is large enough that any single number quoted at you should be treated with suspicion." },
+        { "type": "p", "text": "The people who get there are not usually the fastest learners. They are the ones who kept going after the stage where it stopped being novel." },
+
+        { "type": "cta", "text": "Our Data Science program follows this progression with live mentorship at each stage, so you are not deciding alone whether you are ready to move on.", "href": "/courses/data-science", "label": "See the Data Science course" }
+      ],
+      "faqs": [
+        { "q": "Should I learn data analytics before data science?", "a": "For most people, yes. Analytics builds SQL, data quality judgement and stakeholder communication — all of which data science assumes you already have — and it is an easier role to be hired into first." },
+        { "q": "Can I learn data science for free?", "a": "The material is largely free and much of it is excellent. What free resources rarely provide is feedback on whether your reasoning is sound, accountability when momentum drops, and someone to ask at the moment you are stuck. Those are the failure points, not content access." },
+        { "q": "Do I need a strong maths background?", "a": "You need to understand concepts, not derive them. School-level algebra is enough to start; the probability and statistics that matter are taught in context. Evaluation reasoning is tested far more often in interviews than mathematical derivation." }
+      ]
+    },
+
+    {
+      "slug": "what-is-generative-ai",
+      "category": "generative-ai",
+      "title": "What is Generative AI? Explained Simply | SkillKoder",
+      "description": "A clear, non-hyped explanation of how generative AI works, why models hallucinate, what they are genuinely good and bad at, and what it means for your career.",
+      "keywords": "what is generative ai, generative ai explained, how do llms work, why does chatgpt hallucinate, generative ai for beginners",
+      "ogImage": "/genai.webp",
+      "h1": "What is Generative AI? Explained Simply",
+      "intro": "How these models actually work, why they confidently invent things, what they are genuinely good and bad at — and what that means for your job.",
+      "excerpt": "A clear explanation without the hype: how generative AI actually works, why it hallucinates, what it is genuinely good and bad at, and what it means for your career.",
+      "published": "2026-08-01",
+      "updated": "2026-08-01",
+      "readingMinutes": 10,
+      "blocks": [
+        { "type": "p", "text": "Generative AI refers to models that produce new content — text, images, code, audio — rather than classifying or predicting from a fixed set of options. A traditional model tells you whether an email is spam. A generative model writes the email." },
+        { "type": "p", "text": "That distinction sounds small and is not. It changes what these systems can be used for, and it changes how they fail." },
+
+        { "type": "h2", "text": "How language models work, without the maths" },
+        { "type": "p", "text": "A large language model is, at its core, doing something narrow: predicting what token comes next, given everything before it. Trained on enormous quantities of text, it learns statistical structure — which words follow which, how arguments are typically constructed, what a Python function tends to look like." },
+        { "type": "p", "text": "When you ask a question, the model generates a plausible continuation, one token at a time, each new token feeding back in as context for the next." },
+        { "type": "callout", "title": "The single most useful thing to understand", "text": "The model is producing text that is statistically plausible given its training. It is not looking anything up, and it has no internal mechanism that distinguishes 'true' from 'reads like the kind of thing that is true'. Almost every surprising failure follows from this one fact." },
+
+        { "type": "h2", "text": "Why models hallucinate" },
+        { "type": "p", "text": "Ask for a citation and you may receive a paper title, plausible authors and a real-sounding journal — none of which exist. This is not a bug that will be patched away. It is the same mechanism working as designed: the model produced text shaped like a citation, because that is what the context called for." },
+        { "type": "p", "text": "Hallucination becomes more likely when you ask about something rare in training data, ask for specifics like numbers or dates, or ask about events after the training cutoff. It is reduced — not eliminated — by retrieval, which supplies real source text for the model to work from." },
+        { "type": "p", "text": "The practical rule: **anything a model states as fact needs verification if it matters.** Treat output as a well-read colleague's first draft, not as a reference." },
+
+        { "type": "h2", "text": "What these models are genuinely good at" },
+        { "type": "ul", "items": [
+          "**Transforming text you supply** — summarising, reformatting, changing tone, extracting structure. Lowest hallucination risk, because the source material is in front of it.",
+          "**Drafting.** Getting from a blank page to something to edit.",
+          "**Explaining concepts** at a level you specify, which makes them genuinely useful for learning.",
+          "**Code assistance** — boilerplate, unfamiliar syntax, explaining what an error means.",
+          "**Brainstorming**, where volume matters more than correctness."
+        ]},
+
+        { "type": "h2", "text": "What they are bad at" },
+        { "type": "ul", "items": [
+          "**Facts they were not clearly trained on.** Especially numbers, dates and citations.",
+          "**Reliable arithmetic**, unless connected to a tool that actually calculates.",
+          "**Knowing what they do not know.** Confidence in the output is not correlated with accuracy, which is exactly what makes it dangerous.",
+          "**Anything after the training cutoff**, without retrieval.",
+          "**Consistency across many inputs.** Working on your three test cases says little about the thousandth."
+        ]},
+
+        { "type": "h2", "text": "What all the jargon means" },
+        { "type": "table", "headers": ["Term", "What it actually means"], "rows": [
+          ["Token", "A chunk of text, roughly a word or word-piece. Models read and write in these."],
+          ["Context window", "How much text the model can consider at once. Exceed it and the earliest material is lost."],
+          ["Prompt engineering", "Designing instructions that produce reliable output across many inputs — not magic phrases."],
+          ["RAG (retrieval-augmented generation)", "Fetching relevant real documents and giving them to the model, so answers are grounded in sources."],
+          ["Fine-tuning", "Further training on your own data to adjust behaviour. Often unnecessary — try retrieval first."],
+          ["Temperature", "How much randomness in generation. Lower is more predictable, higher more varied."],
+          ["Hallucination", "Confident, fluent output that is false. A property of the mechanism, not a defect."]
+        ]},
+
+        { "type": "h2", "text": "What this means for your career" },
+        { "type": "p", "text": "The honest picture, without either the doom or the evangelism." },
+        { "type": "p", "text": "**What is genuinely changing:** the mechanical parts of many jobs. Writing boilerplate code, drafting standard documents, producing a first-pass summary. If a large share of your work is that, it is worth taking seriously." },
+        { "type": "p", "text": "**What is not changing as fast as claimed:** deciding what problem to solve, judging whether output is correct, taking responsibility for a decision, and doing anything that requires knowing your specific organisation's context. These are most of the value in most senior roles." },
+        { "type": "p", "text": "**The position worth being in** is fluency with these tools inside a field you actually understand. An analyst who uses AI well is more valuable than either an analyst who refuses to or someone who only knows how to prompt. There is more on that route in [how to become an AI engineer](/careers/ai-engineer)." },
+
+        { "type": "h2", "text": "Where to start if you want to build with it" },
+        { "type": "ol", "items": [
+          "**Use it seriously for a month** on real work, and notice where it fails. That intuition is genuinely valuable and cannot be read.",
+          "**Learn basic Python**, if you have not.",
+          "**Call an API directly** rather than only using a chat interface. The behaviour is more visible.",
+          "**Build one thing you actually use.** A demo you built for a portfolio teaches you far less.",
+          "**Add retrieval**, over documents you know well enough to spot a wrong answer.",
+          "**Build an evaluation set.** Fifty hand-labelled examples puts you ahead of most people working in this space."
+        ]},
+
+        { "type": "cta", "text": "Our Generative AI program covers LLM application development, retrieval, Hugging Face Transformers and evaluation — building working software, not demos.", "href": "/courses/generative-ai", "label": "See the Generative AI course" }
+      ],
+      "faqs": [
+        { "q": "Is generative AI going to take my job?", "a": "It is automating tasks rather than whole roles in most fields. The jobs most exposed are those consisting largely of routine production work. The reliable defence is being fluent with the tools within a domain you genuinely understand." },
+        { "q": "Do I need a machine learning background to work with generative AI?", "a": "Not for applied work. Most AI engineering uses pretrained models through APIs or libraries, so understanding how they behave matters more than being able to train one. Python and software fundamentals get you further than ML theory at the start." },
+        { "q": "What is the difference between generative AI and traditional machine learning?", "a": "Traditional ML mostly predicts or classifies from a fixed set of outputs — spam or not spam, a price, a category. Generative models produce new content. They also fail differently: a classifier gives a wrong label, a generative model produces a fluent and confident falsehood." }
+      ]
+    }
+  ]
+}

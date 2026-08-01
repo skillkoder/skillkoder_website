@@ -90,7 +90,7 @@ const GenerativeAI = () => {
               borderRadius: 50, 
               border: 'none',
               background: 'white',
-              color: '#FF8A54',
+              color: '#C2410C',
               cursor: 'pointer',
               fontWeight: '600',
               fontSize: '0.95rem',
@@ -98,7 +98,7 @@ const GenerativeAI = () => {
               boxShadow: '0 4px 20px rgba(255,138,84,0.1)'
             }}
             onMouseEnter={e => {
-              e.target.style.background = 'linear-gradient(135deg, #FF8A54, #FFB088)';
+              e.target.style.background = 'linear-gradient(135deg, #C2410C, #9A3412)';
               e.target.style.color = 'white';
             <style>{`
             @media (max-width: 640px) {
@@ -114,7 +114,7 @@ const GenerativeAI = () => {
             }}
             onMouseLeave={e => {
               e.target.style.background = 'white';
-              e.target.style.color = '#FF8A54';
+              e.target.style.color = '#C2410C';
               e.target.style.transform = 'translateX(0)';
               e.target.style.boxShadow = '0 4px 20px rgba(255,138,84,0.1)';
             }}
@@ -132,7 +132,7 @@ const GenerativeAI = () => {
             animation: 'float 3s ease-in-out infinite'
           }}>
             <span style={{ 
-              color: '#FF8A54', 
+              color: '#C2410C', 
               fontWeight: '700', 
               fontSize: '0.95rem', 
               letterSpacing: '2px'
@@ -152,7 +152,7 @@ const GenerativeAI = () => {
           <h1 style={{ 
             fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', 
             margin: '0 0 1rem 0',
-            background: 'linear-gradient(135deg, #FF8A54 0%, #FFB088 50%, #FF8A54 100%)',
+            background: 'linear-gradient(135deg, #C2410C 0%, #9A3412 50%, #C2410C 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             fontWeight: '800',
@@ -195,18 +195,28 @@ const GenerativeAI = () => {
             background: '#1a1a2e'
           }}>
             {/* Replace the src with your image URL */}
-            <img 
+            <img loading="eager" fetchpriority="high" decoding="async" 
               src="/course4.webp"
               alt="Generative AI" 
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: 'center',
+                objectPosition: 'center top',
                 display: 'block',
                 opacity: 1
               }}
             />
+            {/* Dark gradient overlay for high contrast text readability */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(to bottom, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.85) 100%)',
+              zIndex: 1
+            }} />
 
             {/* Floating Stats */}
             <div className="floating-stats" style={{
@@ -223,7 +233,7 @@ const GenerativeAI = () => {
               <div style={{ 
                 fontSize: 'clamp(1.5rem, 4vw, 2rem)', 
                 fontWeight: '700', 
-                color: '#FF8A54',
+                color: '#C2410C',
                 lineHeight: 1.2
               }}>20+</div>
               <div style={{ 
@@ -254,7 +264,7 @@ const GenerativeAI = () => {
               }}>
                 <span style={{ fontSize: '1.2rem' }}>🎯</span>
                 <span style={{ 
-                  color: '#FF8A54', 
+                  color: '#C2410C', 
                   fontWeight: '700', 
                   fontSize: '0.9rem',
                   letterSpacing: '1px'
@@ -289,7 +299,7 @@ const GenerativeAI = () => {
                 <button
                   onClick={() => window.dispatchEvent(new CustomEvent('skillkoder:openEnrollment', { detail: { course: 'Generative AI' } }))}
                   style={{ 
-                    background: 'linear-gradient(135deg, #FF8A54, #FFB088)', 
+                    background: 'linear-gradient(135deg, #C2410C, #9A3412)', 
                     color: 'white', 
                     padding: '1.2rem 3rem', 
                     borderRadius: 50, 
@@ -316,7 +326,7 @@ const GenerativeAI = () => {
                   onClick={() => window.open('/documents/GenAi.pdf', '_blank')}
                   style={{ 
                     background: 'white', 
-                    color: '#FF8A54', 
+                    color: '#C2410C', 
                     padding: '1.2rem 3rem', 
                     borderRadius: 50, 
                     border: '2px solid white', 
@@ -352,7 +362,7 @@ const GenerativeAI = () => {
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.5rem', background: 'linear-gradient(135deg, #FFF5F2, #FFE8DD)', borderRadius: 50, marginBottom: '1rem', border: '2px solid rgba(255,138,84,0.2)' }}>
                   <span style={{ fontSize: '1.2rem' }}>📚</span>
-                  <span style={{ color: '#FF8A54', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>COMPREHENSIVE CURRICULUM</span>
+                  <span style={{ color: '#C2410C', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>COMPREHENSIVE CURRICULUM</span>
                 </div>
                 <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', margin: '0 0 1rem 0', color: '#1a1a1a', fontWeight: '800' }}>Topics We Cover</h2>
                 <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: '600px', margin: '0 auto' }}>A complete toolkit for modern generative AI development</p>
@@ -362,8 +372,8 @@ const GenerativeAI = () => {
                 <div style={{ background: 'white', borderRadius: 20, padding: '2rem', boxShadow: '0 15px 40px rgba(255,138,84,0.15)', border: '2px solid #FFE8DD', maxHeight: '400px', overflowY: 'auto', overflowX: 'hidden' }} className="topics-scroll-container">
                   <div>
                     {topics.map((topic, i) => (
-                      <div key={i} onMouseEnter={() => setHoveredTopic(i)} onMouseLeave={() => setHoveredTopic(null)} style={{ padding: '0.9rem 1.2rem', background: hoveredTopic === i ? 'linear-gradient(135deg, #FF8A54, #FFB088)' : 'transparent', borderBottom: i !== topics.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.3s ease', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '12px' }}>
-                        <span style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: '700', color: hoveredTopic === i ? 'white' : '#FF8A54', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                      <div key={i} onMouseEnter={() => setHoveredTopic(i)} onMouseLeave={() => setHoveredTopic(null)} style={{ padding: '0.9rem 1.2rem', background: hoveredTopic === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent', borderBottom: i !== topics.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.3s ease', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '12px' }}>
+                        <span style={{ fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', fontWeight: '700', color: hoveredTopic === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
                         <span style={{ fontSize: 'clamp(0.85rem, 2vw, 0.95rem)', fontWeight: '600', color: hoveredTopic === i ? 'white' : '#1a1a1a' }}>{topic}</span>
                       </div>
                     ))}
@@ -377,7 +387,7 @@ const GenerativeAI = () => {
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.5rem', background: 'linear-gradient(135deg, #FFF5F2, #FFE8DD)', borderRadius: 50, marginBottom: '1rem', border: '2px solid rgba(255,138,84,0.2)' }}>
                   <span style={{ fontSize: '1.2rem' }}>🛠️</span>
-                  <span style={{ color: '#FF8A54', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>TOOLS WE USE</span>
+                  <span style={{ color: '#C2410C', fontWeight: '700', fontSize: '0.9rem', letterSpacing: '1px' }}>TOOLS WE USE</span>
                 </div>
                 <h3 style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.5rem)', margin: '0 0 0.6rem 0', color: '#1a1a1a', fontWeight: '800' }}>Tools & Frameworks</h3>
                 <p style={{ fontSize: '1rem', color: '#666', maxWidth: '600px', margin: '0 auto 1rem auto' }}>Tools and libraries commonly used in generative AI workflows</p>
@@ -387,8 +397,8 @@ const GenerativeAI = () => {
                 <div style={{ background: 'white', borderRadius: 20, padding: '1.5rem', boxShadow: '0 15px 40px rgba(255,138,84,0.15)', border: '2px solid #FFE8DD', maxHeight: '400px', overflowY: 'auto', overflowX: 'hidden' }} className="topics-scroll-container">
                   <div>
                     {tools.map((tool, i) => (
-                      <div key={i} onMouseEnter={() => setHoveredTool(i)} onMouseLeave={() => setHoveredTool(null)} style={{ padding: '0.7rem 1rem', background: hoveredTool === i ? 'linear-gradient(135deg, #FF8A54, #FFB088)' : 'transparent', borderBottom: i !== tools.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.25s ease', cursor: 'default', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '10px' }}>
-                        <span style={{ fontSize: '0.95rem', fontWeight: '700', color: hoveredTool === i ? 'white' : '#FF8A54', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
+                      <div key={i} onMouseEnter={() => setHoveredTool(i)} onMouseLeave={() => setHoveredTool(null)} style={{ padding: '0.7rem 1rem', background: hoveredTool === i ? 'linear-gradient(135deg, #C2410C, #9A3412)' : 'transparent', borderBottom: i !== tools.length - 1 ? '1px solid #FFE8DD' : 'none', transition: 'all 0.25s ease', cursor: 'default', display: 'flex', alignItems: 'center', gap: '1rem', borderRadius: '10px' }}>
+                        <span style={{ fontSize: '0.95rem', fontWeight: '700', color: hoveredTool === i ? 'white' : '#C2410C', minWidth: '30px' }}>{String(i + 1).padStart(2, '0')}.</span>
                         <span style={{ fontSize: '0.95rem', fontWeight: '600', color: hoveredTool === i ? 'white' : '#1a1a1a' }}>{tool}</span>
                       </div>
                     ))}

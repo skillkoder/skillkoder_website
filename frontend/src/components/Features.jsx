@@ -3,36 +3,45 @@ import React, { useState } from 'react';
 const Features = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // `color` is decorative only — fills, glows, borders. Each of these six
+  // measures between 1.8:1 and 2.9:1 on white, so none of them may carry text.
+  // `ink` is the accessible partner used for any text, all >= 5:1 on white.
   const features = [
     {
       title: "Placement Assistance",
       description: "Career support with resume guidance, interview prep, and placement-ready project portfolios.",
-      color: "#FF8A54"
+      color: "#FF8A54",
+      ink: "#C2410C"
     },
     {
       title: "Tools Mastery",
       description: "Learn industry-standard tools like Python, Power BI, SQL, Tableau, Excel, and ChatGPT.",
-      color: "#FFB088"
+      color: "#FFB088",
+      ink: "#9A3412"
     },
     {
       title: "Real-World Projects",
       description: "Build authentic case studies and portfolio projects aligned with top hiring needs.",
-      color: "#FF7A3D"
+      color: "#FF7A3D",
+      ink: "#B45309"
     },
     {
       title: "Expert Mentorship",
       description: "Guidance from working professionals to help you learn fast and stay industry-ready.",
-      color: "#FF6B6B"
+      color: "#FF6B6B",
+      ink: "#B42318"
     },
     {
       title: "Career Growth",
       description: "Step into roles like Data Analyst, Data Scientist, AI Developer, and Business Intelligence Analyst.",
-      color: "#FFA07A"
+      color: "#FFA07A",
+      ink: "#BE185D"
     },
     {
       title: "High-Confidence Learning",
       description: "A structured path from beginner to career-ready with measurable progress every week.",
-      color: "#FF9966"
+      color: "#FF9966",
+      ink: "#7C2D12"
     }
   ];
 
@@ -91,7 +100,7 @@ const Features = () => {
               letterSpacing: '-0.02em'
             }}>
               Why Choose <span style={{
-                background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
+                background: 'linear-gradient(135deg, #C2410C, #9A3412)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}>SkillKoder</span>?
@@ -116,21 +125,28 @@ const Features = () => {
         </div>
 
         {/* Main Content Area */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1.25fr',
-          gap: '1.5rem',
-          alignItems: 'center'
-        }}>
+        <div 
+          className="features-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1.25fr',
+            gap: '1.5rem',
+            alignItems: 'center'
+          }}
+        >
           {/* Left Side - Feature List */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.5rem'
-          }}>
+          <div 
+            className="features-list"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem'
+            }}
+          >
             {features.map((feature, index) => (
               <div
                 key={index}
+                className="features-item"
                 onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
                 style={{
@@ -146,7 +162,7 @@ const Features = () => {
                 <h3 style={{
                   fontSize: 'clamp(1rem, 1.6vw, 1.25rem)',
                   fontWeight: activeIndex === index ? '700' : '600',
-                  color: activeIndex === index ? feature.color : '#4a5568',
+                  color: activeIndex === index ? feature.ink : '#4a5568',
                   transition: 'all 0.3s ease',
                   marginBottom: '0.25rem'
                 }}>
@@ -192,7 +208,7 @@ const Features = () => {
                 marginBottom: '1rem',
                 fontSize: '0.85rem',
                 fontWeight: '600',
-                color: features[activeIndex].color,
+                color: features[activeIndex].ink,
                 transition: 'all 0.4s ease'
               }}>
                 Feature Highlight
@@ -269,34 +285,42 @@ const Features = () => {
 
       <style>{`
         @media (max-width: 968px) {
-          /* Keep the list and details side-by-side on narrower screens.
-             Use horizontal scrolling if viewport is too narrow so the
-             right-side card remains to the right instead of stacking below. */
-          #features > div > div:nth-child(2) {
-            grid-auto-flow: column !important;
-            grid-auto-columns: minmax(260px, 1fr) !important;
-            gap: 1rem !important;
-            overflow-x: auto;
+          .features-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.75rem !important;
+          }
+          .features-list {
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            white-space: nowrap !important;
+            gap: 0.75rem !important;
+            padding: 0.5rem 0.25rem !important;
+            scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 0.5rem; /* allow space for scrolling */
           }
-
-          /* Make each child snap into view when scrolling */
-          #features > div > div:nth-child(2) > div {
-            scroll-snap-align: start;
+          .features-list::-webkit-scrollbar {
+            display: none;
           }
-
-          #features > div > div:nth-child(2) > div:last-child {
-            min-height: 240px !important;
+          .features-item {
+            border-left: none !important;
+            border-radius: 24px !important;
+            padding: 0.65rem 1.25rem !important;
+            display: inline-block !important;
+            flex-shrink: 0 !important;
+            transform: none !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+            border: 1px solid rgba(255, 176, 136, 0.15) !important;
+          }
+          .features-item h3 {
+            font-size: 0.95rem !important;
+            margin: 0 !important;
           }
         }
 
         @media (max-width: 640px) {
           #features {
-            padding: 2rem 1rem !important;
+            padding: 2.5rem 1rem !important;
           }
-
           #features > div > div:first-child {
             flex-direction: column !important;
             align-items: flex-start !important;

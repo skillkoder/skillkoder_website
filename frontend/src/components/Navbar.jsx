@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RegistrationModal from './RegistrationModal';
 import EnrollmentModal from './EnrollmentModal';
+import BrochureModal from './BrochureModal';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +10,8 @@ const Navbar = () => {
   const [showRegistration, setShowRegistration] = useState(false);
   const [showEnrollment, setShowEnrollment] = useState(false);
   const [enrollmentCourse, setEnrollmentCourse] = useState('');
+  const [showBrochure, setShowBrochure] = useState(false);
+  const [brochureCourse, setBrochureCourse] = useState('');
 
   // Scroll to a section without touching the URL.
   // If not on the homepage, navigate there first then scroll.
@@ -40,6 +43,17 @@ const Navbar = () => {
     };
     window.addEventListener('skillkoder:openEnrollment', onOpenEnrollment);
     return () => window.removeEventListener('skillkoder:openEnrollment', onOpenEnrollment);
+  }, []);
+
+  // Brochure downloads are triggered from content pages and the footer, none of
+  // which are ancestors of this component — hence the event rather than props.
+  React.useEffect(() => {
+    const onOpenBrochure = (e) => {
+      setBrochureCourse(e?.detail?.course || '');
+      setShowBrochure(true);
+    };
+    window.addEventListener('skillkoder:openBrochure', onOpenBrochure);
+    return () => window.removeEventListener('skillkoder:openBrochure', onOpenBrochure);
   }, []);
 
   const styles = {
@@ -109,7 +123,7 @@ const Navbar = () => {
       borderRadius: '999px'
     },
     registerBtn: {
-      background: 'linear-gradient(135deg, #FF8A54, #FFB088)',
+      background: 'linear-gradient(135deg, #C2410C, #9A3412)',
       color: 'white',
       padding: '0.6rem 1.5rem',
       borderRadius: '999px',
@@ -197,27 +211,35 @@ const Navbar = () => {
         nav > div { background: transparent !important; }
         .desktop-menu { background: transparent !important; box-shadow: none !important; border-bottom: none !important; }
 
-        @media (max-width: 1024px) {
-          .desktop-menu { 
-            gap: 1.5rem !important; 
+        /* Three extra links (Tools, Blog, Placement) tighten the row, so the
+           gap steps down earlier than it used to rather than overflowing. */
+        @media (max-width: 1320px) {
+          .desktop-menu {
+            gap: 1.15rem !important;
+          }
+          .desktop-menu a {
+            font-size: 0.9rem !important;
           }
           .desktop-menu button {
-            padding: 0.65rem 1.5rem !important;
+            padding: 0.55rem 1.2rem !important;
             font-size: 0.9rem !important;
+          }
+        }
+        @media (max-width: 1024px) {
+          .desktop-menu {
+            gap: 1rem !important;
+          }
+          .desktop-menu a {
+            font-size: 0.86rem !important;
+          }
+          .desktop-menu button {
+            padding: 0.6rem 1.15rem !important;
+            font-size: 0.86rem !important;
           }
         }
         @media (max-width: 768px) {
           .desktop-menu {
-            display: ${isMenuOpen ? 'flex' : 'none'} !important;
-            position: absolute !important;
-            top: 100% !important;
-            left: 0 !important;
-            right: 0 !important;
-            flex-direction: column !important;
-            background: transparent !important;
-            padding: 1rem 0 !important;
-            box-shadow: none !important;
-            gap: 1rem !important;
+            display: none !important;
           }
           .mobile-menu-btn {
             display: block !important;
@@ -261,7 +283,7 @@ const Navbar = () => {
       <nav style={styles.nav}>
         <div style={styles.container}>
           <div style={styles.logoContainer}>
-            <img 
+            <img loading="eager" fetchpriority="high" decoding="async" 
               src="/sk_logo.webp" 
               alt="SkillKoder Logo" 
               style={styles.logoImg}
@@ -276,7 +298,7 @@ const Navbar = () => {
                 style={styles.menuItem}
                 href="/"
                 onClick={scrollToTop}
-                onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
                 Home
@@ -289,7 +311,7 @@ const Navbar = () => {
                 style={styles.menuItem}
                 href="/about"
                 onClick={(e) => { e.preventDefault(); navigate('/about'); }}
-                onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
                 About
@@ -302,7 +324,7 @@ const Navbar = () => {
                 style={styles.menuItem}
                 href="/courses"
                 onClick={(e) => { e.preventDefault(); navigate('/courses'); }}
-                onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
                 Courses
@@ -313,9 +335,48 @@ const Navbar = () => {
               <a
                 className="menu-item"
                 style={styles.menuItem}
+                href="/tools"
+                onClick={(e) => { e.preventDefault(); navigate('/tools'); }}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
+                onMouseLeave={(e) => e.target.style.color = '#1a202c'}
+              >
+                Tools
+                <div className="underline" style={styles.menuItemUnderline}></div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="menu-item"
+                style={styles.menuItem}
+                href="/blog"
+                onClick={(e) => { e.preventDefault(); navigate('/blog'); }}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
+                onMouseLeave={(e) => e.target.style.color = '#1a202c'}
+              >
+                Blog
+                <div className="underline" style={styles.menuItemUnderline}></div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="menu-item"
+                style={styles.menuItem}
+                href="/placement"
+                onClick={(e) => { e.preventDefault(); navigate('/placement'); }}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
+                onMouseLeave={(e) => e.target.style.color = '#1a202c'}
+              >
+                Placement
+                <div className="underline" style={styles.menuItemUnderline}></div>
+              </a>
+            </li>
+            <li>
+              <a
+                className="menu-item"
+                style={styles.menuItem}
                 href="/features"
                 onClick={(e) => { e.preventDefault(); navigate('/features'); }}
-                onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
                 Features
@@ -328,7 +389,7 @@ const Navbar = () => {
                 style={styles.menuItem}
                 href="/contact"
                 onClick={(e) => { e.preventDefault(); navigate('/contact'); }}
-                onMouseEnter={(e) => e.target.style.color = '#FF6B6B'}
+                onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
               >
                 Contact Us
@@ -400,10 +461,46 @@ const Navbar = () => {
           <li>
             <a
               style={styles.mobileMenuItem}
+              href="/tools"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/tools'); }}
+            >
+              Tools
+            </a>
+          </li>
+          <li>
+            <a
+              style={styles.mobileMenuItem}
+              href="/blog"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/blog'); }}
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              style={styles.mobileMenuItem}
+              href="/placement"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/placement'); }}
+            >
+              Placement
+            </a>
+          </li>
+          <li>
+            <a
+              style={styles.mobileMenuItem}
               href="/features"
               onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/features'); }}
             >
               Features
+            </a>
+          </li>
+          <li>
+            <a
+              style={styles.mobileMenuItem}
+              href="/faq"
+              onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); navigate('/faq'); }}
+            >
+              FAQs
             </a>
           </li>
           <li>
@@ -427,6 +524,7 @@ const Navbar = () => {
       </div>
       <RegistrationModal open={showRegistration} onClose={() => setShowRegistration(false)} />
       <EnrollmentModal open={showEnrollment} onClose={() => setShowEnrollment(false)} initialCourse={enrollmentCourse} />
+      <BrochureModal open={showBrochure} onClose={() => setShowBrochure(false)} initialCourse={brochureCourse} />
     </>
   );
 };
