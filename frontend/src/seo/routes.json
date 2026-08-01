@@ -223,6 +223,17 @@
       ]
     },
     {
+      "_note": "Added so this route gets a static shell and returns HTTP 200. Without an entry here it fell through to 404.html, meaning the page worked for humans but every crawler and every link preview saw a 404. Marked noindex deliberately: it is a certificate generator rather than a marketing page, and the copy below was not written by whoever owns the feature. If it SHOULD rank, remove noindex and replace the title, description and intro with real copy — it will then appear in the sitemap automatically.",
+      "path": "/drug-free-certificates",
+      "title": "Drug-Free Certificate | SkillKoder",
+      "description": "Generate and download a SkillKoder drug-free certificate.",
+      "keywords": "",
+      "ogImage": "/logo512.png",
+      "h1": "Drug-Free Certificate",
+      "intro": "Generate and download your certificate.",
+      "noindex": true
+    },
+    {
       "path": "/404",
       "title": "Page Not Found | SkillKoder",
       "description": "That page does not exist. Browse our courses, tools, blog and career guides instead.",

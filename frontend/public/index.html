@@ -13,11 +13,20 @@
     <meta property="og:description" content="Join SkillKoder to learn Data Analytics, Data Science, Generative AI, and Azure Data Engineering with project-based training and expert mentorship." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.skillkoder.com/" />
-    <meta property="og:image" content="/logo512.png" />
+    <!-- Absolute URLs are required here. Facebook, LinkedIn, WhatsApp and X all
+         fetch og:image from their own servers, where a root-relative path has
+         no host to resolve against and the preview silently renders blank.
+         scripts/prerender.mjs writes absolute URLs into every route shell; this
+         template needs them too for any path it serves directly. -->
+    <meta property="og:image" content="https://www.skillkoder.com/logo512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="SkillKoder" />
+    <meta property="og:locale" content="en_IN" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SkillKoder | Data Analytics, Data Science, Generative AI Training" />
     <meta name="twitter:description" content="Join SkillKoder to learn Data Analytics, Data Science, Generative AI, and Azure Data Engineering with project-based training and expert mentorship." />
-    <meta name="twitter:image" content="/logo512.png" />
+    <meta name="twitter:image" content="https://www.skillkoder.com/logo512.png" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-702HZNVRFG"></script>
     <script>
@@ -41,19 +50,66 @@
         }
       }(window.location));
     </script>
+    <!--
+      Organization entity for the whole site.
+
+      @id gives every other schema block on the site a stable node to point at,
+      instead of each page re-declaring an unrelated "SkillKoder" provider that
+      Google has to guess is the same organisation.
+
+      postalAddress matters specifically for the city pages: the SERP for
+      "data analytics course in hyderabad" carries a local pack above the
+      organic results. Schema alone does not put you in that pack — a verified
+      Google Business Profile does — but a consistent name, address and phone
+      across the site, the profile and directory listings is what lets Google
+      treat them as the same business. Keep this address identical to the one
+      on /privacy-policy, /terms and the Business Profile, character for
+      character; a mismatch is worse than an omission.
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
+      "@id": "https://www.skillkoder.com/#organization",
       "name": "SkillKoder",
       "url": "https://www.skillkoder.com/",
-      "logo": "https://www.skillkoder.com/sk_logo.webp",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.skillkoder.com/sk_logo.webp"
+      },
+      "image": "https://www.skillkoder.com/logo512.png",
       "description": "Specialist online academy for Data Analytics, Data Science, Generative AI and Azure Data Engineering, with live mentorship, real projects and placement support.",
-      "areaServed": "IN",
+      "email": "Skillkoder2025@gmail.com",
+      "telephone": "+91 9951599922",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2-3-720/2/31/C, New Maruti Nagar, Amberpet",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500013",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "knowsAbout": [
+        "Data Analytics",
+        "Data Science",
+        "Generative AI",
+        "Azure Data Engineering",
+        "Python",
+        "SQL",
+        "Power BI",
+        "Tableau"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91 9951599922",
-        "contactType": "customer service"
+        "email": "Skillkoder2025@gmail.com",
+        "contactType": "admissions",
+        "areaServed": "IN",
+        "availableLanguage": ["en", "hi", "te"]
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61582789902427",

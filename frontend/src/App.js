@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
@@ -11,7 +11,6 @@ import AzureDataEngineeringPage from './pages/AzureDataEngineeringPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import FeaturesPage from './pages/FeaturesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
-import DrugFreeCertificatePage from './pages/DrugFreeCertificatePage.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ToolsPage from './pages/ToolsPage.jsx';
 import FaqPage from './pages/FaqPage.jsx';
@@ -22,6 +21,22 @@ import BlogPostPage from './pages/BlogPostPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import StickyCTA from './components/StickyCTA.jsx';
 import { CONTENT_ROUTES } from './seo/allRoutes';
+
+/**
+ * Code-split so jspdf does not ship to every visitor.
+ *
+ * DrugFreeCertificatePage imports jspdf at module scope, which put ~133 kB
+ * gzipped into the main bundle for everyone — including the homepage and every
+ * blog post, none of which generate a PDF. A PageSpeed run measured mobile LCP
+ * at 5.5s and 108 kB of unused JavaScript, so this was a real cost rather than
+ * a theoretical one.
+ *
+ * Lazy-loading moves it into a chunk fetched only when the route is visited.
+ * The page itself is unchanged.
+ */
+const DrugFreeCertificatePage = lazy(() =>
+  import('./pages/DrugFreeCertificatePage.jsx')
+);
 
 const CourseDetailPage = () => {
   const { slug } = useParams();
@@ -69,7 +84,14 @@ const App = () => (
       <Route path="/blog/:slug"                  element={<BlogPostPage />} />
 
       <Route path="/contact"           element={<ContactPage />} />
-      <Route path="/drug-free-certificates" element={<DrugFreeCertificatePage />} />
+      <Route
+        path="/drug-free-certificates"
+        element={
+          <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
+            <DrugFreeCertificatePage />
+          </Suspense>
+        }
+      />
 
       {/*
         Unknown URLs render a real 404 rather than the homepage.
