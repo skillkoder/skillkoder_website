@@ -2,10 +2,18 @@
   "_README": [
     "ACTION REQUIRED BEFORE THESE GO LIVE.",
     "",
-    "1. Every occurrence of the string '[REGISTERED ENTITY]' must be replaced with",
-    "   the legal name of the company that operates SkillKoder, and '[REGISTERED",
-    "   ADDRESS]' with its registered office address. These are the two facts a",
-    "   privacy policy legally cannot omit in India and that no one but you knows.",
+    "1. Entity name and registered address are filled in, confirmed by the owner",
+    "   on 1 Aug 2026: the registered name is 'SkillKoder' and the registered",
+    "   office is 2-3-720/2/31/C, New Maruti Nagar, Amberpet, Hyderabad, Telangana",
+    "   500013. City and state were inferred from PIN 500013 — correct them if the",
+    "   registration certificate writes the address differently, since these pages",
+    "   should match it exactly.",
+    "",
+    "   Because the brand and the registered entity share a name, the identifying",
+    "   sentences are phrased as 'SkillKoder is registered at ...' rather than",
+    "   'SkillKoder is operated by SkillKoder'. If the entity is ever incorporated",
+    "   under a longer legal name, restore the 'operated by <entity>' construction",
+    "   in both pages.",
     "",
     "2. The refund page deliberately does NOT state a refund window, a percentage",
     "   or a deadline. Those are binding commercial commitments; a number invented",
@@ -34,7 +42,7 @@
       "intro": "This policy explains what personal data SkillKoder collects, why we collect it, how long we keep it and what you can ask us to do with it. Last updated 1 August 2026.",
       "blocks": [
         { "type": "h2", "text": "Who we are" },
-        { "type": "p", "text": "SkillKoder is an online training academy operated by [REGISTERED ENTITY], with its registered office at [REGISTERED ADDRESS]. For any question about this policy or your data, contact us at Skillkoder2025@gmail.com or +91 99515 99922." },
+        { "type": "p", "text": "SkillKoder is an online training academy with its registered office at 2-3-720/2/31/C, New Maruti Nagar, Amberpet, Hyderabad, Telangana 500013, India. For any question about this policy or about the data we hold on you, contact us at Skillkoder2025@gmail.com or +91 99515 99922." },
 
         { "type": "h2", "text": "What we collect" },
         { "type": "p", "text": "We collect only what we need to answer your enquiry and deliver a course. Specifically:" },
@@ -111,7 +119,7 @@
       "intro": "These terms apply when you use this website, book a demo class, or enrol in a SkillKoder program. Last updated 1 August 2026.",
       "blocks": [
         { "type": "h2", "text": "Agreement to these terms" },
-        { "type": "p", "text": "By using this website or enrolling in a program, you agree to these terms. SkillKoder is operated by [REGISTERED ENTITY], registered at [REGISTERED ADDRESS]. If you do not agree with these terms, please do not use the site or enrol." },
+        { "type": "p", "text": "By using this website or enrolling in a program, you agree to these terms. SkillKoder is registered at 2-3-720/2/31/C, New Maruti Nagar, Amberpet, Hyderabad, Telangana 500013, India. If you do not agree with these terms, please do not use the site or enrol." },
 
         { "type": "h2", "text": "What we provide" },
         { "type": "p", "text": "SkillKoder provides online, instructor-led training in Data Analytics, Data Science, Generative AI and Azure Data Engineering, together with the career support set out on our [placement support page](/placement)." },
