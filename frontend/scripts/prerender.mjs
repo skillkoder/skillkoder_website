@@ -60,6 +60,25 @@ const content = ['careers', 'locations', 'landings', 'legal'].map((name) =>
 );
 const blog = readJSON(path.join(CONTENT_DIR, 'blog.json'));
 
+/**
+ * Data behind pages that are built as React components rather than from
+ * content JSON — the homepage, /tools and /placement.
+ *
+ * Those pages used to emit a shell containing only their h1, intro and
+ * bullets: 236 words for a homepage that renders roughly 800, and 262 for a
+ * /tools page listing 14 detailed entries. Googlebot renders JavaScript and
+ * would eventually see the full page, but that happens in a second, slower
+ * queue — and Bing, LLM crawlers and social scrapers largely do not render at
+ * all, so those pages were badly under-represented to exactly the crawlers
+ * that matter most for a domain with no authority yet.
+ *
+ * The copy now lives in JSON that both React and this script read, so what a
+ * crawler is served matches what a visitor sees. That equivalence is what
+ * keeps this progressive enhancement rather than cloaking.
+ */
+const toolsData = readJSON(path.join(SRC, 'data', 'tools.json'));
+const sectionsData = readJSON(path.join(SRC, 'data', 'sections.json'));
+
 const contentRoutes = content.flatMap((file) => file.pages);
 
 const blogCategoryRoutes = blog.categories.map((category) => ({
@@ -347,6 +366,115 @@ function renderBlocks(blocks = []) {
     .join('');
 }
 
+/* Sections mirroring the React components on /, /tools and /placement. */
+
+/** Full tool catalogue — mirrors ToolsPage.jsx. */
+function toolsSection({ full }) {
+  const out = [];
+  for (const category of toolsData.toolCategories) {
+    const tools = toolsData.tools.filter((t) => t.category === category.id);
+    if (!tools.length) continue;
+    out.push(`<h2>${esc(category.label)}</h2>`);
+    if (full) {
+      for (const t of tools) {
+        out.push(`<h3 id="${t.slug}">${esc(t.name)}</h3>`);
+        out.push(`<p>${esc(t.tagline)}</p>`);
+        out.push(`<p>${esc(t.description)}</p>`);
+        out.push(`<p><strong>What you build:</strong> ${esc(t.youWillBuild)}</p>`);
+        out.push(
+          `<p>${t.courses
+            .map((c) => `<a href="${c}">${esc(toolsData.courseLabels[c] || c)}</a>`)
+            .join(' ')}</p>`
+        );
+      }
+    } else {
+      // Homepage version: names only, matching ToolsCovered.jsx.
+      out.push(
+        `<ul>${tools
+          .map((t) => `<li><a href="/tools#${t.slug}">${esc(t.name)}</a></li>`)
+          .join('')}</ul>`
+      );
+    }
+  }
+  return out;
+}
+
+/** Career outcomes — mirrors CareerOutcomes.jsx. */
+function careerOutcomesSection() {
+  const out = ['<h2>Where these programs lead</h2>'];
+  for (const route of routes) {
+    if (!route.course?.roles?.length) continue;
+    const label = toolsData.courseLabels[route.path];
+    if (!label) continue;
+    out.push(`<h3><a href="${route.path}">${esc(label)}</a></h3>`);
+    out.push(
+      `<ul>${route.course.roles
+        .map((role) => {
+          const blurb = sectionsData.roleBlurbs[role];
+          return `<li><strong>${esc(role)}</strong>${blurb ? ' — ' + esc(blurb) : ''}</li>`;
+        })
+        .join('')}</ul>`
+    );
+  }
+  return out;
+}
+
+/**
+ * Course comparison — mirrors what CoursesPage.jsx presents.
+ *
+ * Built from the course routes themselves rather than from copy duplicated
+ * here, so the summary cannot drift from the course pages it summarises.
+ */
+function coursesSection() {
+  const out = [];
+  for (const route of routes) {
+    if (!route.course?.tools?.length) continue;
+    const label = toolsData.courseLabels[route.path];
+    if (!label) continue;
+    out.push(`<h2><a href="${route.path}">${esc(route.course.name)}</a></h2>`);
+    out.push(`<p>${esc(route.intro || route.description)}</p>`);
+    out.push(
+      `<p><strong>Tools:</strong> ${route.course.tools.map(esc).join(', ')}</p>`
+    );
+    out.push(
+      `<p><strong>Roles:</strong> ${route.course.roles.map(esc).join(', ')}</p>`
+    );
+  }
+  return out;
+}
+
+/** Placement pillars — mirrors PlacementPage.jsx. */
+function placementSection() {
+  return [
+    '<h2>What placement support includes</h2>',
+    ...sectionsData.placementPillars.map(
+      (p) => `<h3>${esc(p.title)}</h3><p>${esc(p.body)}</p>`
+    ),
+  ];
+}
+
+/** Homepage question block — mirrors HomeFAQ.jsx (a subset of /faq). */
+const HOMEPAGE_FAQ_QUESTIONS = [
+  'Who can join a SkillKoder course?',
+  'Is coding experience required to start?',
+  'Are classes live or pre-recorded?',
+  'Do SkillKoder courses include placement assistance?',
+  'Can I attend a class before paying?',
+  'Which course should I choose?',
+];
+
+function homepageFaqSection() {
+  const faqs = (baseRoutes.find((r) => r.path === '/faq')?.faqs || []).filter((f) =>
+    HOMEPAGE_FAQ_QUESTIONS.includes(f.q)
+  );
+  if (!faqs.length) return [];
+  return [
+    '<h2>Common questions</h2>',
+    ...faqs.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`),
+    '<p><a href="/faq">Read all frequently asked questions</a></p>',
+  ];
+}
+
 function staticBody(r) {
   const parts = [];
 
@@ -372,6 +500,27 @@ function staticBody(r) {
   // The article body itself — the reason this script exists for content pages.
   if (r.blocks?.length) {
     parts.push(renderBlocks(r.blocks));
+  }
+
+  // Component-built pages: emit the same sections React renders.
+  if (r.path === '/') {
+    parts.push('<h2>Tools you will learn at SkillKoder</h2>');
+    parts.push(...toolsSection({ full: false }));
+    parts.push('<p><a href="/tools">See what you build with each tool</a></p>');
+    parts.push(...careerOutcomesSection());
+    parts.push(...homepageFaqSection());
+  }
+
+  if (r.path === '/tools') {
+    parts.push(...toolsSection({ full: true }));
+  }
+
+  if (r.path === '/courses') {
+    parts.push(...coursesSection());
+  }
+
+  if (r.path === '/placement') {
+    parts.push(...placementSection());
   }
 
   // Category listings get the post links they render client-side, so a crawler

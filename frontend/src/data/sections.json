@@ -1,0 +1,65 @@
+{
+  "_README": [
+    "Section copy shared by React components and scripts/prerender.mjs.",
+    "",
+    "These strings previously lived inside CareerOutcomes.jsx and",
+    "PlacementPage.jsx. prerender runs in plain Node and cannot read JSX, so",
+    "the static shells for / and /placement omitted them entirely. Moving the",
+    "copy here lets both renderers read one source.",
+    "",
+    "roleBlurbs is keyed by the role names in the course.roles arrays of",
+    "src/seo/routes.json. A role with no entry simply renders without a blurb."
+  ],
+  "roleBlurbs": {
+    "Data Analyst": "Turns raw business data into the reports and dashboards that leadership actually decides from. The most common entry point into the field.",
+    "Business Intelligence Analyst": "Owns the reporting layer end to end — data models, metric definitions and the BI tooling the rest of the company relies on.",
+    "Reporting Analyst": "Builds and maintains the recurring reporting that operations teams run on, and automates what used to be assembled by hand.",
+    "Data Scientist": "Moves past describing what happened into predicting what will. Builds and validates models that feed real product and business decisions.",
+    "Machine Learning Engineer": "Takes models out of notebooks and into production, where they have to be reliable, monitored and fast.",
+    "Applied Data Analyst": "Sits between analytics and data science, using statistical methods on business problems that a dashboard cannot answer.",
+    "AI Developer": "Builds applications on top of large language models — retrieval, structured prompting, evaluation and the plumbing around them.",
+    "Prompt Engineering Specialist": "Designs and tests the prompts and guardrails that make an LLM behave consistently across thousands of real inputs.",
+    "AI Application Engineer": "Ships user-facing AI features, owning the trade-offs between model quality, latency and cost.",
+    "Azure Data Engineer": "Designs the pipelines and storage that everyone else queries. Less crowded than analytics and typically better paid.",
+    "Cloud Data Engineer": "Runs data infrastructure on cloud platforms, from ingestion through transformation to serving.",
+    "Analytics Engineer": "Bridges engineering and analytics — models and tests the transformed data layer that analysts build on."
+  },
+  "courseAccents": {
+    "/courses/data-analytics": "#C2410C",
+    "/courses/data-science": "#B42318",
+    "/courses/generative-ai": "#BE185D",
+    "/courses/azure-data-engineering": "#9A3412"
+  },
+  "placementPillars": [
+    {
+      "title": "Resume and LinkedIn review",
+      "body": "A line-by-line review of your CV against the specific roles you are applying for — rewriting project descriptions so a recruiter can see the tools and the outcome in the first five seconds, which is roughly how long yours gets.",
+      "accent": "#C2410C"
+    },
+    {
+      "title": "Portfolio guidance",
+      "body": "Your course projects turned into something presentable: a clean repository, a readable summary of the problem and result, and a version of the story you can tell out loud in an interview without notes.",
+      "accent": "#9A3412"
+    },
+    {
+      "title": "Mock interviews",
+      "body": "Practice rounds covering SQL and Python problems, case-style business questions, and the project deep-dive where most candidates come unstuck. You get direct feedback on what would have ended the real interview.",
+      "accent": "#B42318"
+    },
+    {
+      "title": "Technical interview prep",
+      "body": "Structured preparation for the rounds that actually filter candidates — window functions and joins in SQL, model evaluation reasoning in Data Science, pipeline design in Data Engineering.",
+      "accent": "#BE185D"
+    },
+    {
+      "title": "Job search strategy",
+      "body": "Where to apply, how to prioritise, and how to approach referrals. Most people lose months applying broadly through job portals; a targeted approach with a clear positioning statement works considerably better.",
+      "accent": "#7C2D12"
+    },
+    {
+      "title": "Mentor access during the search",
+      "body": "Your mentor stays reachable while you are interviewing, so you can bring back real questions from real rounds instead of guessing at what went wrong.",
+      "accent": "#C2410C"
+    }
+  ]
+}

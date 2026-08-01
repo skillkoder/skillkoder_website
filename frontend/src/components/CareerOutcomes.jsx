@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import seoRoutes from '../seo/routes.json';
+import sections from '../data/sections.json';
 import { COURSE_LABELS } from '../data/tools';
 
 /**
@@ -31,39 +32,11 @@ import { COURSE_LABELS } from '../data/tools';
  */
 const SALARY_BY_ROLE = {};
 
-const ROLE_BLURBS = {
-  'Data Analyst':
-    'Turns raw business data into the reports and dashboards that leadership actually decides from. The most common entry point into the field.',
-  'Business Intelligence Analyst':
-    'Owns the reporting layer end to end — data models, metric definitions and the BI tooling the rest of the company relies on.',
-  'Reporting Analyst':
-    'Builds and maintains the recurring reporting that operations teams run on, and automates what used to be assembled by hand.',
-  'Data Scientist':
-    'Moves past describing what happened into predicting what will. Builds and validates models that feed real product and business decisions.',
-  'Machine Learning Engineer':
-    'Takes models out of notebooks and into production, where they have to be reliable, monitored and fast.',
-  'Applied Data Analyst':
-    'Sits between analytics and data science, using statistical methods on business problems that a dashboard cannot answer.',
-  'AI Developer':
-    'Builds applications on top of large language models — retrieval, structured prompting, evaluation and the plumbing around them.',
-  'Prompt Engineering Specialist':
-    'Designs and tests the prompts and guardrails that make an LLM behave consistently across thousands of real inputs.',
-  'AI Application Engineer':
-    'Ships user-facing AI features, owning the trade-offs between model quality, latency and cost.',
-  'Azure Data Engineer':
-    'Designs the pipelines and storage that everyone else queries. Less crowded than analytics and typically better paid.',
-  'Cloud Data Engineer':
-    'Runs data infrastructure on cloud platforms, from ingestion through transformation to serving.',
-  'Analytics Engineer':
-    'Bridges engineering and analytics — models and tests the transformed data layer that analysts build on.',
-};
 
-const COURSE_ACCENTS = {
-  '/courses/data-analytics': '#C2410C',
-  '/courses/data-science': '#B42318',
-  '/courses/generative-ai': '#BE185D',
-  '/courses/azure-data-engineering': '#9A3412',
-};
+
+/** Copy lives in src/data/sections.json so prerender.mjs can render it too. */
+const ROLE_BLURBS = sections.roleBlurbs;
+const COURSE_ACCENTS = sections.courseAccents;
 
 const CAREER_TRACKS = seoRoutes.routes
   .filter((r) => r.course?.roles?.length && COURSE_LABELS[r.path])

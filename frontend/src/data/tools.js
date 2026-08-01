@@ -1,188 +1,28 @@
+import toolsData from './tools.json';
+
 /**
- * The tool catalogue behind /tools and the homepage "Tools Covered" section.
+ * Tool catalogue — the data itself lives in tools.json.
  *
- * SCOPE RULE — every tool listed here must appear in the `course.tools` array of
- * at least one route in src/seo/routes.json. A tools page that advertises
- * software no course actually teaches is both a false claim to prospective
- * students and, once a visitor bounces off it, a ranking liability.
+ * WHY THE DATA MOVED OUT OF THIS FILE
+ * -----------------------------------
+ * scripts/prerender.mjs runs in plain Node and cannot import an ESM module from
+ * src/, which webpack compiles. While the arrays lived here, prerender had no
+ * way to read them, so the static shell for /tools contained only its title and
+ * intro — 262 words standing in for a page that renders 14 detailed entries.
+ * Googlebot renders JavaScript and would eventually see the full page, but that
+ * rendering sits in a slower second queue, and Bing plus most LLM and social
+ * crawlers do not render at all.
  *
- * seo.md also suggests Midjourney and Google Colab. Neither is in any current
- * curriculum, so neither is listed. Add them here once a course covers them.
+ * As JSON the same file feeds both renderers, so the crawled HTML and the
+ * rendered page cannot disagree.
  *
- * `courses` values must match the `path` of a route in routes.json.
+ * This module stays as the import surface for React code — every existing
+ * `import { TOOLS } from '../data/tools'` keeps working unchanged.
  */
 
-export const TOOL_CATEGORIES = [
-  { id: 'analysis', label: 'Analysis & Querying' },
-  { id: 'visualization', label: 'Visualization & BI' },
-  { id: 'ml', label: 'Machine Learning & AI' },
-  { id: 'cloud', label: 'Cloud & Data Engineering' },
-];
-
-export const TOOLS = [
-  {
-    name: 'Python',
-    slug: 'python',
-    category: 'analysis',
-    tagline: 'The default language of data work',
-    description:
-      'Python is where most analytics and machine learning work actually happens. You learn it from first principles — variables, control flow, functions — then move straight into pandas and NumPy for cleaning, reshaping and aggregating real datasets.',
-    youWillBuild:
-      'Cleaning pipelines for messy CSV and Excel exports, exploratory analysis notebooks, and the data preparation layer that every model in the course sits on top of.',
-    courses: ['/courses/data-analytics', '/courses/data-science', '/courses/generative-ai'],
-  },
-  {
-    name: 'SQL',
-    slug: 'sql',
-    category: 'analysis',
-    tagline: 'The one skill every data job interview tests',
-    description:
-      'SQL is the most consistently requested skill in Indian data job descriptions, and the one candidates most often get filtered out on. You cover SELECT through joins, grouping, subqueries, window functions and query performance against MySQL and PostgreSQL.',
-    youWillBuild:
-      'Analytical queries over multi-table schemas, plus the kind of window-function problems that come up in analyst interview rounds.',
-    courses: ['/courses/data-analytics', '/courses/data-science', '/courses/azure-data-engineering'],
-  },
-  {
-    name: 'Excel',
-    slug: 'excel',
-    category: 'analysis',
-    tagline: 'Still the first tool on most analyst desks',
-    description:
-      'Excel is where a lot of real business data still lives, and fluency in it makes you immediately useful on day one of a job. You cover lookups, pivot tables, conditional logic and Power Query for repeatable transformations.',
-    youWillBuild:
-      'Pivot-driven summary reports and a Power Query workflow that turns a recurring manual clean-up into a one-click refresh.',
-    courses: ['/courses/data-analytics'],
-  },
-  {
-    name: 'Power BI',
-    slug: 'power-bi',
-    category: 'visualization',
-    tagline: 'The BI tool most Indian employers ask for',
-    description:
-      'Power BI turns a cleaned dataset into something a business audience will actually act on. You cover the data model, relationships, DAX measures and report design — including the layout decisions that separate a dashboard people use from one they ignore.',
-    youWillBuild:
-      'A multi-page interactive dashboard built on a proper star schema, with DAX measures for the metrics stakeholders ask about.',
-    courses: ['/courses/data-analytics', '/courses/azure-data-engineering'],
-  },
-  {
-    name: 'Tableau',
-    slug: 'tableau',
-    category: 'visualization',
-    tagline: 'Exploratory visualization, done fast',
-    description:
-      'Tableau is the other BI tool worth having on a CV, and it thinks about data differently to Power BI. You cover calculated fields, level-of-detail expressions, dashboard actions and the chart-choice reasoning that applies in any tool.',
-    youWillBuild:
-      'A published interactive dashboard with drill-downs, plus a comparison exercise so you can speak to when Tableau beats Power BI and when it does not.',
-    courses: ['/courses/data-analytics'],
-  },
-  {
-    name: 'scikit-learn',
-    slug: 'scikit-learn',
-    category: 'ml',
-    tagline: 'Classical machine learning end to end',
-    description:
-      'scikit-learn covers the models that solve most real business problems: regression, classification, clustering and the pipeline and cross-validation machinery around them. This is where you learn to evaluate a model honestly rather than just fit one.',
-    youWillBuild:
-      'A full modelling workflow — feature engineering, train/test discipline, hyperparameter search and a metric choice you can defend in an interview.',
-    courses: ['/courses/data-science'],
-  },
-  {
-    name: 'TensorFlow',
-    slug: 'tensorflow',
-    category: 'ml',
-    tagline: 'Deep learning at production scale',
-    description:
-      'TensorFlow and Keras take you from classical models into neural networks. You cover network architecture, training dynamics, regularisation and how to tell overfitting from a genuine result.',
-    youWillBuild:
-      'A trained neural network on a real dataset, with the training curves and evaluation you would present to a hiring panel.',
-    courses: ['/courses/data-science', '/courses/generative-ai'],
-  },
-  {
-    name: 'PyTorch',
-    slug: 'pytorch',
-    category: 'ml',
-    tagline: 'The research-to-production AI framework',
-    description:
-      'PyTorch is the framework most current AI work is written in, and its explicit training loop makes what a model is actually doing much easier to see. You cover tensors, autograd, custom modules and fine-tuning pretrained models.',
-    youWillBuild:
-      'A model fine-tuned on your own data, written with a training loop you understand line by line rather than a black-box fit call.',
-    courses: ['/courses/data-science', '/courses/generative-ai'],
-  },
-  {
-    name: 'Hugging Face Transformers',
-    slug: 'hugging-face-transformers',
-    category: 'ml',
-    tagline: 'Where modern language models are shipped from',
-    description:
-      'Transformers is the standard library for working with pretrained language models. You cover tokenisation, inference, fine-tuning and the practical trade-offs between using a hosted API and running a model yourself.',
-    youWillBuild:
-      'An NLP application built on a pretrained model — classification, summarisation or retrieval — packaged so it can be demoed.',
-    courses: ['/courses/generative-ai'],
-  },
-  {
-    name: 'ChatGPT & prompt engineering',
-    slug: 'chatgpt',
-    category: 'ml',
-    tagline: 'Building with LLMs, not just using them',
-    description:
-      'Most people can prompt a chatbot. Far fewer can design a prompt that behaves reliably across hundreds of inputs, evaluate whether it is working, and build an application on top of it. That gap is what this part of the course closes.',
-    youWillBuild:
-      'A working LLM-backed application with structured prompts, an evaluation set to measure quality, and handling for the cases where the model gets it wrong.',
-    courses: ['/courses/generative-ai'],
-  },
-  {
-    name: 'Azure Data Factory',
-    slug: 'azure-data-factory',
-    category: 'cloud',
-    tagline: 'Orchestrating data movement at scale',
-    description:
-      'Data Factory is the pipeline layer of the Azure data stack. You cover linked services, datasets, mapping data flows, triggers and the monitoring and retry behaviour that keeps a pipeline running unattended.',
-    youWillBuild:
-      'A scheduled ingestion pipeline that pulls from source systems into a data lake, with failure handling and alerting configured.',
-    courses: ['/courses/azure-data-engineering'],
-  },
-  {
-    name: 'Databricks',
-    slug: 'databricks',
-    category: 'cloud',
-    tagline: 'Spark for data that outgrows one machine',
-    description:
-      'Databricks is where large-scale transformation happens. You cover Spark fundamentals, notebooks, Delta Lake and the medallion architecture that structures a modern lakehouse.',
-    youWillBuild:
-      'A bronze-silver-gold transformation flow in Delta Lake, written in PySpark against a dataset too large for pandas.',
-    courses: ['/courses/azure-data-engineering'],
-  },
-  {
-    name: 'Azure Synapse Analytics',
-    slug: 'azure-synapse',
-    category: 'cloud',
-    tagline: 'The warehouse layer analysts query',
-    description:
-      'Synapse is where engineered data is made available to the rest of the business. You cover dedicated and serverless SQL pools, distribution strategy and the modelling decisions that determine whether queries return in seconds or minutes.',
-    youWillBuild:
-      'A dimensional warehouse model served from Synapse and connected to a Power BI report.',
-    courses: ['/courses/azure-data-engineering'],
-  },
-  {
-    name: 'Azure Data Lake Storage',
-    slug: 'azure-data-lake',
-    category: 'cloud',
-    tagline: 'The storage foundation underneath it all',
-    description:
-      'Data Lake Storage Gen2 is where raw and processed data sits. You cover hierarchical namespaces, partitioning strategy, file formats such as Parquet, and the access control model that governs who can read what.',
-    youWillBuild:
-      'A partitioned lake layout with sensible file formats and access policies, feeding the pipelines built in Data Factory and Databricks.',
-    courses: ['/courses/azure-data-engineering'],
-  },
-];
-
-/** Human-readable labels for the course paths referenced above. */
-export const COURSE_LABELS = {
-  '/courses/data-analytics': 'Data Analytics',
-  '/courses/data-science': 'Data Science',
-  '/courses/generative-ai': 'Generative AI',
-  '/courses/azure-data-engineering': 'Azure Data Engineering',
-};
+export const TOOL_CATEGORIES = toolsData.toolCategories;
+export const TOOLS = toolsData.tools;
+export const COURSE_LABELS = toolsData.courseLabels;
 
 export const toolsByCategory = (categoryId) =>
   TOOLS.filter((t) => t.category === categoryId);

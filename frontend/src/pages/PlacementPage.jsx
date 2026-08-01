@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import FAQAccordion from '../components/FAQAccordion';
 import { PLACEMENT_FAQS } from '../data/faqs';
+import sections from '../data/sections.json';
 import { applySEO } from '../utils/seo';
 import { openDemoModal, PHONE_DISPLAY, PHONE_TEL } from '../data/site';
 
@@ -30,38 +31,8 @@ const SUCCESS_STORIES = [];
 /** @type {{name: string, logo?: string}[]} */
 const HIRING_PARTNERS = [];
 
-const SUPPORT_PILLARS = [
-  {
-    title: 'Resume and LinkedIn review',
-    body: 'A line-by-line review of your CV against the specific roles you are applying for — rewriting project descriptions so a recruiter can see the tools and the outcome in the first five seconds, which is roughly how long yours gets.',
-    accent: '#C2410C',
-  },
-  {
-    title: 'Portfolio guidance',
-    body: 'Your course projects turned into something presentable: a clean repository, a readable summary of the problem and result, and a version of the story you can tell out loud in an interview without notes.',
-    accent: '#9A3412',
-  },
-  {
-    title: 'Mock interviews',
-    body: 'Practice rounds covering SQL and Python problems, case-style business questions, and the project deep-dive where most candidates come unstuck. You get direct feedback on what would have ended the real interview.',
-    accent: '#B42318',
-  },
-  {
-    title: 'Technical interview prep',
-    body: 'Structured preparation for the rounds that actually filter candidates — window functions and joins in SQL, model evaluation reasoning in Data Science, pipeline design in Data Engineering.',
-    accent: '#BE185D',
-  },
-  {
-    title: 'Job search strategy',
-    body: 'Where to apply, how to prioritise, and how to approach referrals. Most people lose months applying broadly through job portals; a targeted approach with a clear positioning statement works considerably better.',
-    accent: '#7C2D12',
-  },
-  {
-    title: 'Mentor access during the search',
-    body: 'Your mentor stays reachable while you are interviewing, so you can bring back real questions from real rounds instead of guessing at what went wrong.',
-    accent: '#C2410C',
-  },
-];
+/** Copy lives in src/data/sections.json so prerender.mjs renders it too. */
+const SUPPORT_PILLARS = sections.placementPillars;
 
 const PlacementPage = () => {
   useEffect(() => {
