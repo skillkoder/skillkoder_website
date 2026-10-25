@@ -42,7 +42,7 @@
       "intro": "This policy explains what personal data SkillKoder collects, why we collect it, how long we keep it and what you can ask us to do with it. Last updated 1 August 2026.",
       "blocks": [
         { "type": "h2", "text": "Who we are" },
-        { "type": "p", "text": "SkillKoder is an online training academy with its registered office at 2-3-720/2/31/C, New Maruti Nagar, Amberpet, Hyderabad, Telangana 500013, India. For any question about this policy or about the data we hold on you, contact us at Skillkoder2025@gmail.com or +91 99515 99922." },
+        { "type": "p", "text": "SkillKoder is an online training academy with its registered office at 2-3-720/2/31/C, New Maruti Nagar, Amberpet, Hyderabad, Telangana 500013, India. For any question about this policy or about the data we hold on you, contact us at support@skillkoder.in or +91 99515 99922." },
 
         { "type": "h2", "text": "What we collect" },
         { "type": "p", "text": "We collect only what we need to answer your enquiry and deliver a course. Specifically:" },
@@ -92,7 +92,7 @@
           "Withdraw consent for marketing communications, at any time.",
           "Nominate someone to exercise these rights on your behalf if you are unable to."
         ]},
-        { "type": "p", "text": "Write to Skillkoder2025@gmail.com to make any of these requests. We will respond within a reasonable period. If you are not satisfied with our response, you may complain to the Data Protection Board of India." },
+        { "type": "p", "text": "Write to support@skillkoder.in to make any of these requests. We will respond within a reasonable period. If you are not satisfied with our response, you may complain to the Data Protection Board of India." },
 
         { "type": "h2", "text": "Cookies and analytics" },
         { "type": "p", "text": "This site uses Google Analytics, which sets cookies to measure how the site is used. You can block these through your browser settings or a browser extension without losing any functionality of this site. We do not use advertising or cross-site tracking cookies." },
@@ -161,7 +161,7 @@
         { "type": "p", "text": "These terms are governed by the laws of India. The courts at Hyderabad, Telangana have exclusive jurisdiction over any dispute arising from them." },
 
         { "type": "h2", "text": "Contact" },
-        { "type": "p", "text": "Questions about these terms: Skillkoder2025@gmail.com or +91 99515 99922." },
+        { "type": "p", "text": "Questions about these terms: support@skillkoder.in or +91 99515 99922." },
 
         { "type": "cta", "text": "Want the specific terms for the batch you are considering, in writing, before you commit? Ask us.", "href": "/contact", "label": "Talk to SkillKoder" }
       ]
@@ -182,7 +182,7 @@
         { "type": "p", "text": "The best way to avoid needing a refund is to sit in on a live class first. Every prospective learner can [book a free demo class](/contact) and see the teaching, the pace and the curriculum before committing any money. We would rather you decided against enrolling than enrolled and regretted it." },
 
         { "type": "h2", "text": "Refund eligibility" },
-        { "type": "callout", "title": "Your specific terms are in your enrolment agreement", "text": "Refund windows and conditions vary by program, batch and payment plan, and the terms that apply to you are the ones set out in writing at the time you enrol. Ask for them before you pay — we will always give them to you in writing, and we will not ask you to commit without them. If you have already enrolled and cannot find your terms, email Skillkoder2025@gmail.com and we will resend them." },
+        { "type": "callout", "title": "Your specific terms are in your enrolment agreement", "text": "Refund windows and conditions vary by program, batch and payment plan, and the terms that apply to you are the ones set out in writing at the time you enrol. Ask for them before you pay — we will always give them to you in writing, and we will not ask you to commit without them. If you have already enrolled and cannot find your terms, email support@skillkoder.in and we will resend them." },
 
         { "type": "h2", "text": "When we cancel or reschedule" },
         { "type": "p", "text": "This part does not depend on your enrolment terms and applies in every case:" },
@@ -194,7 +194,7 @@
 
         { "type": "h2", "text": "How to request a refund" },
         { "type": "ol", "items": [
-          "Email Skillkoder2025@gmail.com from the address you enrolled with, with the subject line 'Refund request'.",
+          "Email support@skillkoder.in from the address you enrolled with, with the subject line 'Refund request'.",
           "Include your full name, the program and batch you enrolled in, the date of payment and the reason for the request.",
           "We will acknowledge your request and tell you whether it falls within your enrolment terms.",
           "Approved refunds are returned to the original payment method. Your bank or payment provider determines how long it takes to appear on your statement."

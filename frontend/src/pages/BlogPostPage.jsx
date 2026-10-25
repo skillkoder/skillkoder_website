@@ -59,7 +59,7 @@ const BlogPostPage = () => {
               marginBottom: '1.25rem',
             }}
           >
-            <Link to="/" style={{ color: '#9A3412', textDecoration: 'none' }}>
+            <Link to="/academy" style={{ color: '#9A3412', textDecoration: 'none' }}>
               Home
             </Link>
             <span aria-hidden="true"> / </span>

@@ -22,7 +22,7 @@ import { applySEO } from '../utils/seo';
 const HomePage = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-    applySEO('/');
+    applySEO('/academy');
   }, []);
 
   return (

@@ -358,7 +358,7 @@ const CourseDetail = ({ slug }) => {
 
         {/* Back button */}
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/academy')}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             background: 'none', border: 'none', cursor: 'pointer',

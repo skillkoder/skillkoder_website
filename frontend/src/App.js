@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import CourseDetail from './components/CourseDetail.jsx';
@@ -12,6 +12,7 @@ import AboutPage from './pages/AboutPage.jsx';
 import FeaturesPage from './pages/FeaturesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import HomePage from './pages/HomePage.jsx';
+import CompanyHomePage from './pages/CompanyHomePage.jsx';
 import ToolsPage from './pages/ToolsPage.jsx';
 import FaqPage from './pages/FaqPage.jsx';
 import PlacementPage from './pages/PlacementPage.jsx';
@@ -43,11 +44,25 @@ const CourseDetailPage = () => {
   return <CourseDetail slug={slug} />;
 };
 
+/**
+ * The academy site (everything except the company homepage) keeps its own
+ * navbar, footer and sticky CTA. The company page at "/" brings its own chrome.
+ */
+const AcademyLayout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+    <Footer />
+    <StickyCTA />
+  </>
+);
+
 const App = () => (
   <BrowserRouter>
-    <Navbar />
     <Routes>
-      <Route path="/"                  element={<HomePage />} />
+      <Route path="/"                  element={<CompanyHomePage />} />
+      <Route element={<AcademyLayout />}>
+      <Route path="/academy"           element={<HomePage />} />
       <Route path="/about"             element={<AboutPage />} />
       <Route path="/courses"                     element={<CoursesPage />} />
       <Route path="/courses/data-analytics"      element={<DataAnalyticsPage />} />
@@ -103,9 +118,8 @@ const App = () => (
       */}
       <Route path="/404"               element={<NotFoundPage />} />
       <Route path="*"                  element={<NotFoundPage />} />
+      </Route>
     </Routes>
-    <Footer />
-    <StickyCTA />
   </BrowserRouter>
 );
 

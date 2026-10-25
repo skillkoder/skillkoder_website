@@ -55,7 +55,7 @@ const CourseLanding = ({
       <div style={{ maxWidth: '1320px', margin: '0 auto', padding: '2rem 1rem 0 1rem', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.75rem' }}>
           <button
-            onClick={() => { navigate('/'); window.scrollTo(0, 0); }}
+            onClick={() => { navigate('/academy'); window.scrollTo(0, 0); }}
             style={{
               padding: '0.9rem 1.9rem',
               borderRadius: 999,

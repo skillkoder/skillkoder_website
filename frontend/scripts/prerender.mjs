@@ -290,6 +290,7 @@ function applyHead(html, r) {
 
 const NAV = [
   ['/', 'Home'],
+  ['/academy', 'SkillKoder Academy'],
   ['/courses', 'Courses'],
   ['/courses/data-analytics', 'Data Analytics Course'],
   ['/courses/data-science', 'Data Science Course'],
@@ -503,7 +504,7 @@ function staticBody(r) {
   }
 
   // Component-built pages: emit the same sections React renders.
-  if (r.path === '/') {
+  if (r.path === '/academy') {
     parts.push('<h2>Tools you will learn at SkillKoder</h2>');
     parts.push(...toolsSection({ full: false }));
     parts.push('<p><a href="/tools">See what you build with each tool</a></p>');
