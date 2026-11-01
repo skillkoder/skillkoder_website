@@ -5,8 +5,8 @@
  *
  * Base URL resolves automatically:
  *   Local dev   →  http://localhost:8000/api/v1
- *   Production  →  https://api.skillkoder.com/api/v1
- *               (set REACT_APP_API_URL in .env or .env.production)
+ *   Production  →  https://api.skillkoder.com/api/v1   (Azure VM, see deploy/azure-vm/)
+ *               (override with REACT_APP_API_URL in .env.production)
  *
  * Features:
  *   - Automatic Bearer token injection from localStorage
@@ -22,9 +22,9 @@
 // ---------------------------------------------------------------------------
 // Base URL — configure via REACT_APP_API_URL environment variable
 // ---------------------------------------------------------------------------
+// Production backend: Django on the Azure VM behind nginx (deploy/azure-vm/).
 export const API_BASE_URL =
-  process.env.REACT_APP_API_URL || 'https://skillkoder-backend-d9gvewesa9c7a5hc.canadacentral-01.azurewebsites.net/api/v1';
-  // process.env.REACT_APP_API_URL || 'http://localhost:8001/api/v1';
+  process.env.REACT_APP_API_URL || 'https://api.skillkoder.com/api/v1';
 
 
 // ---------------------------------------------------------------------------

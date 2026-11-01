@@ -1,0 +1,20 @@
+[Unit]
+Description=SkillKoder Django backend (gunicorn)
+After=network.target
+
+[Service]
+User=skillkoder
+Group=www-data
+WorkingDirectory=/srv/skillkoder/app/backend
+RuntimeDirectory=skillkoder
+# 2 workers x 4 threads fits the 1 GB free-tier VM. --timeout 300 lets a
+# Virtual Try-On request (~65-100 s, longer when queued) finish.
+ExecStart=/srv/skillkoder/venv/bin/gunicorn skillkoder_project.wsgi:application \
+    --bind unix:/run/skillkoder/gunicorn.sock --umask 007 \
+    --workers 2 --threads 4 --timeout 300 \
+    --access-logfile - --error-logfile -
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -392,13 +392,15 @@ for _origin in _LOCAL_ORIGINS:
 CORS_ALLOW_CREDENTIALS = True
 
 # ---------------------------------------------------------------------------
-# CSRF — Trusted Origins (Necessary for Admin login on Azure)
+# CSRF — Trusted Origins (needed for the admin login over HTTPS)
+# The API host itself (e.g. https://api.skillkoder.com on the Azure VM) is set
+# through CSRF_TRUSTED_ORIGINS in the server's .env.
 # ---------------------------------------------------------------------------
-CSRF_TRUSTED_ORIGINS = [
-    'https://skillkoder-backend-d9gvewesa9c7a5hc.canadacentral-01.azurewebsites.net',
-    'https://www.skillkoder.com',
-    'https://skillkoder.com',
-]
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='https://api.skillkoder.com,https://www.skillkoder.com,https://skillkoder.com',
+    cast=Csv()
+)
 
 # ---------------------------------------------------------------------------
 # Security (Production)
@@ -407,6 +409,12 @@ if not DEBUG:
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
+    # On the Azure VM, nginx terminates HTTPS and forwards plain HTTP to
+    # gunicorn with X-Forwarded-Proto. Trust it so Django knows the request
+    # was secure (admin login CSRF checks, secure cookies, absolute URLs).
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = config('SESSION_COOKIE_SECURE', default=True, cast=bool)
+    CSRF_COOKIE_SECURE = config('CSRF_COOKIE_SECURE', default=True, cast=bool)
 
 # ---------------------------------------------------------------------------
 # Logging
