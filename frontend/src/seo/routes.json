@@ -249,6 +249,16 @@
       "noindex": true
     },
     {
+      "path": "/virtualtryon",
+      "title": "Virtual Try-On | SkillKoder",
+      "description": "Try clothes on virtually with SkillKoder's AI: photograph or upload a garment, take a photo of yourself, and see how it looks in about a minute. Photos are not stored.",
+      "keywords": "virtual try-on, ai virtual try on, try clothes online, skillkoder",
+      "ogImage": "/logo512.png",
+      "h1": "Virtual Try-On",
+      "intro": "See how a piece of clothing looks on you. Snap or upload the cloth, take a photo of yourself, and our AI dresses you in about a minute.",
+      "noindex": true
+    },
+    {
       "path": "/404",
       "title": "Page Not Found | SkillKoder",
       "description": "That page does not exist. Browse our courses, tools, blog and career guides instead.",

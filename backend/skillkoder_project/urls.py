@@ -42,6 +42,11 @@ urlpatterns = [
     # Courses API
     # -----------------------------------------------------------------------
     path('api/v1/', include('courses.urls')),
+
+    # -----------------------------------------------------------------------
+    # Virtual Try-On proxy → self-hosted GPU server (holds TRYON_API_KEY)
+    # -----------------------------------------------------------------------
+    path('api/v1/', include('virtualtryon.urls')),
 ]
 
 # Serve media files in development (DEBUG=True).

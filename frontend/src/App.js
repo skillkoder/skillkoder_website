@@ -21,6 +21,7 @@ import BlogIndexPage from './pages/BlogIndexPage.jsx';
 import BlogPostPage from './pages/BlogPostPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import StickyCTA from './components/StickyCTA.jsx';
+import VirtualTryOnPage from './pages/VirtualTryOnPage.jsx';
 import { CONTENT_ROUTES } from './seo/allRoutes';
 
 /**
@@ -99,6 +100,7 @@ const App = () => (
       <Route path="/blog/:slug"                  element={<BlogPostPage />} />
 
       <Route path="/contact"           element={<ContactPage />} />
+      <Route path="/virtualtryon"      element={<VirtualTryOnPage />} />
       <Route
         path="/drug-free-certificates"
         element={

@@ -55,6 +55,13 @@ export const PRODUCTS = [
     name: 'SkillKoder Insights',
     text: 'Ready-to-deploy business dashboards that turn spreadsheets and databases into live KPIs.',
   },
+  {
+    icon: 'Shirt',
+    name: 'SkillKoder Virtual Try-On',
+    text: 'Photograph any piece of clothing, take a photo of yourself, and AI shows how it looks on you in about a minute.',
+    link: '/virtualtryon',
+    cta: 'Try it on',
+  },
 ];
 
 /**

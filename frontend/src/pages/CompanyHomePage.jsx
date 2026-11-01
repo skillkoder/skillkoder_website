@@ -11,6 +11,7 @@ import {
   MapPin,
   MessageCircle,
   Phone,
+  Shirt,
   Workflow,
 } from 'lucide-react';
 import {
@@ -55,12 +56,13 @@ import { applySEO } from '../utils/seo';
 /** Company brand colour — buttons, accents and highlighted text. */
 const BRAND = '#e86a5d';
 
-const ICONS ={ Brain, Workflow, Briefcase, GraduationCap, Bot, LayoutDashboard };
+const ICONS ={ Brain, Workflow, Briefcase, GraduationCap, Bot, LayoutDashboard, Shirt };
 
 const FONT = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 const TABS = [
   { id: 'home', label: 'Home' },
+  { id: 'products', label: 'Products' },
   { id: 'about', label: 'About Us' },
   { id: 'clients', label: 'Clients' },
   { id: 'projects', label: 'New Projects' },
@@ -343,7 +345,7 @@ const CompanyHomePage = () => {
       </section>
 
       {/* PRODUCTS */}
-      <section className="ck-section ck-canvas" aria-labelledby="products-title">
+      <section id="products" className="ck-section ck-canvas" aria-labelledby="products-title">
         <div className="ck-wrap">
           <div className="ck-head">
             <span className="ck-eyebrow">Our products</span>
