@@ -13,7 +13,7 @@ APP="$BASE/app"
 VENV="$BASE/venv"
 BACKEND="$APP/backend"
 [ "$(id -u)" -eq 0 ] || { echo "Run as root (sudo)." >&2; exit 1; }
-BRANCH="${BRANCH:-$(git -C "$APP" rev-parse --abbrev-ref HEAD)}"
+BRANCH="${BRANCH:-$(sudo -u skillkoder git -C "$APP" rev-parse --abbrev-ref HEAD)}"
 
 if [ -f "$BASE/data/db.sqlite3" ]; then
   mkdir -p "$BASE/backups"
@@ -30,4 +30,4 @@ systemctl daemon-reload
 systemctl restart skillkoder-backend
 sleep 2
 systemctl is-active skillkoder-backend
-echo "Deployed $(git -C "$APP" log --oneline -1)"
+echo "Deployed $(sudo -u skillkoder git -C "$APP" log --oneline -1)"
