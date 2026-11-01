@@ -1,0 +1,24 @@
+# Python packages for the SkillKoder Virtual Try-On GPU server (tryon_server.py).
+# Install everything with:  .\setup.ps1      (see VIRTUALTRYON.md at the repo root)
+# Manual equivalent, run inside gpu-server\ (setup.ps1 does exactly this):
+#   python -m uv venv --python 3.12 .venv-fashn
+#   python -m uv pip install --python .venv-fashn\Scripts\python.exe torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+#   python -m uv pip install --python .venv-fashn\Scripts\python.exe -r requirements-fashn.txt
+#   git clone https://github.com/fashn-AI/fashn-vton-1.5.git vendor/fashn-vton ; git -C vendor/fashn-vton checkout 7c0f10a
+#   python -m uv pip install --python .venv-fashn\Scripts\python.exe --no-deps -e vendor/fashn-vton
+# PyTorch comes first, from PyTorch's CUDA 12.8 index; onnxruntime-gpu must be a CUDA 12 build to
+# share its CUDA libraries. --no-deps keeps out fashn-human-parser (NVIDIA non-commercial
+# weights); fashn_stubs/ stands in for it. In OneDrive folders set UV_LINK_MODE=copy first.
+onnxruntime-gpu==1.22.0
+transformers==5.22.1  # SAM 2.1 (native, no downloaded model code)
+safetensors==0.8.0
+huggingface-hub==2.4.0
+pillow==13.0.0
+numpy==2.5.4
+opencv-python-headless==5.0.0.93
+tqdm==4.70.1
+einops==0.8.2
+matplotlib==3.11.2
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+python-multipart==0.0.33
