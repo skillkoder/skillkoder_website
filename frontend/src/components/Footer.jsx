@@ -159,8 +159,8 @@ const Footer = () => {
 
   const scrollToTop = (e) => {
     e.preventDefault();
-    if (window.location.pathname !== '/') {
-      navigate('/');
+    if (window.location.pathname !== '/academy') {
+      navigate('/academy');
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -244,7 +244,7 @@ const Footer = () => {
             <ul style={styles.linksList}>
               <li style={styles.linkItem}>
                 <a
-                  href="/"
+                  href="/academy"
                   style={styles.link}
                   onMouseEnter={(e) => handleLinkHover(e, true)}
                   onMouseLeave={(e) => handleLinkHover(e, false)}

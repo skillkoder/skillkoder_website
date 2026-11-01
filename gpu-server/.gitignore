@@ -1,0 +1,6 @@
+# Installed by setup.ps1 / downloaded on first start — never commit
+.venv-fashn/
+vendor/
+checkpoints/
+__pycache__/
+*.part

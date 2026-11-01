@@ -3,11 +3,26 @@
   "routes": [
     {
       "path": "/",
+      "title": "SkillKoder | AI Solutions, Automation & Business Software",
+      "description": "SkillKoder builds AI solutions, workflow automations and custom business software for growing companies — and trains the next generation of data and AI talent.",
+      "keywords": "ai solutions company hyderabad, business process automation, custom business software, ai development services, skillkoder",
+      "ogImage": "/logo512.png",
+      "h1": "We build AI solutions, automations and business software",
+      "intro": "SkillKoder is a Hyderabad-based technology company. We design and ship AI solutions, workflow automations and custom business software, and through SkillKoder Academy we train professionals in Data Analytics, Data Science and Generative AI.",
+      "bullets": [
+        "AI Solutions — chatbots, assistants, document intelligence and predictive models",
+        "Automations — workflows, integrations and reporting that run themselves",
+        "Business Solutions — CRMs, dashboards and custom web applications",
+        "SkillKoder Academy — live, project-based Data and AI courses"
+      ]
+    },
+    {
+      "path": "/academy",
       "title": "Data Analytics, Data Science & AI Courses | SkillKoder",
       "description": "Specialist online training in Data Analytics, Data Science, Generative AI and Azure Data Engineering. Live classes, real projects, placement support.",
       "keywords": "data analytics course online, data science course online india, generative ai course online, azure data engineering training, online tech course with placement",
       "ogImage": "/logo512.png",
-      "h1": "SkillKoder",
+      "h1": "SkillKoder Academy",
       "intro": "Premium Data, AI and Analytics training for career-ready professionals. Learn live with mentors, build a real project portfolio, and get placement support across Data Analytics, Data Science, Generative AI and Azure Data Engineering.",
       "bullets": [
         "Live instructor-led classes",
@@ -231,6 +246,16 @@
       "ogImage": "/logo512.png",
       "h1": "Drug-Free Certificate",
       "intro": "Generate and download your certificate.",
+      "noindex": true
+    },
+    {
+      "path": "/virtualtryon",
+      "title": "Virtual Try-On | SkillKoder",
+      "description": "Try clothes on virtually with SkillKoder's AI: photograph or upload a garment, take a photo of yourself, and see how it looks in about a minute. Photos are not stored.",
+      "keywords": "virtual try-on, ai virtual try on, try clothes online, skillkoder",
+      "ogImage": "/logo512.png",
+      "h1": "Virtual Try-On",
+      "intro": "See how a piece of clothing looks on you. Snap or upload the cloth, take a photo of yourself, and our AI dresses you in about a minute.",
       "noindex": true
     },
     {

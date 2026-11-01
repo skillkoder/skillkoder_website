@@ -70,7 +70,7 @@ const Contact = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      info: 'Skillkoder2025@gmail.com'
+      info: 'support@skillkoder.in'
     },
     {
       icon: <Phone size={24} />,

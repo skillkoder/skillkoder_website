@@ -14,8 +14,8 @@ export const PHONE_DISPLAY = '+91 99515 99922';
 export const PHONE_E164 = '+919951599922';
 export const PHONE_TEL = 'tel:+919951599922';
 
-export const EMAIL = 'Skillkoder2025@gmail.com';
-export const EMAIL_HREF = 'mailto:Skillkoder2025@gmail.com';
+export const EMAIL = 'support@skillkoder.in';
+export const EMAIL_HREF = 'mailto:support@skillkoder.in';
 
 export const LOCATION = 'Hyderabad, India';
 

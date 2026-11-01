@@ -18,8 +18,8 @@ const Navbar = () => {
 
   const scrollToTop = (e) => {
     e.preventDefault();
-    if (window.location.pathname !== '/') {
-      navigate('/');
+    if (window.location.pathname !== '/academy') {
+      navigate('/academy');
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -282,7 +282,8 @@ const Navbar = () => {
 
       <nav style={styles.nav}>
         <div style={styles.container}>
-          <div style={styles.logoContainer}>
+          {/* The logo leads back to the company homepage; "Home" stays within the academy. */}
+          <div style={styles.logoContainer} onClick={() => navigate('/')} title="SkillKoder home">
             <img loading="eager" fetchpriority="high" decoding="async" 
               src="/sk_logo.webp" 
               alt="SkillKoder Logo" 
@@ -296,7 +297,7 @@ const Navbar = () => {
               <a
                 className="menu-item"
                 style={styles.menuItem}
-                href="/"
+                href="/academy"
                 onClick={scrollToTop}
                 onMouseEnter={(e) => e.target.style.color = '#C2410C'}
                 onMouseLeave={(e) => e.target.style.color = '#1a202c'}
@@ -434,7 +435,7 @@ const Navbar = () => {
           <li>
             <a
               style={styles.mobileMenuItem}
-              href="/"
+              href="/academy"
               onClick={(e) => { setIsMenuOpen(false); scrollToTop(e); }}
             >
               Home
