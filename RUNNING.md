@@ -212,6 +212,15 @@ npm run deploy
 
 ---
 
+## 9. Virtual Try-On (optional GPU server)
+
+The `/virtualtryon` page needs a separate try-on server on a PC with an NVIDIA GPU. Without it the
+page loads but shows "Virtual try-on is offline". Installation of the server and all its models,
+and how to connect it (`TRYON_SERVER_URL`, `TRYON_API_KEY` in `backend/.env`):
+see **[VIRTUALTRYON.md](VIRTUALTRYON.md)**.
+
+---
+
 ## Troubleshooting
 
 | Problem | Fix |
