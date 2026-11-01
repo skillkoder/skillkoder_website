@@ -11,7 +11,9 @@ API_DOMAIN="${API_DOMAIN:-api.skillkoder.com}"
 [ "$(id -u)" -eq 0 ] || { echo "Run as root (sudo)." >&2; exit 1; }
 
 MY_IP="$(curl -s -m 5 -H Metadata:true \
-  'http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2021-02-01&format=text')"
+  'http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2021-02-01&format=text' || true)"
+# Standard-SKU public IPs are often missing from the metadata service: ask an echo service instead.
+[ -n "$MY_IP" ] || MY_IP="$(curl -s -4 -m 5 https://api.ipify.org || true)"
 DNS_IP="$(getent ahostsv4 "$API_DOMAIN" | awk 'NR==1{print $1}')"
 if [ "$DNS_IP" != "$MY_IP" ]; then
   echo "DNS for $API_DOMAIN points to '${DNS_IP:-nothing}', but this VM is $MY_IP."

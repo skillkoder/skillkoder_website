@@ -64,6 +64,8 @@ sudo -u "$APP_USER" "$VENV/bin/pip" install --quiet -r "$BACKEND/requirements.tx
 log "Django settings (.env)"
 PUBLIC_IP="$(curl -s -m 5 -H Metadata:true \
   'http://169.254.169.254/metadata/instance/network/interface/0/ipv4/ipAddress/0/publicIpAddress?api-version=2021-02-01&format=text' || true)"
+# Standard-SKU public IPs are often missing from the metadata service: ask an echo service instead.
+[ -n "$PUBLIC_IP" ] || PUBLIC_IP="$(curl -s -4 -m 5 https://api.ipify.org || true)"
 if [ ! -f "$ENV_FILE" ]; then
   SECRET="$("$VENV/bin/python" -c 'import secrets; print(secrets.token_urlsafe(50))')"
   HOSTS="$API_DOMAIN,localhost,127.0.0.1${EXTRA_HOSTS:+,$EXTRA_HOSTS}${PUBLIC_IP:+,$PUBLIC_IP}"
