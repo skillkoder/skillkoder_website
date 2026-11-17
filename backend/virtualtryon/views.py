@@ -72,6 +72,12 @@ _hits_lock = threading.Lock()
 
 
 def _client_ip(request):
+    # Behind the Cloudflare tunnel (home PC), Cloudflare puts the visitor's
+    # address in CF-Connecting-IP. The backend only listens on 127.0.0.1 there,
+    # so the header can only arrive through the tunnel.
+    cf_ip = request.META.get('HTTP_CF_CONNECTING_IP', '').strip()
+    if cf_ip:
+        return cf_ip
     # Azure App Service appends the real client address (as "ip:port") to the
     # end of X-Forwarded-For. Earlier entries are client-supplied and spoofable,
     # so only the last one is trusted.
@@ -208,12 +214,27 @@ def tryon(request):
     if slot not in ALLOWED_SLOTS:
         return _error('Garment type must be one of: top, outerwear, bottom, dress.', 400)
 
+    person_part = ('person.jpg', person.content_type, person.read())
+    garment_part = ('garment.jpg', garment.content_type, garment.read())
+
+    if request.GET.get('async') == '1':
+        # Job mode: answer at once and let the browser poll. Needed behind
+        # Cloudflare, which cuts off any request that runs past 100 s.
+        job_id = _start_job(server_url, api_key, slot, person_part, garment_part)
+        if job_id is None:
+            return _error('Virtual try-on is busy right now. Please try again in a few minutes.', 429)
+        response = JsonResponse({'job': job_id}, status=202)
+        response['Cache-Control'] = 'no-store'
+        return response
+
+    status, payload = _call_upstream(server_url, api_key, slot, person_part, garment_part)
+    return _to_response(status, payload)
+
+
+def _call_upstream(server_url, api_key, slot, person_part, garment_part):
+    """Run one try-on on the GPU server. Returns (200, png_bytes) or (status, error_message)."""
     body, content_type = _encode_multipart(
-        {'slot': slot},
-        {
-            'person': ('person.jpg', person.content_type, person.read()),
-            'garment': ('garment.jpg', garment.content_type, garment.read()),
-        },
+        {'slot': slot}, {'person': person_part, 'garment': garment_part},
     )
     upstream = urllib.request.Request(
         f'{server_url}/tryon',
@@ -231,18 +252,77 @@ def tryon(request):
         logger.warning('virtualtryon: upstream returned %s', exc.code)
         if exc.code == 401:
             # Key mismatch is our misconfiguration, not the visitor's fault.
-            return _error(OFFLINE_MESSAGE, 503)
-        return _error(_upstream_error_message(raw, exc.code), exc.code)
+            return 503, OFFLINE_MESSAGE
+        return exc.code, _upstream_error_message(raw, exc.code)
     except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as exc:
         logger.warning('virtualtryon: upstream unreachable (%s)', type(exc).__name__)
-        return _error(OFFLINE_MESSAGE, 503)
+        return 503, OFFLINE_MESSAGE
     finally:
         del body  # release the image bytes promptly
 
     logger.info('virtualtryon: ok slot=%s in %.1fs', slot, time.monotonic() - started)
-    response = HttpResponse(png, content_type='image/png')
+    return 200, png
+
+
+def _to_response(status, payload):
+    if status != 200:
+        return _error(payload, status)
+    response = HttpResponse(payload, content_type='image/png')
     response['Cache-Control'] = 'no-store'
     return response
+
+
+# ---------------------------------------------------------------------------
+# Jobs — in memory only (results are photos of people; never written to disk).
+# Needs a single server process (waitress on the home PC); a job started in one
+# gunicorn worker would not be visible to the others.
+# ---------------------------------------------------------------------------
+JOB_TTL_S = 10 * 60          # unclaimed results are dropped after this
+MAX_PENDING_JOBS = 6         # GPU runs one at a time; refuse a longer queue
+
+_jobs = {}                   # id -> {'status': None | int, 'payload': ..., 'at': monotonic}
+_jobs_lock = threading.Lock()
+
+
+def _prune_jobs(now):
+    for job_id in [k for k, v in _jobs.items() if now - v['at'] > JOB_TTL_S + TRYON_TIMEOUT_S]:
+        del _jobs[job_id]
+
+
+def _start_job(server_url, api_key, slot, person_part, garment_part):
+    now = time.monotonic()
+    with _jobs_lock:
+        _prune_jobs(now)
+        if sum(1 for v in _jobs.values() if v['status'] is None) >= MAX_PENDING_JOBS:
+            return None
+        job_id = secrets.token_urlsafe(24)
+        _jobs[job_id] = {'status': None, 'payload': None, 'at': now}
+
+    def run():
+        status, payload = _call_upstream(server_url, api_key, slot, person_part, garment_part)
+        with _jobs_lock:
+            if job_id in _jobs:
+                _jobs[job_id].update(status=status, payload=payload, at=time.monotonic())
+
+    threading.Thread(target=run, name=f'tryon-{job_id[:6]}', daemon=True).start()
+    return job_id
+
+
+@require_GET
+@never_cache
+def job(request, job_id):
+    """202 {"status": "pending"} while running; then the PNG (or error) once, and it is gone."""
+    with _jobs_lock:
+        _prune_jobs(time.monotonic())
+        entry = _jobs.get(job_id)
+        if entry is None:
+            return _error('This try-on has expired. Please try again.', 404)
+        if entry['status'] is None:
+            response = JsonResponse({'status': 'pending'}, status=202)
+            response['Cache-Control'] = 'no-store'
+            return response
+        del _jobs[job_id]
+    return _to_response(entry['status'], entry['payload'])
 
 
 @require_GET

@@ -40,7 +40,17 @@ Step 'Installing uv'
 Run python @('-m', 'pip', 'install', '--quiet', '--upgrade', 'uv')
 
 Step 'Creating Python 3.12 environment (.venv-fashn)'
-if (Test-Path $Py) { Write-Host 'already exists' } else { Run python @('-m', 'uv', 'venv', '--python', '3.12', '.venv-fashn') }
+if (Test-Path $Py) { Write-Host 'already exists' } else {
+  # Build the venv from the official, signed python.org 3.12 so Windows Smart App Control
+  # doesn't block it (a uv-made venv uses an unsigned python.exe that it refuses to run).
+  $Base = $null
+  if (Get-Command pymanager -ErrorAction SilentlyContinue) {
+    pymanager install 3.12 | Out-Host
+    $Base = pymanager list --format=exe 2>$null | Where-Object { $_ -match '3\.12' } | Select-Object -First 1
+  }
+  if ($Base) { Run $Base @('-m', 'venv', '.venv-fashn') }
+  else { Run python @('-m', 'uv', 'venv', '--python', '3.12', '.venv-fashn') }
+}
 
 Step 'Installing PyTorch 2.11 with CUDA 12.8'
 Run python @('-m', 'uv', 'pip', 'install', '--python', $Py, 'torch==2.11.0', 'torchvision==0.26.0',

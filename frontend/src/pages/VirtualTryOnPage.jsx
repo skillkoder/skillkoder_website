@@ -47,6 +47,8 @@ const SLOTS = [
 const SLOT_VALUES = SLOTS.map((s) => s.value);
 
 const OFFLINE_MESSAGE = 'Virtual try-on is offline right now. Please try again later.';
+const JOB_POLL_MS = 3000;
+const JOB_MAX_POLL_FAILURES = 10; // ~30 s of failed polls in a row → treat as offline
 const PRIVACY_LINE = "Your photo is only used to create this preview and isn't stored.";
 
 /** Object URL for a Blob, revoked automatically when the Blob changes or on unmount. */
@@ -284,11 +286,37 @@ const VirtualTryOnPage = () => {
 
       let res;
       try {
-        res = await fetch(`${API_BASE_URL}/virtualtryon/`, {
+        // Job mode: the POST returns a job id at once, then we poll for the PNG.
+        // A single long request would be cut off by Cloudflare after 100 s.
+        res = await fetch(`${API_BASE_URL}/virtualtryon/?async=1`, {
           method: 'POST',
           body: form,
           signal: controller.signal,
         });
+        if (res.status === 202) {
+          const { job } = await res.json();
+          let failures = 0;
+          for (;;) {
+            await new Promise((resolve, reject) => {
+              const timer = setTimeout(resolve, JOB_POLL_MS);
+              controller.signal.addEventListener('abort', () => {
+                clearTimeout(timer);
+                reject(new DOMException('Aborted', 'AbortError'));
+              }, { once: true });
+            });
+            try {
+              res = await fetch(`${API_BASE_URL}/virtualtryon/jobs/${encodeURIComponent(job)}/`, {
+                cache: 'no-store',
+                signal: controller.signal,
+              });
+            } catch (err) {
+              if (err.name === 'AbortError' || ++failures >= JOB_MAX_POLL_FAILURES) throw err;
+              continue; // brief network blip: keep polling
+            }
+            failures = 0;
+            if (res.status !== 202) break;
+          }
+        }
       } catch (err) {
         if (err.name === 'AbortError') throw err;
         setHealth('offline');
